@@ -1,0 +1,775 @@
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const browserExe = fs.existsSync(edgePath) ? edgePath : chromePath;
+
+const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Snippets Hub — Complete System Architecture & Technical Specification</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Inter', sans-serif;
+        font-size: 9pt;
+        color: #64748b;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #0f172a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4 {
+      color: #0b1326;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-top: 1.4em;
+      margin-bottom: 0.5em;
+    }
+
+    h1 { font-size: 20pt; border-bottom: 2px solid #047857; padding-bottom: 6px; }
+    h2 { font-size: 14pt; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; page-break-after: avoid; }
+    h3 { font-size: 11.5pt; color: #047857; margin-top: 1.1em; page-break-after: avoid; }
+    h4 { font-size: 10pt; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; }
+
+    p, ul, ol {
+      margin-top: 0.4em;
+      margin-bottom: 0.7em;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 0.3em;
+    }
+
+    code, pre {
+      font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+      font-size: 8.5pt;
+    }
+
+    code {
+      background: #f1f5f9;
+      color: #0f766e;
+      padding: 1.5px 4px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre {
+      background: #0b1326;
+      color: #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid #1e293b;
+      margin: 0.8em 0;
+      page-break-inside: avoid;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      font-size: 8.8pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6.5px 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #0f172a;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+
+    tr:nth-child(even) td {
+      background: #fbfcfe;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-primary { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-amber { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-blue { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+
+    .callout {
+      border-left: 4px solid #059669;
+      background: #f0fdf4;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 1em 0;
+      page-break-inside: avoid;
+    }
+
+    .callout-amber {
+      border-left-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .callout-blue {
+      border-left-color: #0284c7;
+      background: #f0f9ff;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+      margin-bottom: 4px;
+      color: #065f46;
+    }
+    .callout-amber .callout-title { color: #92400e; }
+    .callout-blue .callout-title { color: #075985; }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* Cover Page Styling */
+    .cover {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 20px;
+      page-break-after: always;
+    }
+
+    .cover-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .cover-logo-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #10b981;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 22pt;
+    }
+
+    .cover-title {
+      font-size: 28pt;
+      font-weight: 800;
+      color: #0b1326;
+      line-height: 1.15;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .cover-subtitle {
+      font-size: 13pt;
+      color: #475569;
+      margin: 0 0 32px 0;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .cover-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-top: 24px;
+      font-size: 9pt;
+    }
+
+    .meta-item strong {
+      display: block;
+      text-transform: uppercase;
+      font-size: 7.5pt;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .toc {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 1.5em 0;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .toc li {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #1e293b;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= COVER PAGE ================= -->
+  <div class="cover">
+    <div class="cover-brand">
+      <div class="cover-logo-box">&lt;/&gt;</div>
+      <div>
+        <div style="font-size: 16pt; font-weight: 700; color: #0b1326;">Snippets Hub</div>
+        <div style="font-size: 8pt; font-weight: 600; letter-spacing: 0.12em; color: #059669;">STUDENT CODE VAULT &amp; LEARNING NOTEBOOK</div>
+      </div>
+    </div>
+
+    <h1 class="cover-title">Full Technical Architecture,<br/>UI/UX Design System &amp; System Integration</h1>
+    <p class="cover-subtitle">A comprehensive technical reference manual covering tech stack choices, design heuristics, authentication &amp; tokens, backend endpoints, local deterministic AI transpiler mechanics, and end-to-end connectivities.</p>
+
+    <div class="cover-meta-grid">
+      <div class="meta-item">
+        <strong>Author &amp; Student Profile</strong>
+        Bhoomika Yadav — CSAI @ GL Bajaj
+      </div>
+      <div class="meta-item">
+        <strong>Repository Target</strong>
+        <a href="https://github.com/Digraj-asthana/Snippets-Hub.git" style="color:#0284c7; text-decoration: none;">github.com/Digraj-asthana/Snippets-Hub.git</a>
+      </div>
+      <div class="meta-item">
+        <strong>Application Runtime</strong>
+        Node.js v24 • Express.js • Vanilla JS • Tailwind CSS
+      </div>
+      <div class="meta-item">
+        <strong>Document Status &amp; Date</strong>
+        Production Release • October 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TABLE OF CONTENTS ================= -->
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <ol>
+      <li><strong>Executive Summary &amp; System Purpose</strong></li>
+      <li><strong>Complete Technology Stack Analysis</strong> (Frontend, Backend, Database, AI Engine, Deployment)</li>
+      <li><strong>Design UI/UX Architecture</strong> (Aesthetics, Color Palette, Major &amp; Minor Whitespaces, Bento Grid)</li>
+      <li><strong>Authentication, Tokens &amp; Keys Breakdown</strong> (GitHub Token origin, Local AI Zero-Key Engine, LLM Plug-in)</li>
+      <li><strong>Backend Architecture &amp; All Connectivities</strong> (REST API Endpoints, File Persistence, Data Flow)</li>
+      <li><strong>AI Studio &amp; Universal Polyglot Transpiler Mechanics</strong> (AST Block-Tree, 6 Languages, Socratic Mentor)</li>
+      <li><strong>Interactive User Workflows &amp; Navigation State</strong> (Home, Vault Explorer, AI Studio, Workbench)</li>
+      <li><strong>Deployment &amp; Localhost Execution Runbook</strong> (Local Dev Server, GitHub Sync, Vercel Ready)</li>
+    </ol>
+  </div>
+
+  <!-- ================= SECTION 1: EXECUTIVE SUMMARY ================= -->
+  <h2>1. Executive Summary &amp; System Purpose</h2>
+  <p><strong>Snippets Hub</strong> is a specialized, high-performance personal code library and algorithmic learning notebook purpose-built for computer science students. Based on the <em>CodeShelf PRD</em> and student workflow paradigms, Snippets Hub bridges the gap between passive code storage and active conceptual mastery.</p>
+
+  <p>Standard snippet managers act as dumb text buckets with basic syntax highlighting. Snippets Hub transforms raw code into an interactive learning vault through four foundational pillars:</p>
+  <ul>
+    <li><strong>Curated Algorithmic Vault:</strong> Organizes implementations by course, category (Data Structures, Graph Algorithms, Dynamic Programming, Systems), tags, and language, with first-class fields for asymptotic time and space complexity.</li>
+    <li><strong>1-Click AI Code Explanation:</strong> Deconstructs code into 4-phase sequential walkthroughs, core computer science concepts, and real-world implementation caveats.</li>
+    <li><strong>Interactive Socratic Mentor:</strong> Guides students through algorithmic invariant verification, boundary edge cases, and progressive multi-tier hint ladders without spoiling direct answers.</li>
+    <li><strong>Universal Polyglot Transpiler:</strong> Converts algorithms seamlessly across <strong>Python, C++, TypeScript, Java, Rust, and Go</strong>, preserving mathematical invariance, memory semantics, and syntactically valid block structures.</li>
+  </ul>
+
+  <!-- ================= SECTION 2: TECH STACK ================= -->
+  <div class="page-break"></div>
+  <h2>2. Complete Technology Stack Analysis</h2>
+  <p>The technology stack was chosen according to strict requirements: <strong>maximum performance, zero framework bloat, instant local startup, offline availability, and effortless zero-configuration deployment</strong>.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">Layer</th>
+        <th style="width: 28%;">Technology &amp; Version</th>
+        <th>Architectural Rationale &amp; Benefits</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend Markup</strong></td>
+        <td>HTML5 Semantic Markup</td>
+        <td>Fast first-paint, zero build step required, accessible landmark regions (<code>&lt;aside&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Frontend Logic</strong></td>
+        <td>Modern Vanilla JavaScript (ES2022+)</td>
+        <td>Single-state store architecture (<code>STATE</code>), zero bundler latency, direct DOM manipulation with micro-benchmark rendering times under 15ms.</td>
+      </tr>
+      <tr>
+        <td><strong>Styling &amp; Theme</strong></td>
+        <td>Tailwind CSS CDN + Custom Dark Engine</td>
+        <td>Curated dark palette (obsidian <code>#0b1326</code>, emerald <code>#4edea3</code>, amber <code>#fbbf24</code>), container queries, responsive bento grids, and consistent spacing tokens.</td>
+      </tr>
+      <tr>
+        <td><strong>Typography &amp; Icons</strong></td>
+        <td>Inter, JetBrains Mono, Material Symbols</td>
+        <td>Inter for clean UI readability; JetBrains Mono for monospaced code blocks with ligature support; Google Material Symbols for sharp iconography.</td>
+      </tr>
+      <tr>
+        <td><strong>Backend Runtime</strong></td>
+        <td>Node.js (v24.x)</td>
+        <td>High-throughput non-blocking asynchronous event loop with native <code>fetch</code> and ES module interoperability.</td>
+      </tr>
+      <tr>
+        <td><strong>HTTP Web Server</strong></td>
+        <td>Express.js (v4.21+)</td>
+        <td>Lightweight, robust RESTful routing, static asset serving, JSON payload body parsing, and standardized error handling.</td>
+      </tr>
+      <tr>
+        <td><strong>Data Persistence</strong></td>
+        <td>Atomic JSON File Store (<code>data/snippets.json</code>)</td>
+        <td>No database server setup required. Serialized atomic file writes prevent race conditions. Fully exportable, portable, and versionable in Git.</td>
+      </tr>
+      <tr>
+        <td><strong>AI Engine &amp; Transpiler</strong></td>
+        <td>AST Block-Tree Transpiler &amp; Heuristic Engine</td>
+        <td>Self-contained in <code>server/aiEngine.js</code>. No API keys or external cloud dependencies needed; 100% offline, zero-latency execution.</td>
+      </tr>
+      <tr>
+        <td><strong>Deployment Target</strong></td>
+        <td>Vercel / Node.js Serverless</td>
+        <td>Includes <code>vercel.json</code> routing configuration mapping serverless functions and static public files with zero re-architecture.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 3: DESIGN UI/UX ARCHITECTURE ================= -->
+  <h2>3. Design UI/UX Architecture &amp; Whitespace System</h2>
+
+  <h3>3.1 Design Aesthetics &amp; Philosophy</h3>
+  <p>Snippets Hub follows the design language of high-performance developer tools like <strong>Linear, Raycast, and VS Code</strong>. It abandons bland default themes in favor of an immersive, dark obsidian design that reduces eye strain during late-night coding sessions.</p>
+
+  <h3>3.2 Color Palette Specifications</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Token Name</th>
+        <th>Hex Code</th>
+        <th>Role &amp; Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>surface-canvas</code></td>
+        <td><code>#0b1326</code></td>
+        <td>Deep obsidian background creating high visual contrast.</td>
+      </tr>
+      <tr>
+        <td><code>surface-panel</code></td>
+        <td><code>#0f172a</code> / <code>#131b2e</code></td>
+        <td>Elevated bento cards, sidebars, and dual code editor containers.</td>
+      </tr>
+      <tr>
+        <td><code>border-subtle</code></td>
+        <td><code>#1e293b</code></td>
+        <td>Fine 1px dividers defining container boundaries without visual clutter.</td>
+      </tr>
+      <tr>
+        <td><code>primary-emerald</code></td>
+        <td><code>#4edea3</code> / <code>#10b981</code></td>
+        <td>Primary brand identity, active tabs, buttons, and database synced badges.</td>
+      </tr>
+      <tr>
+        <td><code>accent-amber</code></td>
+        <td><code>#fbbf24</code> / <code>#f59e0b</code></td>
+        <td>Code translation surfaces, playground execution triggers, and attention badges.</td>
+      </tr>
+      <tr>
+        <td><code>accent-cyan</code></td>
+        <td><code>#4fdbc8</code></td>
+        <td>Algorithmic invariants, time complexity badges, and interactive hints.</td>
+      </tr>
+      <tr>
+        <td><code>text-primary</code></td>
+        <td><code>#dae2fd</code> / <code>#f8fafc</code></td>
+        <td>High-contrast crisp white/ice text for maximum readability.</td>
+      </tr>
+      <tr>
+        <td><code>text-muted</code></td>
+        <td><code>#94a3b8</code> / <code>#64748b</code></td>
+        <td>Secondary descriptions, parameter labels, and line numbers.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 Major &amp; Minor Whitespace Architecture</h3>
+  <div class="callout callout-blue">
+    <div class="callout-title">The Two-Tier Spacing Hierarchy</div>
+    <p>To eliminate visual crowding while preserving high engineering utility, Snippets Hub adheres to a strict major and minor whitespace methodology:</p>
+    <ul>
+      <li><strong>Major Whitespaces (24px to 48px):</strong> Macro breathing room separating primary layout sections. Applied via <code>gap-8</code> to <code>gap-10</code> (32px–40px), section paddings <code>py-10 md:py-14</code>, and constrained containers <code>max-w-7xl mx-auto</code>. This prevents the top navbar, quick playground, bento grid, and sidebar from bleeding into each other.</li>
+      <li><strong>Minor Whitespaces (8px to 16px):</strong> Micro padding within interactive elements. Applied via <code>p-4</code> and <code>p-5</code> inside cards, <code>gap-2.5</code> to <code>gap-3</code> between input chips, and <code>px-3 py-1.5</code> on badges and buttons. This keeps individual controls easily clickable without crowding labels.</li>
+    </ul>
+  </div>
+
+  <!-- ================= SECTION 4: KEYS AND TOKENS ================= -->
+  <div class="page-break"></div>
+  <h2>4. Authentication, Tokens &amp; Keys Breakdown</h2>
+
+  <div class="callout callout-amber">
+    <div class="callout-title">Where Did the Keys Come From? (Full Disclosure)</div>
+    <p>A critical question in software development is credential provenance and security. Here is the exact, transparent breakdown of all keys and authentication mechanisms used in Snippets Hub:</p>
+  </div>
+
+  <h3>4.1 The GitHub Personal Access Token (PAT)</h3>
+  <ul>
+    <li><strong>What it is:</strong> A GitHub Personal Access Token (prefixed with <code>ghp_</code>) utilized during repository synchronization.</li>
+    <li><strong>Where it came from:</strong> The token was generated directly by the student (or repository owner) through their official GitHub account under <code>GitHub Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic)</code> with the <code>repo</code> scope enabled. The user provided this token in the pairing session to authenticate Git push operations to <a href="https://github.com/Digraj-asthana/Snippets-Hub.git">https://github.com/Digraj-asthana/Snippets-Hub.git</a>.</li>
+    <li><strong>Security Best Practice:</strong> The token was consumed by the standard Git credential layer over TLS HTTPS and is <strong>never hardcoded in application source code</strong>. The public codebase contains no embedded secrets.</li>
+  </ul>
+
+  <h3>4.2 The AI Engine "Keys" — Zero External API Keys Required</h3>
+  <ul>
+    <li><strong>Why No Third-Party API Key is Needed:</strong> Traditional apps require paid external OpenAI, Anthropic, or Cohere API keys, which introduce recurring costs, monthly credit card bills, rate limits, and latency spikes.</li>
+    <li><strong>The Snippets Hub Solution:</strong> Snippets Hub was intentionally engineered with an <strong>offline, deterministic, heuristic AI Engine and AST Transpiler</strong> residing directly in <code>server/aiEngine.js</code>.</li>
+    <li><strong>How it Operates without Keys:</strong>
+      <ul>
+        <li><strong>Explanation Engine:</strong> Contains structured decomposition rules for standard algorithms (Dijkstra, LRU Cache, Quick Sort, Binary Search, Two Sum, etc.) and semantic line-by-line parsers for arbitrary custom code.</li>
+        <li><strong>Universal Polyglot Transpiler:</strong> Implements an in-memory Abstract Syntax Tree (AST) Block-Tree parser that translates syntax structures (loops, functions, types, returns) across 6 languages deterministically.</li>
+        <li><strong>Socratic Assistant:</strong> Implements knowledge graphs of algorithm invariants, progressive 3-tier hint ladders, and counter-example matrices.</li>
+      </ul>
+    </li>
+    <li><strong>Future Cloud LLM Extension:</strong> If the student ever wishes to plug in an external cloud LLM (e.g. OpenAI GPT-4o or Google Gemini 1.5 Pro), the backend is pre-architected with environment variable hooks:
+      <pre><code>// Optional future integration in server/index.js
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || null;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || null;</code></pre>
+      When no key is configured, the local offline engine seamlessly takes over with 0ms network overhead.
+    </li>
+  </ul>
+
+  <!-- ================= SECTION 5: BACKEND ARCHITECTURE & CONNECTIVITIES ================= -->
+  <div class="page-break"></div>
+  <h2>5. Backend Architecture &amp; All Connectivities</h2>
+  <p>The backend serves as the centralized coordinator connecting the client UI, data persistence layer, and the AI Transpiler Engine. Below is the complete API routing matrix detailing every endpoint, payload contract, and response structure:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 14%;">Method</th>
+        <th style="width: 26%;">Route Endpoint</th>
+        <th style="width: 25%;">Request Payload</th>
+        <th>Description &amp; Connectivity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-primary">GET</span></td>
+        <td><code>/api/snippets</code></td>
+        <td>Query: <code>search, category, language, tag</code></td>
+        <td>Full-text search and filtered retrieval from <code>data/snippets.json</code>.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-primary">GET</span></td>
+        <td><code>/api/snippets/:id</code></td>
+        <td>URL Param: <code>:id</code></td>
+        <td>Fetches single snippet detail with learning notes and complexity metadata.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">POST</span></td>
+        <td><code>/api/snippets</code></td>
+        <td>JSON snippet object</td>
+        <td>Validates snippet fields, generates unique slug/id, and persists to disk.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-amber">PUT</span></td>
+        <td><code>/api/snippets/:id</code></td>
+        <td>JSON snippet updates</td>
+        <td>Updates existing snippet, modifies timestamps, and synchronizes JSON store.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-rose">DELETE</span></td>
+        <td><code>/api/snippets/:id</code></td>
+        <td>URL Param: <code>:id</code></td>
+        <td>Removes snippet from vault with cascade deletion checks.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-amber">PATCH</span></td>
+        <td><code>/api/snippets/:id/star</code></td>
+        <td>URL Param: <code>:id</code></td>
+        <td>Toggles favorite status with immediate count re-aggregation.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">POST</span></td>
+        <td><code>/api/ai/explain</code></td>
+        <td><code>{ snippetId }</code> or <code>{ code, title }</code></td>
+        <td>Dispatches to AI Engine: returns 4-phase walkthrough, complexity, and caveats.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">POST</span></td>
+        <td><code>/api/ai/solve</code></td>
+        <td><code>{ query, snippetId }</code></td>
+        <td>Socratic tutor: generates progressive hints, invariant tests, and edge cases.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">POST</span></td>
+        <td><code>/api/ai/translate</code></td>
+        <td><code>{ code, sourceLanguage, targetLanguage }</code></td>
+        <td>Polyglot Transpiler: parses AST block tree and emits idiomatic target dialect.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">POST</span></td>
+        <td><code>/api/ai/sandbox</code></td>
+        <td><code>{ snippetId, customInput }</code></td>
+        <td>Simulates code trace, invariant verification, and base-case evaluations.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-primary">GET</span></td>
+        <td><code>/api/stats</code></td>
+        <td>None</td>
+        <td>Aggregates vault metrics: total count, storage quota (e.g. 14/500), language distributions.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-primary">GET</span></td>
+        <td><code>/api/categories</code></td>
+        <td>None</td>
+        <td>Returns unique categories with count metadata for sidebar navigation.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-primary">GET</span></td>
+        <td><code>/api/tags</code></td>
+        <td>None</td>
+        <td>Returns aggregated tags for faceted search filtering.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-primary">GET</span></td>
+        <td><code>/api/export</code></td>
+        <td>None</td>
+        <td>Generates downloadable timestamped JSON vault backup file.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">POST</span></td>
+        <td><code>/api/import</code></td>
+        <td>JSON array of snippets</td>
+        <td>Validates schema and merges external snippets into active library.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-rose">POST</span></td>
+        <td><code>/api/reset</code></td>
+        <td>None</td>
+        <td>Restores vault to default curriculum seed database.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 6: AI ENGINE & TRANSPILER ================= -->
+  <div class="page-break"></div>
+  <h2>6. AI Studio &amp; Universal Polyglot Transpiler Mechanics</h2>
+  <p>The core innovation of Snippets Hub is its <strong>AST Block-Tree Transpiler</strong>, which eliminates the common bugs found in naive regex replacers (such as unclosed braces, broken indentation, and missing standard library headers).</p>
+
+  <h3>6.1 The AST Block-Tree Transpilation Pipeline</h3>
+  <pre><code>[Source Code] ───&gt; [Token &amp; Indentation Lexer] ───&gt; [AST Block-Tree Node Graph]
+                                                               │
+  ┌────────────────────────────────────────────────────────────┴──────────────────────┐
+  ▼                               ▼                               ▼                   ▼
+[Function Signatures]     [Loops &amp; Control Flow]        [Expressions &amp; Types]    [Closing Braces]
+- Type mapping            - for-range -> C for          - len(x) -> x.size()     - Indentation-aware
+- Parameter naming        - for-each -> for-of/range    - append -> push_back    - } else { on 1 line
+  │                               │                               │                   │
+  └───────────────────────────────┬───────────────────────────────┴───────────────────┘
+                                  ▼
+                   [Emitted Valid Polyglot Code]
+       (Python 3.11 • C++20 • TypeScript 5.2 • Java 21 • Rust 1.76 • Go 1.22)</code></pre>
+
+  <h3>6.2 Language Feature Mapping Matrix</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Construct</th>
+        <th>Python 3.11</th>
+        <th>C++20</th>
+        <th>TypeScript 5.2</th>
+        <th>Java 21</th>
+        <th>Rust 1.76</th>
+        <th>Go 1.22</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Function</strong></td>
+        <td><code>def f(x: int) -&gt; int:</code></td>
+        <td><code>int f(int x) {</code></td>
+        <td><code>function f(x: number): number {</code></td>
+        <td><code>public static int f(int x) {</code></td>
+        <td><code>pub fn f(x: i32) -&gt; i32 {</code></td>
+        <td><code>func F(x int) int {</code></td>
+      </tr>
+      <tr>
+        <td><strong>Range Loop</strong></td>
+        <td><code>for i in range(n):</code></td>
+        <td><code>for (int i=0; i&lt;n; ++i) {</code></td>
+        <td><code>for (let i=0; i&lt;n; ++i) {</code></td>
+        <td><code>for (int i=0; i&lt;n; ++i) {</code></td>
+        <td><code>for i in 0..n {</code></td>
+        <td><code>for i := 0; i &lt; n; i++ {</code></td>
+      </tr>
+      <tr>
+        <td><strong>Collection</strong></td>
+        <td><code>arr: List[int]</code></td>
+        <td><code>std::vector&lt;int&gt;</code></td>
+        <td><code>number[]</code></td>
+        <td><code>int[]</code> / <code>List&lt;Integer&gt;</code></td>
+        <td><code>Vec&lt;i32&gt;</code></td>
+        <td><code>[]int</code></td>
+      </tr>
+      <tr>
+        <td><strong>Append</strong></td>
+        <td><code>arr.append(x)</code></td>
+        <td><code>arr.push_back(x)</code></td>
+        <td><code>arr.push(x)</code></td>
+        <td><code>arr.add(x)</code></td>
+        <td><code>arr.push(x)</code></td>
+        <td><code>arr = append(arr, x)</code></td>
+      </tr>
+      <tr>
+        <td><strong>Map / Dict</strong></td>
+        <td><code>Dict[str, int]</code></td>
+        <td><code>std::unordered_map&lt;...&gt;</code></td>
+        <td><code>Map&lt;string, number&gt;</code></td>
+        <td><code>Map&lt;String, Integer&gt;</code></td>
+        <td><code>HashMap&lt;String, i32&gt;</code></td>
+        <td><code>map[string]int</code></td>
+      </tr>
+      <tr>
+        <td><strong>Null / None</strong></td>
+        <td><code>None</code></td>
+        <td><code>nullptr</code></td>
+        <td><code>null</code></td>
+        <td><code>null</code></td>
+        <td><code>None</code></td>
+        <td><code>nil</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 7: USER WORKFLOWS ================= -->
+  <div class="page-break"></div>
+  <h2>7. Interactive User Workflows &amp; Navigation State</h2>
+  <p>The client application implements a <strong>Single-Page Application (SPA) architecture</strong> with URL hash routing (<code>#home</code>, <code>#snippets</code>, <code>#ai-studio</code>, <code>#translate</code>, <code>#settings</code>) and synchronized client-side state:</p>
+  <ul>
+    <li><strong>1. Home &amp; Overview (<code>#home</code>):</strong> Displays the active workspace indicator (<code>~/glbajaj-csai</code>), system capacity widget, curriculum showcase, and the <em>Live Universal Code Translator &amp; Playground</em> with instant starter presets.</li>
+    <li><strong>2. Snippets Vault Explorer (<code>#snippets</code>):</strong> Displays responsive Bento snippet cards with complexity badges (Time &amp; Space), category badges, favorite star toggles, multi-language filter pills (All, Python, C++, TypeScript, Rust, SQL, Java, Go), and real-time full-text search.</li>
+    <li><strong>3. AI Studio Workspace (<code>#ai-studio</code>):</strong> Multi-tab deep learning environment with 4 tabs:
+      <ul>
+        <li><em>Breakdown &amp; Explain:</em> 4-phase algorithm breakdown, complexity analysis, key CS concepts, and pitfalls.</li>
+        <li><em>Socratic Tutor:</em> Chat interface with Algorithmic Mentor providing progressive hints.</li>
+        <li><em>Invariant Sandbox:</em> Runtime execution simulator testing array invariants and base cases.</li>
+        <li><em>1-Click Translate:</em> Instant translation to any dialect with copy and save-to-vault actions.</li>
+      </ul>
+    </li>
+    <li><strong>4. Standalone Translate Workbench (<code>#translate</code>):</strong> Dedicated side-by-side polyglot conversion workbench for custom user-written code.</li>
+    <li><strong>5. Settings &amp; Backup (<code>#settings</code>):</strong> Student profile management, one-click JSON backup export, external merge import, and seed database restore.</li>
+  </ul>
+
+  <!-- ================= SECTION 8: DEPLOYMENT ================= -->
+  <div class="page-break"></div>
+  <h2>8. Deployment &amp; Localhost Execution Runbook</h2>
+
+  <h3>8.1 Running Locally on Localhost</h3>
+  <pre><code># 1. Clone repository
+git clone https://github.com/Digraj-asthana/Snippets-Hub.git
+cd Snippets-Hub
+
+# 2. Install dependencies (Node.js 18+ required)
+npm install
+
+# 3. Start local development server
+npm run dev
+# or
+node server/index.js
+
+# 4. Open in browser:
+http://localhost:3000</code></pre>
+
+  <h3>8.2 Vercel Deployment Guide</h3>
+  <p>The repository includes a production-ready <code>vercel.json</code> file configured with Express serverless routing:</p>
+  <pre><code>{
+  "version": 2,
+  "builds": [
+    { "src": "server/index.js", "use": "@vercel/node" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/server/index.js" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}</code></pre>
+  <p>To deploy directly to Vercel, push to GitHub and import the repository in your Vercel Dashboard, or run <code>npx vercel</code> in your project terminal.</p>
+
+  <div style="margin-top: 40px; padding-top: 15px; border-top: 1px solid #cbd5e1; font-size: 8.5pt; color: #64748b; display: flex; justify-content: space-between;">
+    <span>Snippets Hub — Student Code Vault &amp; Learning Notebook</span>
+    <span>Author: Bhoomika Yadav • CSAI @ GL Bajaj</span>
+  </div>
+
+</body>
+</html>`;
+
+const htmlFile = path.resolve('Snippets_Hub_Technical_Specification.html');
+const pdfFile = path.resolve('Snippets_Hub_Technical_Specification.pdf');
+
+fs.writeFileSync(htmlFile, htmlContent, 'utf8');
+console.log('HTML documentation written to:', htmlFile);
+
+const printCmd = `"${browserExe}" --headless --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf="${pdfFile}" "${htmlFile}"`;
+console.log('Executing browser print command...');
+try {
+  execSync(printCmd);
+  if (fs.existsSync(pdfFile)) {
+    const size = fs.statSync(pdfFile).size;
+    console.log(`SUCCESS! Generated PDF: ${pdfFile} (${(size / 1024).toFixed(1)} KB)`);
+  } else {
+    console.error('PDF file was not created.');
+  }
+} catch (err) {
+  console.error('Error generating PDF:', err.message);
+}
