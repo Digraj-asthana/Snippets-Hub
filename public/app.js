@@ -387,14 +387,14 @@ function renderHome() {
     tracksContainer.innerHTML = tracks.map(t => {
       const count = STATE.snippets.filter(s => (s.category || '').toLowerCase().includes(t.name.toLowerCase().split(' ')[0])).length;
       return `
-        <div class="track-pill bg-[#131b2e] border border-[#1e293b] rounded-xl p-3 flex flex-col justify-between gap-2 cursor-pointer shadow-sm hover:border-emerald-500/40 transition-all" data-category="${t.name}">
+        <div class="track-pill bg-[#131b2e] border border-[#1e293b] rounded-2xl p-5 flex flex-col justify-between gap-4 cursor-pointer shadow-md hover:border-emerald-500/40 hover:shadow-lg transition-all" data-category="${t.name}">
           <div class="flex items-center justify-between">
-            <span class="material-symbols-outlined text-base text-emerald-400">${t.icon}</span>
-            <span class="font-label-mono-sm text-[10px] text-emerald-300 bg-emerald-950/60 border border-emerald-500/20 px-1.5 py-0.5 rounded font-semibold">${count || 2}</span>
+            <span class="material-symbols-outlined text-lg text-emerald-400">${t.icon}</span>
+            <span class="font-label-mono-sm text-[11px] text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-semibold">${count || 2}</span>
           </div>
           <div>
-            <span class="font-body-md text-xs font-semibold text-[#dae2fd] block">${t.name}</span>
-            <span class="text-[10px] text-[#64748b] block mt-0.5 truncate">${t.desc}</span>
+            <span class="font-body-md text-sm font-semibold text-[#dae2fd] block">${t.name}</span>
+            <span class="text-xs text-[#94a3b8] block mt-1.5 truncate">${t.desc}</span>
           </div>
         </div>
       `;
@@ -424,31 +424,31 @@ function renderHome() {
     featuredContainer.innerHTML = featuredList.map(s => {
       const langColor = getLanguageColor(s.language);
       return `
-        <div class="bg-[#131b2e] border border-[#1e293b] hover:border-slate-600 rounded-xl p-4 flex flex-col justify-between gap-3 shadow-md transition-all">
-          <div class="flex flex-col gap-1.5">
-            <div class="flex items-center justify-between gap-2">
-              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-[10.5px]">
-                <span class="w-1.5 h-1.5 rounded-full ${langColor}"></span>
+        <div class="bg-[#131b2e] border border-[#1e293b] hover:border-emerald-500/40 rounded-2xl p-6 md:p-7 flex flex-col justify-between gap-5 shadow-xl transition-all">
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-xs">
+                <span class="w-2 h-2 rounded-full ${langColor}"></span>
                 ${s.version || capitalize(s.language)}
               </span>
-              <span class="font-label-mono-sm text-[10px] text-teal-300 bg-teal-950/60 border border-teal-500/20 px-2 py-0.5 rounded">
+              <span class="font-label-mono-sm text-[11px] text-teal-300 bg-teal-950/60 border border-teal-500/25 px-2.5 py-1 rounded-lg">
                 ${s.timeComplexity || 'O(1)'}
               </span>
             </div>
-            <h3 class="font-headline-sm text-sm font-semibold text-[#dae2fd] mt-1">${escapeHtml(s.title)}</h3>
-            <p class="text-xs text-[#94a3b8] line-clamp-2">${escapeHtml(s.description || s.notes || '')}</p>
+            <h3 class="font-headline-sm text-base font-semibold text-[#dae2fd] mt-1">${escapeHtml(s.title)}</h3>
+            <p class="text-xs md:text-sm text-[#94a3b8] leading-relaxed line-clamp-2">${escapeHtml(s.description || s.notes || '')}</p>
           </div>
-          <div class="flex items-center justify-between pt-2 border-t border-[#1e293b]">
-            <span class="font-label-mono-sm text-[10.5px] text-[#64748b]">${s.category || 'Algorithms'}</span>
-            <div class="flex items-center gap-1.5">
-              <button class="px-2.5 py-1 rounded bg-[#0b1326] border border-[#1e293b] hover:bg-[#1e293b] text-[#cbd5e1] font-label-mono-sm text-[11px] btn-home-inspect" data-id="${s.id}">
+          <div class="flex items-center justify-between pt-4 border-t border-[#1e293b] gap-3">
+            <span class="font-label-mono-sm text-xs text-[#64748b]">${s.category || 'Algorithms'}</span>
+            <div class="flex items-center gap-2">
+              <button class="px-3 py-1.5 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:bg-[#1e293b] text-[#cbd5e1] font-label-mono-sm text-xs btn-home-inspect transition-colors" data-id="${s.id}">
                 Inspect
               </button>
-              <button class="px-2.5 py-1 rounded bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/30 font-label-mono-sm text-[11px] btn-home-explain flex items-center gap-1" data-id="${s.id}">
-                <span class="material-symbols-outlined text-xs">psychology</span> Explain
+              <button class="px-3 py-1.5 rounded-xl bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/30 font-label-mono-sm text-xs btn-home-explain flex items-center gap-1.5 transition-colors" data-id="${s.id}">
+                <span class="material-symbols-outlined text-sm">psychology</span> Explain
               </button>
-              <button class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 font-label-mono-sm text-[11px] btn-home-translate flex items-center gap-1" data-id="${s.id}">
-                <span class="material-symbols-outlined text-xs">compare_arrows</span> Translate
+              <button class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 font-label-mono-sm text-xs btn-home-translate flex items-center gap-1.5 transition-colors" data-id="${s.id}">
+                <span class="material-symbols-outlined text-sm">compare_arrows</span> Translate
               </button>
             </div>
           </div>
@@ -708,101 +708,101 @@ function renderGridView(container) {
     const isFeatureCard = isPinned || (idx === 0 && !STATE.searchQuery && STATE.filterLanguage === 'all' && STATE.filterCategory === 'all');
 
     return `
-      <article class="snippet-card ${isFeatureCard ? 'col-span-1 md:col-span-2' : 'col-span-1'} bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-5 flex flex-col justify-between gap-3.5 transition-all" data-id="${snippet.id}">
+      <article class="snippet-card ${isFeatureCard ? 'col-span-1 md:col-span-2' : 'col-span-1'} bg-[#131b2e] border border-[#1e293b] rounded-2xl shadow-xl p-6 md:p-7 flex flex-col justify-between gap-5 transition-all hover:border-slate-600" data-id="${snippet.id}">
         <!-- Card Header -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div class="flex items-center gap-2 flex-wrap">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5 flex-wrap">
             ${isPinned ? `
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-label-mono-sm text-[10px] font-semibold">
-                <span class="material-symbols-outlined text-[11px]">push_pin</span> PINNED
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-label-mono-sm text-[11px] font-semibold">
+                <span class="material-symbols-outlined text-xs">push_pin</span> PINNED
               </span>
             ` : ''}
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-[11px]">
-              <span class="w-1.5 h-1.5 rounded-full ${langColor}"></span>
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-xs">
+              <span class="w-2 h-2 rounded-full ${langColor}"></span>
               ${snippet.version || capitalize(snippet.language)}
             </span>
-            <span class="font-label-mono-sm text-[11px] text-[#94a3b8] flex items-center gap-1">
-              <span class="material-symbols-outlined text-xs text-primary">folder</span>
+            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-primary">folder</span>
               ${snippet.category || 'General'}
             </span>
           </div>
 
-          <div class="flex items-center gap-1.5">
-            <span class="inline-flex items-center px-2 py-0.5 rounded bg-teal-500/15 text-teal-300 border border-teal-500/30 font-label-mono-sm text-[10px] font-semibold">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-teal-500/15 text-teal-300 border border-teal-500/30 font-label-mono-sm text-[11px] font-semibold">
               Time: ${snippet.timeComplexity || 'O(1)'}
             </span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] text-[#94a3b8] font-label-mono-sm text-[10px]">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#94a3b8] font-label-mono-sm text-[11px]">
               Space: ${snippet.spaceComplexity || 'O(1)'}
             </span>
-            <button class="p-1 rounded text-amber-400 hover:bg-[#1e293b] transition-colors btn-star" data-id="${snippet.id}" title="${isStarred ? 'Unstar' : 'Star'}">
+            <button class="p-1.5 rounded-lg text-amber-400 hover:bg-[#1e293b] transition-colors btn-star" data-id="${snippet.id}" title="${isStarred ? 'Unstar' : 'Star'}">
               <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' ${isStarred ? 1 : 0};">star</span>
             </button>
-            <button class="p-1 rounded text-[#94a3b8] hover:bg-[#1e293b] hover:text-rose-400 transition-colors btn-delete" data-id="${snippet.id}" title="Delete">
+            <button class="p-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-rose-400 transition-colors btn-delete" data-id="${snippet.id}" title="Delete">
               <span class="material-symbols-outlined text-base">delete</span>
             </button>
           </div>
         </div>
 
         <!-- Title & Description / Context -->
-        <div class="flex flex-col gap-1">
-          <h2 class="font-headline-sm text-base text-[#dae2fd] font-semibold cursor-pointer hover:text-emerald-400 transition-colors btn-open-detail" data-id="${snippet.id}">
+        <div class="flex flex-col gap-2">
+          <h2 class="font-headline-sm text-lg text-[#dae2fd] font-semibold cursor-pointer hover:text-emerald-400 transition-colors btn-open-detail leading-snug" data-id="${snippet.id}">
             ${escapeHtml(snippet.title)}
           </h2>
-          <p class="text-xs text-[#94a3b8] leading-relaxed line-clamp-2">
+          <p class="text-xs md:text-sm text-[#94a3b8] leading-relaxed line-clamp-2">
             ${escapeHtml(snippet.description || 'No description provided.')}
           </p>
           ${snippet.notes ? `
-            <div class="mt-1 px-2.5 py-1.5 rounded-lg bg-[#0b1326] border border-[#1e293b] flex items-start gap-1.5 text-[11px] text-[#cbd5e1]">
-              <span class="material-symbols-outlined text-xs text-amber-400 mt-0.5 shrink-0">menu_book</span>
+            <div class="mt-1.5 px-3.5 py-2 rounded-xl bg-[#0b1326] border border-[#1e293b] flex items-start gap-2 text-xs text-[#cbd5e1] leading-relaxed">
+              <span class="material-symbols-outlined text-sm text-amber-400 mt-0.5 shrink-0">menu_book</span>
               <span class="line-clamp-1 italic"><strong class="text-amber-300 font-medium not-italic">Note:</strong> ${escapeHtml(snippet.notes)}</span>
             </div>
           ` : ''}
         </div>
 
         <!-- Sunken Code Preview -->
-        <div class="bg-[#060e20] border border-[#1e293b] rounded-lg overflow-hidden flex flex-col font-code-block text-xs shadow-inner">
-          <div class="bg-[#0b1326] border-b border-[#1e293b] px-3 py-1 flex items-center justify-between text-[#94a3b8] text-[11px] select-none">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-rose-500/80 inline-block"></span>
-              <span class="w-2 h-2 rounded-full bg-amber-500/80 inline-block"></span>
-              <span class="w-2 h-2 rounded-full bg-emerald-500/80 inline-block"></span>
-              <span class="font-label-mono-sm text-[#94a3b8] ml-1.5">${snippet.id}.${getFileExtension(snippet.language)}</span>
+        <div class="bg-[#060e20] border border-[#1e293b] rounded-xl overflow-hidden flex flex-col font-code-block text-xs shadow-inner">
+          <div class="bg-[#0b1326] border-b border-[#1e293b] px-4 py-2 flex items-center justify-between text-[#94a3b8] text-xs select-none">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+              <span class="font-label-mono-sm text-[#94a3b8] ml-2">${snippet.id}.${getFileExtension(snippet.language)}</span>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="font-label-mono-sm text-[#64748b]">${lineCount} lines</span>
-              <button class="text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1 font-label-mono-sm btn-copy-code" data-id="${snippet.id}" title="Copy code">
+            <div class="flex items-center gap-4">
+              <span class="font-label-mono-sm text-[#64748b] text-[11px]">${lineCount} lines</span>
+              <button class="text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1.5 font-label-mono-sm btn-copy-code text-[11.5px]" data-id="${snippet.id}" title="Copy code">
                 <span class="material-symbols-outlined text-xs">content_copy</span> Copy
               </button>
             </div>
           </div>
-          <div class="p-3 overflow-x-auto leading-relaxed select-text cursor-pointer btn-open-detail" data-id="${snippet.id}">
-            <pre class="m-0">${highlightedCode}</pre>
+          <div class="p-4 md:p-5 overflow-x-auto leading-relaxed select-text cursor-pointer btn-open-detail text-xs md:text-[13px]" data-id="${snippet.id}">
+            <pre class="m-0">${highlightCode(codeSnippetPreview, snippet.language)}</pre>
           </div>
         </div>
 
         <!-- Card Footer Toolbar -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1 border-t border-[#1e293b]/60">
-          <div class="flex items-center gap-1 flex-wrap">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-[#1e293b]/80">
+          <div class="flex items-center gap-1.5 flex-wrap">
             ${(snippet.tags || []).map(t => `
-              <span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-[10px] text-[#94a3b8] cursor-pointer hover:border-emerald-500/50 hover:text-emerald-300 transition-colors btn-tag-filter" data-tag="${t.replace('#', '')}">
+              <span class="px-2.5 py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-xs text-[#94a3b8] cursor-pointer hover:border-emerald-500/50 hover:text-emerald-300 transition-colors btn-tag-filter" data-tag="${t.replace('#', '')}">
                 #${t.replace('#', '')}
               </span>
             `).join('')}
           </div>
 
           <div class="flex items-center gap-2">
-            <button class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-semibold font-body-sm text-xs hover:bg-emerald-400 transition-all flex items-center gap-1 shadow-[0_0_12px_rgba(16,185,129,0.25)] btn-explain-ai" data-id="${snippet.id}">
-              <span class="material-symbols-outlined text-sm font-bold">psychology</span>
+            <button class="px-3.5 py-2 rounded-xl bg-emerald-500 text-slate-950 font-semibold font-body-sm text-xs hover:bg-emerald-400 transition-all flex items-center gap-1.5 shadow-[0_0_14px_rgba(16,185,129,0.25)] btn-explain-ai" data-id="${snippet.id}">
+              <span class="material-symbols-outlined text-base font-bold">psychology</span>
               <span>Explain</span>
             </button>
-            <button class="px-2.5 py-1.5 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] font-body-sm text-xs hover:bg-[#1e293b] hover:border-slate-600 transition-colors flex items-center gap-1 btn-quick-translate" data-id="${snippet.id}">
-              <span class="material-symbols-outlined text-sm text-teal-400">compare_arrows</span>
+            <button class="px-3 py-2 rounded-xl bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] font-body-sm text-xs hover:bg-[#1e293b] hover:border-slate-600 transition-colors flex items-center gap-1.5 btn-quick-translate" data-id="${snippet.id}">
+              <span class="material-symbols-outlined text-base text-teal-400">compare_arrows</span>
               <span>Translate</span>
             </button>
-            <button class="p-1 rounded text-[#94a3b8] hover:bg-[#1e293b] hover:text-emerald-400 btn-pin" data-id="${snippet.id}" title="${isPinned ? 'Unpin' : 'Pin'}">
+            <button class="p-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-emerald-400 transition-colors btn-pin" data-id="${snippet.id}" title="${isPinned ? 'Unpin' : 'Pin'}">
               <span class="material-symbols-outlined text-base">push_pin</span>
             </button>
-            <button class="p-1 rounded text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] btn-edit-snippet" data-id="${snippet.id}" title="Edit snippet">
+            <button class="p-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors btn-edit-snippet" data-id="${snippet.id}" title="Edit snippet">
               <span class="material-symbols-outlined text-base">edit</span>
             </button>
           </div>
@@ -816,33 +816,33 @@ function renderGridView(container) {
 
 function renderTableView(tableBody) {
   tableBody.innerHTML = STATE.snippets.map(snippet => `
-    <tr class="hover:bg-[#1e293b]/50 transition-colors cursor-pointer" data-id="${snippet.id}">
-      <td class="p-3">
-        <button class="text-amber-400 btn-star" data-id="${snippet.id}">
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' ${snippet.starred ? 1 : 0};">star</span>
+    <tr class="hover:bg-[#1e293b]/50 transition-colors cursor-pointer border-b border-[#1e293b]/40" data-id="${snippet.id}">
+      <td class="py-4 px-4">
+        <button class="text-amber-400 btn-star p-1 hover:bg-[#1e293b] rounded-lg transition-colors" data-id="${snippet.id}">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' ${snippet.starred ? 1 : 0};">star</span>
         </button>
       </td>
-      <td class="p-3 btn-open-detail" data-id="${snippet.id}">
-        <div class="flex flex-col">
-          <span class="font-semibold text-[#dae2fd] hover:text-emerald-400">${escapeHtml(snippet.title)}</span>
-          <span class="text-[#94a3b8] text-[11px] truncate max-w-md">${escapeHtml(snippet.notes || snippet.description || '')}</span>
+      <td class="py-4 px-4 btn-open-detail" data-id="${snippet.id}">
+        <div class="flex flex-col gap-1">
+          <span class="font-semibold text-sm text-[#dae2fd] hover:text-emerald-400 transition-colors">${escapeHtml(snippet.title)}</span>
+          <span class="text-[#94a3b8] text-xs truncate max-w-md">${escapeHtml(snippet.notes || snippet.description || '')}</span>
         </div>
       </td>
-      <td class="p-3 font-label-mono-sm text-[11px] text-[#94a3b8]">${snippet.category || snippet.course || '-'}</td>
-      <td class="p-3 font-label-mono-sm text-[11px] text-teal-300">${snippet.version || capitalize(snippet.language)}</td>
-      <td class="p-3 font-label-mono-sm text-[11px] text-emerald-400">${snippet.timeComplexity || 'O(1)'}</td>
-      <td class="p-3">
-        <div class="flex items-center gap-1 flex-wrap">
+      <td class="py-4 px-4 font-label-mono-sm text-xs text-[#94a3b8]">${snippet.category || snippet.course || '-'}</td>
+      <td class="py-4 px-4 font-label-mono-sm text-xs text-teal-300">${snippet.version || capitalize(snippet.language)}</td>
+      <td class="py-4 px-4 font-label-mono-sm text-xs text-emerald-400">${snippet.timeComplexity || 'O(1)'}</td>
+      <td class="py-4 px-4">
+        <div class="flex items-center gap-1.5 flex-wrap">
           ${(snippet.tags || []).slice(0, 3).map(t => `
-            <span class="px-1.5 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-[10px] text-[#94a3b8]">#${t.replace('#', '')}</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-[10.5px] text-[#94a3b8]">#${t.replace('#', '')}</span>
           `).join('')}
         </div>
       </td>
-      <td class="p-3 text-right">
-        <div class="flex items-center justify-end gap-1.5">
-          <button class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold hover:bg-emerald-500 hover:text-slate-950 transition-all btn-explain-ai" data-id="${snippet.id}">Explain</button>
-          <button class="p-1 rounded text-[#94a3b8] hover:text-emerald-300 btn-copy-code" data-id="${snippet.id}" title="Copy code"><span class="material-symbols-outlined text-sm">content_copy</span></button>
-          <button class="p-1 rounded text-[#94a3b8] hover:text-rose-400 btn-delete" data-id="${snippet.id}" title="Delete"><span class="material-symbols-outlined text-sm">delete</span></button>
+      <td class="py-4 px-4 text-right">
+        <div class="flex items-center justify-end gap-2">
+          <button class="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold hover:bg-emerald-500 hover:text-slate-950 transition-all btn-explain-ai" data-id="${snippet.id}">Explain</button>
+          <button class="p-1.5 rounded-lg text-[#94a3b8] hover:text-emerald-300 hover:bg-[#1e293b] transition-colors btn-copy-code" data-id="${snippet.id}" title="Copy code"><span class="material-symbols-outlined text-sm">content_copy</span></button>
+          <button class="p-1.5 rounded-lg text-[#94a3b8] hover:text-rose-400 hover:bg-[#1e293b] transition-colors btn-delete" data-id="${snippet.id}" title="Delete"><span class="material-symbols-outlined text-sm">delete</span></button>
         </div>
       </td>
     </tr>
@@ -1035,12 +1035,12 @@ function renderStats() {
       const color = getLanguageColor(lang);
       const isActive = STATE.filterLanguage === lang;
       return `
-        <button class="flex items-center justify-between px-2 py-1 rounded-lg border text-left transition-colors ${isActive ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30 font-medium' : 'bg-[#0b1326] border-[#1e293b] text-[#dae2fd] hover:border-slate-600'}" data-lang="${lang}">
-          <span class="flex items-center gap-1 font-label-mono-sm text-[11px] truncate">
-            <span class="w-1.5 h-1.5 rounded-full ${color}"></span>
+        <button class="flex items-center justify-between px-3 py-2 rounded-xl border text-left transition-colors ${isActive ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30 font-medium' : 'bg-[#0b1326] border-[#1e293b] text-[#dae2fd] hover:border-slate-600'}" data-lang="${lang}">
+          <span class="flex items-center gap-1.5 font-label-mono-sm text-xs truncate">
+            <span class="w-2 h-2 rounded-full ${color}"></span>
             ${capitalize(lang)}
           </span>
-          <span class="font-label-mono-sm text-[10px] text-[#94a3b8]">${count}</span>
+          <span class="font-label-mono-sm text-[11px] text-[#94a3b8]">${count}</span>
         </button>
       `;
     }).join('');
@@ -1067,12 +1067,12 @@ function renderCategoriesSidebar() {
   container.innerHTML = STATE.categories.map(cat => {
     const isActive = STATE.filterCategory === cat.name;
     return `
-      <button class="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-colors ${isActive ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-medium' : 'text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd]'}" data-cat="${cat.name}">
-        <span class="flex items-center gap-2 text-xs truncate">
+      <button class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-colors ${isActive ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-medium' : 'text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd]'}" data-cat="${cat.name}">
+        <span class="flex items-center gap-2.5 text-xs truncate">
           <span class="material-symbols-outlined text-sm ${isActive ? 'text-emerald-400' : 'text-[#94a3b8]'}">folder</span>
           ${cat.name}
         </span>
-        <span class="font-label-mono-sm text-[10px] px-1.5 py-0.5 rounded bg-[#0b1326] text-[#cbd5e1] border border-[#1e293b]">${cat.count}</span>
+        <span class="font-label-mono-sm text-[10.5px] px-2 py-0.5 rounded-md bg-[#0b1326] text-[#cbd5e1] border border-[#1e293b]">${cat.count}</span>
       </button>
     `;
   }).join('');
@@ -1094,8 +1094,8 @@ function renderTagsSidebar() {
   container.innerHTML = STATE.tags.map(t => {
     const isActive = STATE.filterTag === t.name;
     return `
-      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-mono-sm text-[10px] cursor-pointer transition-colors ${isActive ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-[#1e293b] text-[#cbd5e1] border border-slate-700 hover:bg-slate-700'}" data-tag="${t.name}">
-        #${t.name} <span class="text-[9px] text-[#94a3b8]">(${t.count})</span>
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-label-mono-sm text-[11px] cursor-pointer transition-colors ${isActive ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-[#1e293b] text-[#cbd5e1] border border-slate-700 hover:bg-slate-700'}" data-tag="${t.name}">
+        #${t.name} <span class="text-[10px] text-[#94a3b8]">(${t.count})</span>
       </span>
     `;
   }).join('');
@@ -1372,12 +1372,12 @@ function renderSocraticChatHistory() {
   historyContainer.innerHTML = STATE.socraticChat.map(msg => {
     if (msg.sender === 'student') {
       return `
-        <div class="flex items-start gap-2 self-end max-w-[90%]">
-          <div class="p-2.5 bg-primary/20 border border-primary/35 text-[#e2e8f0] rounded-xl rounded-tr-none shadow-md text-right">
-            <span class="font-label-mono-sm text-[10px] text-primary block text-right font-medium">${escapeHtml(msg.author || 'Bhoomika Yadav')}</span>
-            <p class="text-xs mt-0.5 text-left text-[#cbd5e1] leading-relaxed">${escapeHtml(msg.text)}</p>
+        <div class="flex items-start gap-3 self-end max-w-[88%]">
+          <div class="p-4 md:p-5 bg-emerald-500/10 border border-emerald-500/30 text-[#e2e8f0] rounded-2xl rounded-tr-none shadow-md text-right">
+            <span class="font-label-mono-sm text-xs text-emerald-400 block text-right font-medium">${escapeHtml(msg.author || 'Bhoomika Yadav')}</span>
+            <p class="text-xs md:text-sm mt-1.5 text-left text-[#cbd5e1] leading-relaxed">${escapeHtml(msg.text)}</p>
           </div>
-          <div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-bold flex items-center justify-center text-[10px] shrink-0 mt-1">
+          <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-bold flex items-center justify-center text-xs shrink-0 mt-1 shadow-inner">
             BY
           </div>
         </div>
@@ -1385,31 +1385,31 @@ function renderSocraticChatHistory() {
     }
 
     return `
-      <div class="flex items-start gap-2 max-w-[95%]">
-        <div class="w-6 h-6 rounded-full bg-tertiary/20 border border-tertiary/40 text-tertiary flex items-center justify-center shrink-0 mt-1 shadow-sm">
-          <span class="material-symbols-outlined text-xs">school</span>
+      <div class="flex items-start gap-3 max-w-[92%]">
+        <div class="w-8 h-8 rounded-full bg-tertiary/20 border border-tertiary/40 text-tertiary flex items-center justify-center shrink-0 mt-1 shadow-sm">
+          <span class="material-symbols-outlined text-sm">school</span>
         </div>
-        <div class="p-3 bg-[#131b2e] border border-[#1e293b] text-[#e2e8f0] rounded-xl rounded-tl-none shadow-md flex flex-col gap-2">
-          <div class="flex items-center justify-between pb-1 border-b border-[#1e293b]/60">
-            <span class="font-label-mono-sm text-xs font-bold text-tertiary">${escapeHtml(msg.author || 'Algorithmic Mentor')}</span>
-            <span class="font-label-mono-sm text-[10px] text-[#64748b]">${escapeHtml(msg.role || 'CS TA')}</span>
+        <div class="p-4 md:p-5 bg-[#131b2e] border border-[#1e293b] text-[#e2e8f0] rounded-2xl rounded-tl-none shadow-md flex flex-col gap-3.5">
+          <div class="flex items-center justify-between pb-2 border-b border-[#1e293b]/70">
+            <span class="font-label-mono-sm text-xs font-bold text-amber-300">${escapeHtml(msg.author || 'Algorithmic Mentor')}</span>
+            <span class="font-label-mono-sm text-xs text-[#64748b]">${escapeHtml(msg.role || 'CS TA')}</span>
           </div>
-          <p class="text-xs leading-relaxed text-[#cbd5e1] whitespace-pre-wrap">${escapeHtml(msg.text)}</p>
+          <p class="text-xs md:text-sm leading-relaxed text-[#cbd5e1] whitespace-pre-wrap">${escapeHtml(msg.text)}</p>
 
           ${msg.hints && msg.hints.length > 0 ? `
-            <div class="p-2.5 bg-tertiary/10 border border-tertiary/25 rounded-lg flex flex-col gap-1">
-              <span class="font-label-mono-sm text-[10.5px] uppercase font-semibold text-amber-300 flex items-center gap-1">
-                <span class="material-symbols-outlined text-xs">lightbulb</span> Progressive Hints:
+            <div class="p-4 bg-tertiary/10 border border-tertiary/25 rounded-xl flex flex-col gap-2">
+              <span class="font-label-mono-sm text-xs uppercase font-semibold text-amber-300 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">lightbulb</span> Progressive Hints:
               </span>
-              <ul class="text-xs text-[#fed7aa] space-y-1 list-disc pl-4">
+              <ul class="text-xs md:text-sm text-[#fed7aa] space-y-1.5 list-disc pl-5 leading-relaxed">
                 ${msg.hints.map(h => `<li>${escapeHtml(h)}</li>`).join('')}
               </ul>
             </div>
           ` : ''}
 
           ${msg.diagram ? `
-            <div class="bg-[#0b0f17] border border-[#1e293b] p-2 rounded-lg flex flex-col items-center">
-              <span class="font-label-mono-sm text-[10px] text-[#94a3b8] mb-1 self-start font-medium">Counterexample Graph Schema:</span>
+            <div class="bg-[#0b0f17] border border-[#1e293b] p-4 rounded-xl flex flex-col items-center gap-2">
+              <span class="font-label-mono-sm text-xs text-[#94a3b8] self-start font-medium">Counterexample Graph Schema:</span>
               <svg class="w-full max-w-xs h-20" fill="none" viewbox="0 0 320 90">
                 <circle cx="40" cy="45" fill="#10b981" r="14"></circle>
                 <text fill="#003824" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle" x="40" y="49">S</text>

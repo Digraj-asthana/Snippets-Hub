@@ -61,11 +61,11 @@
 <body class="bg-[#0b1326] font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white">
 
   <!-- ================= LEFT FIXED SIDEBAR ================= -->
-  <aside class="fixed left-0 top-0 h-full w-64 bg-[#0f172a] border-r border-[#1e293b] z-50 flex flex-col pt-3.5 pb-4 shadow-[4px_0_24px_rgba(0,0,0,0.5)]">
+  <aside class="fixed left-0 top-0 h-full w-64 bg-[#0f172a] border-r border-[#1e293b] z-50 flex flex-col pt-5 pb-5 shadow-[4px_0_24px_rgba(0,0,0,0.5)]">
     <!-- Brand Header (Snippets Hub Identity) -->
-    <div class="px-5 mb-3 flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 flex items-center justify-center font-bold shadow-[0_0_12px_rgba(78,222,163,0.3)]">
-        <span class="material-symbols-outlined text-lg">code_blocks</span>
+    <div class="px-5 mb-4 flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 flex items-center justify-center font-bold shadow-[0_0_14px_rgba(78,222,163,0.3)]">
+        <span class="material-symbols-outlined text-xl">code_blocks</span>
       </div>
       <div class="flex flex-col">
         <span class="font-headline-sm text-base text-[#dae2fd] tracking-tight font-semibold">Snippets Hub</span>
@@ -74,10 +74,10 @@
     </div>
 
     <!-- Active Vault Directory Indicator -->
-    <div class="px-4 mb-3">
-      <div class="bg-[#131b2e] border border-[#1e293b] px-2.5 py-1.5 rounded-lg flex items-center justify-between text-[#94a3b8] shadow-inner">
-        <div class="flex items-center gap-1.5 truncate">
-          <span class="material-symbols-outlined text-sm text-emerald-400">folder_open</span>
+    <div class="px-4 mb-4">
+      <div class="bg-[#131b2e] border border-[#1e293b] px-3.5 py-2 rounded-xl flex items-center justify-between text-[#94a3b8] shadow-inner">
+        <div class="flex items-center gap-2 truncate">
+          <span class="material-symbols-outlined text-base text-emerald-400">folder_open</span>
           <span class="font-label-mono-sm text-[#cbd5e1] font-medium text-xs truncate">~/glbajaj-csai</span>
         </div>
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Database Synced"></span>
@@ -85,238 +85,238 @@
     </div>
 
     <!-- Main Navigation Links -->
-    <nav class="flex-1 px-3 flex flex-col gap-1 overflow-y-auto" id="mainSidebarNav">
-      <div class="px-2 py-1 font-label-mono-sm text-[#64748b] uppercase tracking-wider text-[10px] font-semibold">Workspace</div>
+    <nav class="flex-1 px-3.5 flex flex-col gap-1.5 overflow-y-auto" id="mainSidebarNav">
+      <div class="px-2 py-1 font-label-mono-sm text-[#64748b] uppercase tracking-wider text-[10.5px] font-semibold">Workspace</div>
       
-      <a class="nav-link active flex items-center gap-3 px-3 py-2 rounded-lg text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 font-medium transition-all" data-view="home" href="#home" id="navLinkHome">
+      <a class="nav-link active flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 font-medium transition-all" data-view="home" href="#home" id="navLinkHome">
         <span class="material-symbols-outlined text-lg text-emerald-400">home</span>
         <span class="text-sm">Home &amp; Overview</span>
       </a>
 
-      <a class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="snippets" href="#snippets" id="navLinkSnippets">
+      <a class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="snippets" href="#snippets" id="navLinkSnippets">
         <span class="material-symbols-outlined text-lg text-emerald-400">folder_code</span>
         <span class="text-sm">Snippets Vault</span>
       </a>
 
-      <a class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="translate" href="#translate" id="navLinkTranslate">
+      <a class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="translate" href="#translate" id="navLinkTranslate">
         <span class="material-symbols-outlined text-lg text-amber-400">compare_arrows</span>
         <span class="text-sm">Code Translator</span>
       </a>
       
-      <a class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="ai-studio" href="#ai-studio" id="navLinkAiStudio">
+      <a class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="ai-studio" href="#ai-studio" id="navLinkAiStudio">
         <span class="material-symbols-outlined text-lg text-teal-400">psychology</span>
         <span class="text-sm">AI Studio</span>
       </a>
 
-      <button class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all text-left" id="btnOpenNewSnippetModal">
+      <button class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all text-left" id="btnOpenNewSnippetModal">
         <span class="material-symbols-outlined text-lg text-emerald-400">add_circle</span>
         <span class="text-sm">Add Snippet</span>
       </button>
 
-      <div class="mt-3 px-2 py-1 font-label-mono-sm text-[#64748b] uppercase tracking-wider text-[10px] font-semibold">System</div>
+      <div class="mt-4 px-2 py-1 font-label-mono-sm text-[#64748b] uppercase tracking-wider text-[10.5px] font-semibold">System</div>
 
-      <a class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="settings" href="#settings" id="navLinkSettings">
+      <a class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] border border-transparent transition-all" data-view="settings" href="#settings" id="navLinkSettings">
         <span class="material-symbols-outlined text-lg">sync_saved_locally</span>
         <span class="text-sm">Settings &amp; Backup</span>
       </a>
 
       <!-- Categories Breakdown (PRD Section 6 & 7) -->
-      <div class="mt-3 pt-3 border-t border-[#1e293b]/70 flex flex-col gap-1">
+      <div class="mt-5 pt-4 border-t border-[#1e293b]/70 flex flex-col gap-2">
         <div class="flex items-center justify-between px-2">
-          <span class="font-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider text-[10px]">Categories</span>
-          <span class="font-label-mono-sm text-[#94a3b8] text-[10px]" id="sidebarCategoryCountBadge">0</span>
+          <span class="font-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider text-[10.5px]">Categories</span>
+          <span class="font-label-mono-sm text-[#94a3b8] text-[10.5px]" id="sidebarCategoryCountBadge">0</span>
         </div>
-        <div class="flex flex-col gap-0.5" id="sidebarCategoriesContainer">
+        <div class="flex flex-col gap-1" id="sidebarCategoriesContainer">
           <!-- Dynamically populated categories -->
         </div>
       </div>
 
       <!-- Languages Breakdown -->
-      <div class="mt-3 pt-3 border-t border-[#1e293b]/70 flex flex-col gap-1">
+      <div class="mt-5 pt-4 border-t border-[#1e293b]/70 flex flex-col gap-2">
         <div class="flex items-center justify-between px-2">
-          <span class="font-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider text-[10px]">Languages</span>
-          <span class="font-label-mono-sm text-[#94a3b8] text-[10px]" id="sidebarTotalLangBadge">All</span>
+          <span class="font-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider text-[10.5px]">Languages</span>
+          <span class="font-label-mono-sm text-[#94a3b8] text-[10.5px]" id="sidebarTotalLangBadge">All</span>
         </div>
-        <div class="grid grid-cols-2 gap-1" id="sidebarLanguagesContainer">
+        <div class="grid grid-cols-2 gap-1.5" id="sidebarLanguagesContainer">
           <!-- Dynamically populated language buttons -->
         </div>
       </div>
 
       <!-- Algorithmic Taxonomy Tags Cloud -->
-      <div class="mt-3 pt-3 border-t border-[#1e293b]/70 flex flex-col gap-1">
+      <div class="mt-5 pt-4 border-t border-[#1e293b]/70 flex flex-col gap-2">
         <div class="flex items-center justify-between px-2">
-          <span class="font-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider text-[10px]">Tags</span>
-          <button class="font-label-mono-sm text-emerald-400 hover:underline text-[10px]" id="btnResetFilters">Reset</button>
+          <span class="font-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider text-[10.5px]">Tags</span>
+          <button class="font-label-mono-sm text-emerald-400 hover:underline text-[10.5px]" id="btnResetFilters">Reset</button>
         </div>
-        <div class="flex flex-wrap gap-1 px-1" id="sidebarTagsContainer">
+        <div class="flex flex-wrap gap-1.5 px-1" id="sidebarTagsContainer">
           <!-- Dynamically populated tags -->
         </div>
       </div>
 
       <!-- Vault Quota Meter Card -->
-      <div class="mt-3 bg-[#131b2e] border border-[#1e293b] p-3 rounded-xl shadow-lg flex flex-col gap-2 relative overflow-hidden">
+      <div class="mt-5 bg-[#131b2e] border border-[#1e293b] p-4 rounded-2xl shadow-lg flex flex-col gap-2.5 relative overflow-hidden">
         <div class="flex items-center justify-between">
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span class="font-label-mono-sm text-[#dae2fd] uppercase tracking-wider font-semibold text-[10.5px]">Vault Quota</span>
           </div>
           <span class="font-label-mono-sm text-amber-400 font-medium text-xs" id="quotaText">14 / 500</span>
         </div>
-        <div class="w-full bg-[#1e293b] h-1.5 rounded-full overflow-hidden">
+        <div class="w-full bg-[#1e293b] h-2 rounded-full overflow-hidden">
           <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full transition-all duration-500" id="quotaBar" style="width: 2.8%"></div>
         </div>
-        <div class="flex items-center justify-between text-[#94a3b8] text-[10px] font-label-mono-sm">
+        <div class="flex items-center justify-between text-[#94a3b8] text-[10.5px] font-label-mono-sm">
           <span id="quotaPercent">2.8% capacity</span>
-          <span class="text-emerald-400 flex items-center gap-0.5">
-            <span class="material-symbols-outlined text-[11px]">sync</span> Auto-Save
+          <span class="text-emerald-400 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[12px]">sync</span> Auto-Save
           </span>
         </div>
       </div>
 
       <!-- Quick Export Action -->
-      <button class="mt-2 w-full py-1.5 px-3 rounded-lg bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] font-body-sm text-xs hover:bg-[#1e293b] hover:text-white hover:border-slate-600 transition-colors flex items-center justify-center gap-1.5" id="btnQuickExportMd">
-        <span class="material-symbols-outlined text-sm text-emerald-400">download</span>
+      <button class="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] font-body-sm text-xs hover:bg-[#1e293b] hover:text-white hover:border-slate-600 transition-colors flex items-center justify-center gap-2 shadow-sm" id="btnQuickExportMd">
+        <span class="material-symbols-outlined text-base text-emerald-400">download</span>
         <span>Export Markdown</span>
       </button>
     </nav>
 
     <!-- Bottom Sync Bar -->
-    <div class="px-3 pt-2.5 bg-[#0f172a] border-t border-[#1e293b]/70">
-      <div class="p-2 rounded-lg bg-[#131b2e] border border-[#1e293b] flex items-center justify-between">
+    <div class="px-4 pt-3.5 bg-[#0f172a] border-t border-[#1e293b]/70">
+      <div class="p-3 rounded-xl bg-[#131b2e] border border-[#1e293b] flex items-center justify-between shadow-inner">
         <div class="flex flex-col">
           <span class="font-label-mono-sm text-[#dae2fd] font-semibold text-xs">Local SQLite/JSON</span>
-          <span class="font-label-mono-sm text-emerald-400 text-[10px] flex items-center gap-1">
+          <span class="font-label-mono-sm text-emerald-400 text-[10px] flex items-center gap-1.5 mt-0.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Offline Ready
           </span>
         </div>
-        <span class="material-symbols-outlined text-emerald-400 text-base">cloud_done</span>
+        <span class="material-symbols-outlined text-emerald-400 text-lg">cloud_done</span>
       </div>
     </div>
   </aside>
 
   <!-- ================= TOP FIXED HEADER ================= -->
-  <header class="fixed top-0 left-64 right-0 h-16 bg-[#0b1326]/90 backdrop-blur-xl border-b border-[#1e293b] z-40 flex items-center justify-between px-6">
+  <header class="fixed top-0 left-64 right-0 h-20 bg-[#0b1326]/90 backdrop-blur-xl border-b border-[#1e293b] z-40 flex items-center justify-between px-8 md:px-10">
     <!-- Search Bar & Edition Badge -->
-    <div class="flex items-center gap-4 flex-1 max-w-md">
-      <div class="relative w-full flex items-center bg-[#131b2e] border border-[#1e293b] px-3 py-1.5 rounded-lg gap-2 text-[#94a3b8] focus-within:border-emerald-500/60 focus-within:ring-1 focus-within:ring-emerald-500/30 transition-all shadow-inner">
-        <span class="material-symbols-outlined text-base text-[#94a3b8]">search</span>
+    <div class="flex items-center gap-5 flex-1 max-w-lg">
+      <div class="relative w-full flex items-center bg-[#131b2e] border border-[#1e293b] px-4 py-2.5 rounded-xl gap-2.5 text-[#94a3b8] focus-within:border-emerald-500/60 focus-within:ring-2 focus-within:ring-emerald-500/20 transition-all shadow-inner">
+        <span class="material-symbols-outlined text-lg text-[#94a3b8]">search</span>
         <input class="bg-transparent border-none text-[#dae2fd] text-xs font-body-md w-full focus:outline-none placeholder-[#64748b]" id="globalSearchInput" placeholder="Search titles, code, learning notes, categories, tags..." type="text"/>
-        <kbd class="font-label-mono-sm text-[10px] px-1.5 py-0.5 bg-[#1e293b] rounded text-[#94a3b8] border border-slate-700 select-none">⌘K</kbd>
+        <kbd class="font-label-mono-sm text-[10px] px-2 py-0.5 bg-[#1e293b] rounded text-[#94a3b8] border border-slate-700 select-none">⌘K</kbd>
       </div>
     </div>
 
-    <!-- Quick Navigation Bar with Direct Workspace Buttons (User Request) -->
-    <nav class="hidden lg:flex items-center gap-1.5 bg-[#131b2e]/90 border border-[#1e293b] p-1 rounded-xl shadow-inner text-xs font-semibold" id="topHeaderNavBar">
-      <button class="header-nav-tab active px-3 py-1.5 rounded-lg text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-1.5 transition-all" data-target="home">
+    <!-- Quick Navigation Bar with Direct Workspace Buttons -->
+    <nav class="hidden lg:flex items-center gap-2 bg-[#131b2e]/90 border border-[#1e293b] p-1.5 rounded-2xl shadow-inner text-xs font-semibold" id="topHeaderNavBar">
+      <button class="header-nav-tab active px-4 py-2 rounded-xl text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-2 transition-all" data-target="home">
         <span class="material-symbols-outlined text-base">home</span>
         <span>Home</span>
       </button>
-      <button class="header-nav-tab px-3 py-1.5 rounded-lg text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] border border-transparent flex items-center gap-1.5 transition-all" data-target="snippets">
+      <button class="header-nav-tab px-4 py-2 rounded-xl text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] border border-transparent flex items-center gap-2 transition-all" data-target="snippets">
         <span class="material-symbols-outlined text-base text-emerald-400">folder_code</span>
         <span>Snippets Vault</span>
       </button>
-      <button class="header-nav-tab px-3 py-1.5 rounded-lg text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] border border-transparent flex items-center gap-1.5 transition-all" data-target="translate">
+      <button class="header-nav-tab px-4 py-2 rounded-xl text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] border border-transparent flex items-center gap-2 transition-all" data-target="translate">
         <span class="material-symbols-outlined text-base text-amber-400">compare_arrows</span>
         <span>Code Translator</span>
       </button>
-      <button class="header-nav-tab px-3 py-1.5 rounded-lg text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] border border-transparent flex items-center gap-1.5 transition-all" data-target="ai-studio">
+      <button class="header-nav-tab px-4 py-2 rounded-xl text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] border border-transparent flex items-center gap-2 transition-all" data-target="ai-studio">
         <span class="material-symbols-outlined text-base text-teal-400">psychology</span>
         <span>AI Studio</span>
       </button>
     </nav>
 
     <!-- Header Actions & Profile -->
-    <div class="flex items-center gap-3">
-      <button class="inline-flex items-center gap-1.5 bg-emerald-500 text-slate-950 font-semibold font-body-md text-xs px-3.5 py-2 rounded-lg hover:bg-emerald-400 transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]" id="btnHeaderNewSnippet">
+    <div class="flex items-center gap-4">
+      <button class="inline-flex items-center gap-2 bg-emerald-500 text-slate-950 font-semibold font-body-md text-xs px-4 py-2.5 rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]" id="btnHeaderNewSnippet">
         <span class="material-symbols-outlined text-base font-bold">add</span>
         <span>Add Snippet</span>
       </button>
 
       <!-- Notifications Bell -->
       <div class="relative">
-        <button class="p-2 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors relative border border-[#1e293b]" id="btnNotificationsBell" title="Notifications">
+        <button class="p-2.5 rounded-xl text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors relative border border-[#1e293b]" id="btnNotificationsBell" title="Notifications">
           <span class="material-symbols-outlined text-base">notifications</span>
-          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-[#0b1326]"></span>
+          <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-[#0b1326]"></span>
         </button>
         <!-- Notifications Dropdown -->
-        <div class="hidden absolute right-0 mt-2 w-80 bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-2xl p-3 z-50 flex flex-col gap-2" id="notificationsDropdown">
-          <div class="flex items-center justify-between pb-2 border-b border-[#1e293b]">
+        <div class="hidden absolute right-0 mt-3 w-84 bg-[#131b2e] border border-[#1e293b] rounded-2xl shadow-2xl p-4 z-50 flex flex-col gap-3" id="notificationsDropdown">
+          <div class="flex items-center justify-between pb-2.5 border-b border-[#1e293b]">
             <span class="font-label-mono-sm text-xs font-semibold text-[#dae2fd]">Snippets Hub Sync &amp; Learning</span>
             <span class="font-label-mono-sm text-[10px] text-emerald-400">All saved</span>
           </div>
-          <div class="flex items-start gap-2.5 p-2 rounded-lg bg-[#0b1326] border border-[#1e293b]">
-            <span class="material-symbols-outlined text-sm text-emerald-400 mt-0.5">menu_book</span>
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-[#0b1326] border border-[#1e293b]">
+            <span class="material-symbols-outlined text-base text-emerald-400 mt-0.5">menu_book</span>
             <div class="flex flex-col text-xs">
               <span class="text-[#dae2fd] font-medium">Learning Notes Active</span>
-              <span class="text-[#94a3b8] text-[11px] mt-0.5">Annotate invariants and patterns directly alongside code.</span>
+              <span class="text-[#94a3b8] text-[11px] mt-1 leading-relaxed">Annotate invariants and patterns directly alongside code.</span>
             </div>
           </div>
-          <div class="flex items-start gap-2.5 p-2 rounded-lg bg-[#0b1326] border border-[#1e293b]">
-            <span class="material-symbols-outlined text-sm text-teal-400 mt-0.5">psychology</span>
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-[#0b1326] border border-[#1e293b]">
+            <span class="material-symbols-outlined text-base text-teal-400 mt-0.5">psychology</span>
             <div class="flex flex-col text-xs">
               <span class="text-[#dae2fd] font-medium">AI Socratic Study Partner</span>
-              <span class="text-[#94a3b8] text-[11px] mt-0.5">Explain, Progressive Hints, and Side-by-side Translation ready.</span>
+              <span class="text-[#94a3b8] text-[11px] mt-1 leading-relaxed">Explain, Progressive Hints, and Side-by-side Translation ready.</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- User Profile (Bhoomika Yadav - CSAI @ GL Bajaj) -->
-      <div class="flex items-center gap-2 pl-2 border-l border-[#1e293b]">
-        <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-bold flex items-center justify-center text-xs ring-1 ring-[#334155]">
+      <div class="flex items-center gap-3 pl-4 border-l border-[#1e293b]">
+        <div class="w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-bold flex items-center justify-center text-xs ring-1 ring-[#334155] shadow-inner">
           BY
         </div>
         <div class="hidden md:flex flex-col text-left leading-tight">
           <span class="font-body-sm text-xs font-semibold text-[#dae2fd]">Bhoomika Yadav</span>
-          <span class="font-label-mono-sm text-[#94a3b8] text-[10px]">CSAI @ GL Bajaj</span>
+          <span class="font-label-mono-sm text-[#94a3b8] text-[10.5px] mt-0.5">CSAI @ GL Bajaj</span>
         </div>
       </div>
     </div>
   </header>
 
   <!-- ================= MAIN APP CONTAINER ================= -->
-  <main class="pl-64 pt-16 min-h-screen bg-[#0b1326]">
+  <main class="pl-64 pt-20 min-h-screen bg-[#0b1326]">
 
     <!-- ================= VIEW 0: HOMEPAGE & COMMAND CENTER ================= -->
-    <section class="p-6 md:p-8 flex flex-col gap-8 max-w-7xl mx-auto" id="viewHome">
+    <section class="px-6 py-10 md:px-10 md:py-14 lg:px-14 lg:py-16 flex flex-col gap-12 md:gap-16 max-w-7xl mx-auto" id="viewHome">
       <!-- 1. Hero Command Banner -->
-      <div class="home-hero-mesh border border-[#1e293b] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl flex flex-col gap-5 bg-gradient-to-br from-[#131b2e] via-[#0f172a] to-[#0b1326]">
+      <div class="home-hero-mesh border border-[#1e293b] rounded-3xl p-8 md:p-12 lg:p-14 relative overflow-hidden shadow-2xl flex flex-col gap-8 bg-gradient-to-br from-[#131b2e] via-[#0f172a] to-[#0b1326]">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-label-mono-sm text-xs">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-label-mono-sm text-xs">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>SNIPPETS HUB 2.0 • CS CURRICULUM VAULT</span>
           </div>
-          <div class="flex items-center gap-2 text-xs font-label-mono-sm text-[#94a3b8]">
-            <span class="px-2.5 py-1 rounded-lg bg-[#0b1326] border border-[#1e293b]">14 Core Programs</span>
-            <span class="px-2.5 py-1 rounded-lg bg-[#0b1326] border border-[#1e293b]">6 Dialects</span>
-            <span class="px-2.5 py-1 rounded-lg bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">100% Invariants Verified</span>
+          <div class="flex items-center gap-2.5 text-xs font-label-mono-sm text-[#94a3b8] flex-wrap">
+            <span class="px-3 py-1.5 rounded-xl bg-[#0b1326] border border-[#1e293b]">14 Core Programs</span>
+            <span class="px-3 py-1.5 rounded-xl bg-[#0b1326] border border-[#1e293b]">6 Dialects</span>
+            <span class="px-3 py-1.5 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">100% Invariants Verified</span>
           </div>
         </div>
 
-        <div class="flex flex-col gap-2 max-w-3xl">
-          <h1 class="text-3xl md:text-4xl font-headline-lg font-bold text-[#dae2fd] tracking-tight leading-tight">
+        <div class="flex flex-col gap-4 max-w-3xl">
+          <h1 class="text-3xl md:text-5xl font-headline-lg font-bold text-[#dae2fd] tracking-tight leading-tight">
             Your Algorithmic Code Vault &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Intelligent AI Companion</span>
           </h1>
-          <p class="text-sm md:text-base text-[#94a3b8] leading-relaxed">
+          <p class="text-sm md:text-base text-[#94a3b8] leading-relaxed text-spacious">
             Curate reusable computer science algorithms with first-class learning notes, generate step-by-step Socratic walkthroughs, test invariants in sandbox runtimes, and translate code across any programming language with one click.
           </p>
         </div>
 
         <!-- Quick Launch CTA Buttons -->
-        <div class="flex items-center gap-3 flex-wrap pt-2">
-          <button class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-semibold text-xs flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all" id="btnHeroOpenSnippets">
+        <div class="flex items-center gap-3.5 flex-wrap pt-3">
+          <button class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-semibold text-xs flex items-center gap-2.5 shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all" id="btnHeroOpenSnippets">
             <span class="material-symbols-outlined text-base font-bold">folder_code</span>
             <span>Explore Snippet Vault (14)</span>
           </button>
-          <button class="px-4 py-2.5 rounded-xl bg-[#131b2e] hover:bg-[#1e293b] text-amber-400 border border-amber-500/30 font-semibold text-xs flex items-center gap-2 transition-all" id="btnHeroOpenTranslate">
+          <button class="px-5 py-3 rounded-xl bg-[#131b2e] hover:bg-[#1e293b] text-amber-400 border border-amber-500/30 font-semibold text-xs flex items-center gap-2.5 transition-all" id="btnHeroOpenTranslate">
             <span class="material-symbols-outlined text-base">compare_arrows</span>
             <span>Launch Code Translator</span>
           </button>
-          <button class="px-4 py-2.5 rounded-xl bg-[#131b2e] hover:bg-[#1e293b] text-teal-300 border border-teal-500/30 font-semibold text-xs flex items-center gap-2 transition-all" id="btnHeroOpenAi">
+          <button class="px-5 py-3 rounded-xl bg-[#131b2e] hover:bg-[#1e293b] text-teal-300 border border-teal-500/30 font-semibold text-xs flex items-center gap-2.5 transition-all" id="btnHeroOpenAi">
             <span class="material-symbols-outlined text-base">psychology</span>
             <span>AI Studio &amp; Explainer</span>
           </button>
-          <button class="px-4 py-2.5 rounded-xl bg-[#0b1326] hover:bg-[#1e293b] text-[#cbd5e1] border border-[#1e293b] font-semibold text-xs flex items-center gap-2 transition-all" id="btnHeroNewSnippet">
+          <button class="px-5 py-3 rounded-xl bg-[#0b1326] hover:bg-[#1e293b] text-[#cbd5e1] border border-[#1e293b] font-semibold text-xs flex items-center gap-2.5 transition-all" id="btnHeroNewSnippet">
             <span class="material-symbols-outlined text-base text-emerald-400">add</span>
             <span>Add New Snippet</span>
           </button>
@@ -324,19 +324,19 @@
       </div>
 
       <!-- 2. LIVE INTERACTIVE CODE WRITER & TRANSLATOR (User Direct Requirement) -->
-      <div class="bg-[#0f172a] border border-[#1e293b] rounded-2xl p-6 shadow-2xl flex flex-col gap-5 relative">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-[#1e293b]">
-          <div>
-            <div class="flex items-center gap-2">
+      <div class="bg-[#0f172a] border border-[#1e293b] rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col gap-8 relative">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-6 border-b border-[#1e293b]">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-2.5">
               <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]"></span>
-              <h2 class="font-headline-sm text-lg text-[#dae2fd] font-semibold">Live Universal Code Translator &amp; Playground</h2>
+              <h2 class="font-headline-sm text-xl text-[#dae2fd] font-semibold">Live Universal Code Translator &amp; Playground</h2>
             </div>
-            <p class="text-xs text-[#94a3b8] mt-1">Write or paste any code below. Click translate to convert into other languages instantly with type preservation, asymptotic invariance, and idiomatic mapping notes.</p>
+            <p class="text-xs md:text-sm text-[#94a3b8] mt-2 leading-relaxed">Write or paste any code below. Click translate to convert into other languages instantly with type preservation, asymptotic invariance, and idiomatic mapping notes.</p>
           </div>
-          <div class="flex items-center gap-2 flex-wrap">
+          <div class="flex items-center gap-3 flex-wrap">
             <!-- Starter Template Picker -->
-            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-2.5 py-1.5 rounded-lg text-[#94a3b8]">
-              <span class="font-label-mono-sm text-[11px] mr-1.5">Preset:</span>
+            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-3.5 py-2 rounded-xl text-[#94a3b8]">
+              <span class="font-label-mono-sm text-xs mr-2">Preset:</span>
               <select class="bg-transparent text-xs text-[#dae2fd] font-semibold border-none focus:outline-none cursor-pointer" id="homeSelectPreset">
                 <option value="custom" class="bg-[#131b2e]">Custom / Write My Own</option>
                 <option value="quicksort" class="bg-[#131b2e]">Python: Quick Sort (Partitioning)</option>
@@ -347,20 +347,20 @@
               </select>
             </div>
             <!-- Translate Button -->
-            <button class="px-4 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-bold text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(245,158,11,0.3)] transition-all" id="btnHomeTranslateCode">
-              <span class="material-symbols-outlined text-sm font-bold">sync_alt</span>
+            <button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-[0_0_15px_rgba(245,158,11,0.3)] transition-all" id="btnHomeTranslateCode">
+              <span class="material-symbols-outlined text-base font-bold">sync_alt</span>
               <span>Translate Code Now</span>
             </button>
           </div>
         </div>
 
         <!-- Controls: Language Selectors -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex items-center justify-between bg-[#0b1326] border border-[#1e293b] px-3 py-2 rounded-lg">
-            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm text-emerald-400">code</span> Source Dialect:
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex items-center justify-between bg-[#0b1326] border border-[#1e293b] px-4 py-3 rounded-xl">
+            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-2">
+              <span class="material-symbols-outlined text-base text-emerald-400">code</span> Source Dialect:
             </span>
-            <select class="bg-[#131b2e] border border-[#1e293b] rounded px-2.5 py-1 text-xs text-[#dae2fd] font-label-mono-sm focus:outline-none" id="homeSourceLang">
+            <select class="bg-[#131b2e] border border-[#1e293b] rounded-lg px-3 py-1.5 text-xs text-[#dae2fd] font-label-mono-sm focus:outline-none" id="homeSourceLang">
               <option value="python">Python 3.11</option>
               <option value="cpp">C++20</option>
               <option value="typescript">TypeScript 5.2</option>
@@ -371,11 +371,11 @@
             </select>
           </div>
 
-          <div class="flex items-center justify-between bg-[#0b1326] border border-[#1e293b] px-3 py-2 rounded-lg">
-            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm text-amber-400">arrow_forward</span> Target Dialect:
+          <div class="flex items-center justify-between bg-[#0b1326] border border-[#1e293b] px-4 py-3 rounded-xl">
+            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-2">
+              <span class="material-symbols-outlined text-base text-amber-400">arrow_forward</span> Target Dialect:
             </span>
-            <select class="bg-[#131b2e] border border-[#1e293b] rounded px-2.5 py-1 text-xs text-[#dae2fd] font-label-mono-sm focus:outline-none" id="homeTargetLang">
+            <select class="bg-[#131b2e] border border-[#1e293b] rounded-lg px-3 py-1.5 text-xs text-[#dae2fd] font-label-mono-sm focus:outline-none" id="homeTargetLang">
               <option value="cpp">C++20</option>
               <option value="python">Python 3.11</option>
               <option value="typescript">TypeScript 5.2</option>
@@ -387,52 +387,52 @@
         </div>
 
         <!-- Dual Code Canvases (Input & Output) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <!-- Input Source Box -->
-          <div class="flex flex-col gap-1.5">
-            <div class="flex items-center justify-between text-xs text-[#94a3b8]">
-              <span class="font-label-mono-sm font-semibold uppercase flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Input Code (Editable)
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between text-xs text-[#94a3b8] px-1">
+              <span class="font-label-mono-sm font-semibold uppercase flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Input Code (Editable)
               </span>
               <div class="flex items-center gap-2">
-                <button class="font-label-mono-sm text-[11px] text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1" id="btnHomeClearSource">
-                  <span class="material-symbols-outlined text-xs">backspace</span> Clear
+                <button class="font-label-mono-sm text-xs text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1.5 transition-colors" id="btnHomeClearSource">
+                  <span class="material-symbols-outlined text-sm">backspace</span> Clear
                 </button>
               </div>
             </div>
-            <textarea class="w-full h-72 bg-[#060e20] border border-[#1e293b] rounded-xl p-3.5 font-code-block text-xs text-[#cbd5e1] leading-relaxed focus:border-emerald-500/60 focus:outline-none resize-y shadow-inner" id="homeSourceCode" placeholder="Write or paste your code here... (e.g. def bubble_sort(arr): ...)"></textarea>
+            <textarea class="w-full h-80 md:h-96 bg-[#060e20] border border-[#1e293b] rounded-2xl p-5 font-code-block text-xs text-[#cbd5e1] leading-relaxed focus:border-emerald-500/60 focus:outline-none resize-y shadow-inner" id="homeSourceCode" placeholder="Write or paste your code here... (e.g. def bubble_sort(arr): ...)"></textarea>
           </div>
 
           <!-- Output Translated Box -->
-          <div class="flex flex-col gap-1.5">
-            <div class="flex items-center justify-between text-xs text-[#94a3b8]">
-              <span class="font-label-mono-sm font-semibold uppercase text-amber-300 flex items-center gap-1" id="homeTargetCanvasHeader">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span> Translated Output
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between text-xs text-[#94a3b8] px-1">
+              <span class="font-label-mono-sm font-semibold uppercase text-amber-300 flex items-center gap-2" id="homeTargetCanvasHeader">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Translated Output
               </span>
-              <div class="flex items-center gap-2">
-                <button class="font-label-mono-sm text-[11px] text-primary hover:underline flex items-center gap-1" id="btnHomeCopyResult">
-                  <span class="material-symbols-outlined text-xs">content_copy</span> Copy
+              <div class="flex items-center gap-3">
+                <button class="font-label-mono-sm text-xs text-primary hover:underline flex items-center gap-1" id="btnHomeCopyResult">
+                  <span class="material-symbols-outlined text-sm">content_copy</span> Copy
                 </button>
-                <button class="font-label-mono-sm text-[11px] text-amber-400 hover:underline flex items-center gap-1" id="btnHomeSaveSnippet">
-                  <span class="material-symbols-outlined text-xs">save</span> Save as Snippet
+                <button class="font-label-mono-sm text-xs text-amber-400 hover:underline flex items-center gap-1" id="btnHomeSaveSnippet">
+                  <span class="material-symbols-outlined text-sm">save</span> Save as Snippet
                 </button>
-                <button class="font-label-mono-sm text-[11px] text-teal-300 hover:underline flex items-center gap-1" id="btnHomeExplainResult">
-                  <span class="material-symbols-outlined text-xs">psychology</span> Explain
+                <button class="font-label-mono-sm text-xs text-teal-300 hover:underline flex items-center gap-1" id="btnHomeExplainResult">
+                  <span class="material-symbols-outlined text-sm">psychology</span> Explain
                 </button>
               </div>
             </div>
-            <div class="w-full h-72 bg-[#060e20] border border-[#1e293b] rounded-xl p-3.5 font-code-block text-xs text-emerald-300 leading-relaxed overflow-y-auto select-text shadow-inner" id="homeResultCodeCanvas">
+            <div class="w-full h-80 md:h-96 bg-[#060e20] border border-[#1e293b] rounded-2xl p-5 font-code-block text-xs text-emerald-300 leading-relaxed overflow-y-auto select-text shadow-inner" id="homeResultCodeCanvas">
               <span class="text-[#64748b] italic">// Select code above and click "Translate Code Now" to transpile with type annotations and memory parity...</span>
             </div>
           </div>
         </div>
 
         <!-- Mapping Notes Output -->
-        <div class="bg-[#0b1326] border border-[#1e293b] p-3.5 rounded-xl flex flex-col gap-1.5 text-xs text-[#94a3b8]" id="homeMappingNotesContainer">
-          <span class="font-label-mono-sm text-[10.5px] uppercase font-semibold text-teal-300 flex items-center gap-1">
-            <span class="material-symbols-outlined text-xs">menu_book</span> Paradigmatic Invariants &amp; Idiomatic Mapping Notes
+        <div class="bg-[#0b1326] border border-[#1e293b] p-5 rounded-2xl flex flex-col gap-2.5 text-xs text-[#94a3b8]" id="homeMappingNotesContainer">
+          <span class="font-label-mono-sm text-xs uppercase font-semibold text-teal-300 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">menu_book</span> Paradigmatic Invariants &amp; Idiomatic Mapping Notes
           </span>
-          <ul class="space-y-1 list-disc pl-4 text-[#cbd5e1]" id="homeMappingNotesList">
+          <ul class="space-y-2 list-disc pl-5 text-[#cbd5e1] leading-relaxed" id="homeMappingNotesList">
             <li>Automatic adaptation between dynamic and strongly-typed collections (`list` &harr; `std::vector` &harr; `number[]`).</li>
             <li>Maintains time and space complexity with strict parity across standard libraries.</li>
           </ul>
@@ -440,124 +440,124 @@
       </div>
 
       <!-- 3. DIRECT WORKSPACE LAUNCH CARDS (4 Assistant Cards) -->
-      <div class="flex flex-col gap-3">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-base text-emerald-400">dashboard_customize</span>
-            <h2 class="font-headline-sm text-lg text-[#dae2fd] font-semibold">Direct Workspace Assistants</h2>
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-xl text-emerald-400">dashboard_customize</span>
+            <h2 class="font-headline-sm text-xl text-[#dae2fd] font-semibold">Direct Workspace Assistants</h2>
           </div>
           <span class="font-label-mono-sm text-xs text-[#94a3b8]">Click any workspace to jump directly</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Card 1: Snippets Vault -->
-          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-xl p-5 flex flex-col justify-between gap-4 shadow-lg">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-400/30 flex items-center justify-center font-bold">
-                <span class="material-symbols-outlined text-xl">folder_code</span>
+          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-2xl p-6 md:p-7 flex flex-col justify-between gap-6 shadow-xl">
+            <div class="flex flex-col gap-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-400/30 flex items-center justify-center font-bold shadow-inner">
+                <span class="material-symbols-outlined text-2xl">folder_code</span>
               </div>
               <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">Snippets Vault</h3>
-              <p class="text-xs text-[#94a3b8] leading-relaxed">Browse 14 curated curriculum algorithms. Search with ⌘K, filter by tags, and annotate invariants.</p>
+              <p class="text-xs text-[#94a3b8] leading-relaxed text-spacious">Browse 14 curated curriculum algorithms. Search with ⌘K, filter by tags, and annotate invariants.</p>
             </div>
-            <button class="w-full py-2 px-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-emerald-500/50 hover:bg-[#1e293b] text-emerald-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceSnippets">
+            <button class="w-full py-2.5 px-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-emerald-500/50 hover:bg-[#1e293b] text-emerald-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceSnippets">
               <span>Open Snippets Vault</span>
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
             </button>
           </div>
 
           <!-- Card 2: Code Translator -->
-          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-xl p-5 flex flex-col justify-between gap-4 shadow-lg">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-400/30 flex items-center justify-center font-bold">
-                <span class="material-symbols-outlined text-xl">compare_arrows</span>
+          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-2xl p-6 md:p-7 flex flex-col justify-between gap-6 shadow-xl">
+            <div class="flex flex-col gap-3">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-400/30 flex items-center justify-center font-bold shadow-inner">
+                <span class="material-symbols-outlined text-2xl">compare_arrows</span>
               </div>
               <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">Code Translator</h3>
-              <p class="text-xs text-[#94a3b8] leading-relaxed">Universal multi-language transpilation laboratory between Python, C++, TypeScript, Rust, Java, and Go.</p>
+              <p class="text-xs text-[#94a3b8] leading-relaxed text-spacious">Universal multi-language transpilation laboratory between Python, C++, TypeScript, Rust, Java, and Go.</p>
             </div>
-            <button class="w-full py-2 px-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-amber-500/50 hover:bg-[#1e293b] text-amber-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceTranslate">
+            <button class="w-full py-2.5 px-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-amber-500/50 hover:bg-[#1e293b] text-amber-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceTranslate">
               <span>Open Translator Lab</span>
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
             </button>
           </div>
 
           <!-- Card 3: AI Studio -->
-          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-xl p-5 flex flex-col justify-between gap-4 shadow-lg">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-teal-500/20 text-teal-400 border border-teal-400/30 flex items-center justify-center font-bold">
-                <span class="material-symbols-outlined text-xl">psychology</span>
+          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-2xl p-6 md:p-7 flex flex-col justify-between gap-6 shadow-xl">
+            <div class="flex flex-col gap-3">
+              <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-400/30 flex items-center justify-center font-bold shadow-inner">
+                <span class="material-symbols-outlined text-2xl">psychology</span>
               </div>
               <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">AI Studio &amp; Tutor</h3>
-              <p class="text-xs text-[#94a3b8] leading-relaxed">Phase-by-phase execution trace, Big-O algebraic derivations, progressive hints, and edge-case matrix.</p>
+              <p class="text-xs text-[#94a3b8] leading-relaxed text-spacious">Phase-by-phase execution trace, Big-O algebraic derivations, progressive hints, and edge-case matrix.</p>
             </div>
-            <button class="w-full py-2 px-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-teal-500/50 hover:bg-[#1e293b] text-teal-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceAi">
+            <button class="w-full py-2.5 px-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-teal-500/50 hover:bg-[#1e293b] text-teal-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceAi">
               <span>Launch AI Studio</span>
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
             </button>
           </div>
 
           <!-- Card 4: Sandbox Runner -->
-          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-xl p-5 flex flex-col justify-between gap-4 shadow-lg">
-            <div class="flex flex-col gap-2">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-400/30 flex items-center justify-center font-bold">
-                <span class="material-symbols-outlined text-xl">play_circle</span>
+          <div class="workspace-card bg-[#131b2e] border border-[#1e293b] rounded-2xl p-6 md:p-7 flex flex-col justify-between gap-6 shadow-xl">
+            <div class="flex flex-col gap-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-400/30 flex items-center justify-center font-bold shadow-inner">
+                <span class="material-symbols-outlined text-2xl">play_circle</span>
               </div>
               <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">Algorithm Sandbox</h3>
-              <p class="text-xs text-[#94a3b8] leading-relaxed">Simulated test vectors, runtime execution latency (ms), peak memory RSS, and leak-free verification.</p>
+              <p class="text-xs text-[#94a3b8] leading-relaxed text-spacious">Simulated test vectors, runtime execution latency (ms), peak memory RSS, and leak-free verification.</p>
             </div>
-            <button class="w-full py-2 px-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-emerald-500/50 hover:bg-[#1e293b] text-emerald-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceSandbox">
+            <button class="w-full py-2.5 px-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-emerald-500/50 hover:bg-[#1e293b] text-emerald-400 font-semibold text-xs transition-all flex items-center justify-between" id="btnDirectWorkspaceSandbox">
               <span>Test Active Algorithm</span>
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
             </button>
           </div>
         </div>
       </div>
 
       <!-- 4. CURRICULUM STUDY TRACKS (Taxonomy Categories) -->
-      <div class="flex flex-col gap-3">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-base text-amber-400">category</span>
-            <h2 class="font-headline-sm text-lg text-[#dae2fd] font-semibold">Curriculum Tracks &amp; Specializations</h2>
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-xl text-amber-400">category</span>
+            <h2 class="font-headline-sm text-xl text-[#dae2fd] font-semibold">Curriculum Tracks &amp; Specializations</h2>
           </div>
           <span class="font-label-mono-sm text-xs text-[#94a3b8]">Select a track to filter vault</span>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" id="homeCurriculumTracksContainer">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5" id="homeCurriculumTracksContainer">
           <!-- Populated dynamically via JS -->
         </div>
       </div>
 
       <!-- 5. FEATURED CURRICULUM SHOWCASE (With 1-Click Explain & Translate) -->
-      <div class="flex flex-col gap-3">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-base text-emerald-400">star</span>
-            <h2 class="font-headline-sm text-lg text-[#dae2fd] font-semibold">Featured Core Algorithms</h2>
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between pb-1">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-xl text-emerald-400">star</span>
+            <h2 class="font-headline-sm text-xl text-[#dae2fd] font-semibold">Featured Core Algorithms</h2>
           </div>
           <button class="text-xs text-emerald-400 font-label-mono-sm hover:underline" id="btnHomeViewAllSnippets">View All 14 Snippets &rarr;</button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="homeFeaturedSnippetsContainer">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" id="homeFeaturedSnippetsContainer">
           <!-- Populated dynamically via JS with 1-click Explain and Translate buttons -->
         </div>
       </div>
     </section>
 
     <!-- ================= VIEW 1: SNIPPETS EXPLORER ================= -->
-    <section class="hidden p-6 flex-col gap-5" id="viewSnippets">
+    <section class="hidden px-6 py-10 md:px-10 md:py-14 flex-col gap-10 max-w-7xl mx-auto" id="viewSnippets">
       <!-- Top Explorer Strip -->
-      <div class="bg-[#131b2e] border border-[#1e293b] p-5 rounded-xl shadow-lg flex flex-col gap-4">
+      <div class="bg-[#131b2e] border border-[#1e293b] p-7 md:p-9 rounded-3xl shadow-xl flex flex-col gap-6">
         <!-- Explorer Header Row -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="flex items-baseline gap-2">
-            <h1 class="font-headline-lg text-2xl text-[#dae2fd] tracking-tight font-semibold" id="explorerViewTitle">All Snippets</h1>
-            <span class="font-label-mono-md text-xs text-[#94a3b8]" id="explorerTotalAssetBadge">8 total assets</span>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-1">
+          <div class="flex items-baseline gap-3">
+            <h1 class="font-headline-lg text-2xl md:text-3xl text-[#dae2fd] tracking-tight font-semibold" id="explorerViewTitle">All Snippets</h1>
+            <span class="font-label-mono-md text-xs text-[#94a3b8]" id="explorerTotalAssetBadge">14 total assets</span>
           </div>
 
           <!-- Controls: Sort & Layout toggles -->
-          <div class="flex items-center gap-2 flex-wrap">
+          <div class="flex items-center gap-3 flex-wrap">
             <!-- Sort dropdown -->
-            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-3 py-1.5 rounded-lg text-[#94a3b8]">
+            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-3.5 py-2 rounded-xl text-[#94a3b8]">
               <span class="font-label-mono-sm text-xs mr-2">Sort:</span>
               <select class="bg-transparent text-xs font-semibold text-[#dae2fd] border-none focus:outline-none cursor-pointer" id="selectSort">
                 <option value="recent" class="bg-[#131b2e] text-[#dae2fd]">Recently Modified</option>
@@ -568,19 +568,19 @@
             </div>
 
             <!-- View toggle: Grid vs Table -->
-            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] p-0.5 rounded-lg">
-              <button class="px-2.5 py-1 rounded bg-[#1e293b] text-emerald-400 shadow-sm flex items-center gap-1 border border-slate-700/60" id="btnToggleGridView" title="Grid View" type="button">
+            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] p-1 rounded-xl">
+              <button class="px-3 py-1.5 rounded-lg bg-[#1e293b] text-emerald-400 shadow-sm flex items-center gap-1.5 border border-slate-700/60 transition-all" id="btnToggleGridView" title="Grid View" type="button">
                 <span class="material-symbols-outlined text-base">grid_view</span>
                 <span class="font-label-mono-sm text-xs font-semibold hidden sm:inline">Grid</span>
               </button>
-              <button class="px-2.5 py-1 rounded text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1" id="btnToggleTableView" title="Table View" type="button">
+              <button class="px-3 py-1.5 rounded-lg text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1.5 transition-all" id="btnToggleTableView" title="Table View" type="button">
                 <span class="material-symbols-outlined text-base">table_rows</span>
                 <span class="font-label-mono-sm text-xs hidden sm:inline">List</span>
               </button>
             </div>
 
             <!-- Reload Button -->
-            <button class="p-2 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] transition-colors" id="btnReloadVault" title="Reload Vault" type="button">
+            <button class="p-2.5 rounded-xl bg-[#0b1326] border border-[#1e293b] text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] transition-colors" id="btnReloadVault" title="Reload Vault" type="button">
               <span class="material-symbols-outlined text-base">refresh</span>
             </button>
           </div>
@@ -588,52 +588,52 @@
 
         <!-- Semantic Search Input -->
         <div class="relative w-full">
-          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[#94a3b8]">
-            <span class="material-symbols-outlined text-lg text-emerald-400">search_insights</span>
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#94a3b8]">
+            <span class="material-symbols-outlined text-xl text-emerald-400">search_insights</span>
           </div>
-          <input class="w-full bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] text-xs pl-10 pr-28 py-2 rounded-lg placeholder-[#64748b] focus:outline-none focus:border-emerald-500/60 transition-colors shadow-inner" id="explorerSearchInput" placeholder="Search snippets by code, learning notes, concepts, or plain English keywords (e.g. 'lru', 'dijkstra', 'hooks')..." type="text"/>
-          <div class="absolute inset-y-0 right-0 pr-3 flex items-center gap-2">
-            <span class="font-label-mono-sm text-[10px] text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded">⌥ Full-Text</span>
-            <kbd class="font-label-mono-sm text-[10px] text-[#94a3b8] bg-[#1e293b] px-1.5 py-0.5 rounded border border-slate-700">⌘K</kbd>
+          <input class="w-full bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] text-xs sm:text-sm pl-12 pr-32 py-3.5 rounded-xl placeholder-[#64748b] focus:outline-none focus:border-emerald-500/60 focus:ring-2 focus:ring-emerald-500/20 transition-all shadow-inner" id="explorerSearchInput" placeholder="Search snippets by code, learning notes, concepts, or plain English keywords (e.g. 'lru', 'dijkstra', 'hooks')..." type="text"/>
+          <div class="absolute inset-y-0 right-0 pr-4 flex items-center gap-2.5">
+            <span class="font-label-mono-sm text-[10.5px] text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-md">⌥ Full-Text</span>
+            <kbd class="font-label-mono-sm text-[10.5px] text-[#94a3b8] bg-[#1e293b] px-2 py-0.5 rounded-md border border-slate-700">⌘K</kbd>
           </div>
         </div>
 
         <!-- Language Pill Filter Row -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-[#94a3b8]" id="languagePillsContainer">
-          <span class="font-label-mono-sm text-[11px] uppercase text-[#64748b] mr-1 flex-shrink-0">Language:</span>
-          <button class="lang-pill active px-3 py-1 rounded-full font-label-mono-sm text-xs bg-emerald-500 text-slate-950 font-semibold whitespace-nowrap shadow-[0_0_12px_rgba(16,185,129,0.25)]" data-lang="all">
-            All (<span id="pillCountAll">8</span>)
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 text-[#94a3b8]" id="languagePillsContainer">
+          <span class="font-label-mono-sm text-xs uppercase text-[#64748b] mr-1 flex-shrink-0">Language:</span>
+          <button class="lang-pill active px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-emerald-500 text-slate-950 font-semibold whitespace-nowrap shadow-[0_0_12px_rgba(16,185,129,0.25)]" data-lang="all">
+            All (<span id="pillCountAll">14</span>)
           </button>
-          <button class="lang-pill px-3 py-1 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="python">
+          <button class="lang-pill px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="python">
             Python
           </button>
-          <button class="lang-pill px-3 py-1 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="cpp">
+          <button class="lang-pill px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="cpp">
             C++
           </button>
-          <button class="lang-pill px-3 py-1 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="typescript">
+          <button class="lang-pill px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="typescript">
             TypeScript
           </button>
-          <button class="lang-pill px-3 py-1 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="rust">
+          <button class="lang-pill px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="rust">
             Rust
           </button>
-          <button class="lang-pill px-3 py-1 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="sql">
+          <button class="lang-pill px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="sql">
             SQL
           </button>
-          <button class="lang-pill px-3 py-1 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="java">
+          <button class="lang-pill px-4 py-1.5 rounded-full font-label-mono-sm text-xs bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors" data-lang="java">
             Java
           </button>
         </div>
       </div>
 
       <!-- Active Filter Chips / Reset Bar (visible when filters are applied) -->
-      <div class="hidden flex items-center gap-2 flex-wrap" id="activeFiltersBar">
+      <div class="hidden flex items-center gap-3 flex-wrap" id="activeFiltersBar">
         <span class="text-xs text-[#94a3b8]">Active Filters:</span>
-        <div class="flex items-center gap-1.5 flex-wrap" id="activeFilterTags"></div>
+        <div class="flex items-center gap-2 flex-wrap" id="activeFilterTags"></div>
         <button class="text-xs text-emerald-400 hover:underline ml-2" id="btnClearAllFilters">Clear all</button>
       </div>
 
       <!-- Snippet Cards Grid (Bento Style) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 min-w-0" id="snippetsGridContainer">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 min-w-0" id="snippetsGridContainer">
         <!-- Populated via JavaScript -->
       </div>
 
@@ -673,46 +673,46 @@
     <!-- ================= VIEW 2: AI STUDIO & DETAIL INSPECTOR ================= -->
     <section class="hidden flex-col w-full" id="viewAiStudio">
       <!-- Workspace Context Sub-header -->
-      <div class="px-6 py-3 bg-[#0f172a]/90 backdrop-blur-md border-b border-[#1e293b] flex items-center justify-between flex-wrap gap-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <button class="font-label-mono-sm text-xs text-[#94a3b8] hover:text-primary transition-colors flex items-center gap-1" id="btnBackToSnippets">
-            <span class="material-symbols-outlined text-sm">arrow_back</span>
+      <div class="px-8 md:px-12 py-4.5 bg-[#0f172a]/90 backdrop-blur-md border-b border-[#1e293b] flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <button class="font-label-mono-sm text-xs text-[#94a3b8] hover:text-primary transition-colors flex items-center gap-1.5" id="btnBackToSnippets">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
             <span>Snippets</span>
           </button>
           <span class="text-[#475569] font-label-mono-sm">/</span>
           <span class="font-label-mono-sm text-xs text-[#94a3b8]" id="detailCategoryBreadcrumb">Graph Algorithms</span>
           <span class="text-[#475569] font-label-mono-sm">/</span>
-          <span class="font-label-mono-sm text-xs text-[#f1f5f9] font-semibold flex items-center gap-1.5" id="detailSnippetTitleBreadcrumb">
+          <span class="font-label-mono-sm text-xs text-[#f1f5f9] font-semibold flex items-center gap-2" id="detailSnippetTitleBreadcrumb">
             <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(78,222,163,0.8)]"></span>
             dijkstra_min_heap.cpp
           </span>
         </div>
 
-        <div class="flex items-center gap-2">
-          <div class="flex items-center gap-1 font-label-mono-sm text-[11px] text-[#94a3b8] bg-[#131b2e] border border-[#1e293b] px-2.5 py-1 rounded">
-            <span class="material-symbols-outlined text-xs text-[#64748b]">history</span>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5 font-label-mono-sm text-xs text-[#94a3b8] bg-[#131b2e] border border-[#1e293b] px-3 py-1.5 rounded-xl">
+            <span class="material-symbols-outlined text-sm text-[#64748b]">history</span>
             <span id="detailVersionBadge">C++20 • Graph Algorithms</span>
           </div>
-          <button class="px-2.5 py-1 rounded bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1a2236] hover:text-[#f8fafc] transition-colors font-label-mono-sm text-xs flex items-center gap-1" id="btnDetailToggleStar">
-            <span class="material-symbols-outlined text-xs text-tertiary" id="detailStarIcon">star</span>
+          <button class="px-3 py-1.5 rounded-xl bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1a2236] hover:text-[#f8fafc] transition-colors font-label-mono-sm text-xs flex items-center gap-1.5" id="btnDetailToggleStar">
+            <span class="material-symbols-outlined text-sm text-tertiary" id="detailStarIcon">star</span>
             <span id="detailStarText">Star</span>
           </button>
-          <button class="px-2.5 py-1 rounded bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1a2236] hover:text-[#f8fafc] transition-colors font-label-mono-sm text-xs flex items-center gap-1" id="btnDetailExportGist">
-            <span class="material-symbols-outlined text-xs text-secondary">download</span>
+          <button class="px-3 py-1.5 rounded-xl bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1a2236] hover:text-[#f8fafc] transition-colors font-label-mono-sm text-xs flex items-center gap-1.5" id="btnDetailExportGist">
+            <span class="material-symbols-outlined text-sm text-secondary">download</span>
             <span>Export Markdown</span>
           </button>
         </div>
       </div>
 
       <!-- Master-Detail 2-Column Grid -->
-      <div class="p-6 grid grid-cols-12 gap-6 items-start">
+      <div class="px-8 md:px-12 py-8 grid grid-cols-12 gap-8 lg:gap-10 items-start">
         
         <!-- LEFT COLUMN: Code Canvas, Learning Notes, & Runtime (7 cols) -->
-        <section class="col-span-12 xl:col-span-7 flex flex-col gap-4 min-w-0">
+        <section class="col-span-12 xl:col-span-7 flex flex-col gap-6 min-w-0">
           
           <!-- Editor Controls Bar -->
-          <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl p-3.5 shadow-md flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-2.5">
+          <div class="bg-[#0f172a] border border-[#1e293b] rounded-2xl p-4 md:p-5 shadow-md flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
               <span class="font-label-mono-sm text-xs px-2 py-0.5 rounded bg-primary/10 border border-primary/25 text-primary font-semibold tracking-wider uppercase" id="detailLanguageBadge">C++20</span>
               <span class="font-label-mono-sm text-xs text-[#94a3b8]" id="detailCategoryBadge">Graph Algorithms</span>
               <span class="w-1.5 h-1.5 rounded-full bg-[#334155]"></span>
@@ -1071,16 +1071,16 @@ Peak RSS: 4.2 MB.
     </section>
 
     <!-- ================= VIEW 3: TRANSLATE WORKBENCH ================= -->
-    <section class="hidden p-6 flex flex-col gap-6" id="viewTranslate">
-      <div class="bg-[#131b2e] border border-[#1e293b] p-5 rounded-xl shadow-lg flex flex-col gap-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#1e293b]">
+    <section class="hidden px-6 py-10 md:px-10 md:py-14 flex flex-col gap-10 max-w-7xl mx-auto" id="viewTranslate">
+      <div class="bg-[#131b2e] border border-[#1e293b] p-8 md:p-10 rounded-3xl shadow-xl flex flex-col gap-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pb-5 border-b border-[#1e293b]">
           <div>
-            <h1 class="font-headline-lg text-2xl text-[#dae2fd] tracking-tight font-semibold">Universal Code Translation Laboratory</h1>
-            <p class="text-xs text-[#94a3b8] mt-1">Convert code snippets between languages with side-by-side inspection, mapping notes, and safe save-as-new actions.</p>
+            <h1 class="font-headline-lg text-2xl md:text-3xl text-[#dae2fd] tracking-tight font-semibold">Universal Code Translation Laboratory</h1>
+            <p class="text-xs md:text-sm text-[#94a3b8] mt-2 leading-relaxed">Convert code snippets between languages with side-by-side inspection, mapping notes, and safe save-as-new actions.</p>
           </div>
-          <div class="flex items-center gap-2 flex-wrap">
-            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-2.5 py-1.5 rounded-lg text-[#94a3b8]">
-              <span class="font-label-mono-sm text-[11px] mr-1.5">Preset:</span>
+          <div class="flex items-center gap-3 flex-wrap">
+            <div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-3.5 py-2 rounded-xl text-[#94a3b8]">
+              <span class="font-label-mono-sm text-xs mr-2">Preset:</span>
               <select class="bg-transparent text-xs text-[#dae2fd] font-semibold border-none focus:outline-none cursor-pointer" id="standaloneSelectPreset">
                 <option value="custom" class="bg-[#131b2e]">Custom / User Code</option>
                 <option value="quicksort" class="bg-[#131b2e]">Python: Quick Sort</option>
@@ -1090,17 +1090,19 @@ Peak RSS: 4.2 MB.
                 <option value="reverseList" class="bg-[#131b2e]">Java: Reverse Linked List</option>
               </select>
             </div>
-            <button class="px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 font-semibold text-xs hover:bg-emerald-400 transition-colors flex items-center gap-1.5 shadow-[0_0_12px_rgba(16,185,129,0.25)]" id="btnRunStandaloneTranslate">
-              <span class="material-symbols-outlined text-sm font-bold">sync_alt</span>
+            <button class="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-semibold text-xs hover:bg-emerald-400 transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.25)]" id="btnRunStandaloneTranslate">
+              <span class="material-symbols-outlined text-base font-bold">sync_alt</span>
               <span>Translate Now</span>
             </button>
           </div>
         </div>
 
         <!-- Translation Selector Bar -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex items-center gap-2 bg-[#0b1326] border border-[#1e293b] p-2.5 rounded-lg">
-            <span class="font-label-mono-sm text-xs text-[#94a3b8]">Source Dialect:</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex items-center gap-3 bg-[#0b1326] border border-[#1e293b] p-3.5 rounded-xl">
+            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-1.5 shrink-0">
+              <span class="material-symbols-outlined text-sm text-emerald-400">code</span> Source Dialect:
+            </span>
             <select class="bg-transparent text-xs text-[#dae2fd] font-semibold border-none focus:outline-none flex-1" id="standaloneSourceLang">
               <option value="python" class="bg-[#131b2e]">Python 3.11</option>
               <option value="cpp" class="bg-[#131b2e]">C++20</option>
@@ -1110,11 +1112,13 @@ Peak RSS: 4.2 MB.
               <option value="java" class="bg-[#131b2e]">Java 21</option>
               <option value="go" class="bg-[#131b2e]">Go 1.22</option>
             </select>
-            <button class="text-xs text-emerald-400 font-label-mono-sm hover:underline" id="btnLoadCurrentSnippetForTranslate">Load Active Snippet</button>
+            <button class="text-xs text-emerald-400 font-label-mono-sm hover:underline shrink-0" id="btnLoadCurrentSnippetForTranslate">Load Active Snippet</button>
           </div>
 
-          <div class="flex items-center gap-2 bg-[#0b1326] border border-[#1e293b] p-2.5 rounded-lg">
-            <span class="font-label-mono-sm text-xs text-[#94a3b8]">Target Dialect:</span>
+          <div class="flex items-center gap-3 bg-[#0b1326] border border-[#1e293b] p-3.5 rounded-xl">
+            <span class="font-label-mono-sm text-xs text-[#94a3b8] flex items-center gap-1.5 shrink-0">
+              <span class="material-symbols-outlined text-sm text-amber-400">arrow_forward</span> Target Dialect:
+            </span>
             <select class="bg-transparent text-xs text-[#dae2fd] font-semibold border-none focus:outline-none flex-1" id="standaloneTargetLang">
               <option value="cpp" class="bg-[#131b2e]">C++20</option>
               <option value="python" class="bg-[#131b2e]">Python 3.11</option>
@@ -1127,129 +1131,135 @@ Peak RSS: 4.2 MB.
         </div>
 
         <!-- Side-by-Side Dual Editor Canvases -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <!-- Source Code Canvas -->
-          <div class="flex flex-col gap-1.5">
-            <div class="flex items-center justify-between text-xs text-[#94a3b8]">
-              <span class="font-label-mono-sm font-semibold uppercase">Source Code</span>
-              <span class="font-label-mono-sm text-[11px]" id="sourceCodeMetrics">Input snippet</span>
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between text-xs text-[#94a3b8] px-1">
+              <span class="font-label-mono-sm font-semibold uppercase flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Source Code
+              </span>
+              <span class="font-label-mono-sm text-xs" id="sourceCodeMetrics">Input snippet</span>
             </div>
-            <textarea class="w-full h-80 bg-[#060e20] border border-[#1e293b] rounded-lg p-3.5 font-code-block text-xs text-[#cbd5e1] focus:outline-none focus:border-emerald-500/60 leading-relaxed shadow-inner" id="standaloneSourceCode" placeholder="Write or paste your source code here..."></textarea>
+            <textarea class="w-full h-88 md:h-96 bg-[#060e20] border border-[#1e293b] rounded-2xl p-5 font-code-block text-xs text-[#cbd5e1] focus:outline-none focus:border-emerald-500/60 leading-relaxed shadow-inner" id="standaloneSourceCode" placeholder="Write or paste your source code here..."></textarea>
           </div>
 
           <!-- Target Code Canvas -->
-          <div class="flex flex-col gap-1.5">
-            <div class="flex items-center justify-between text-xs text-[#94a3b8]">
-              <span class="font-label-mono-sm font-semibold uppercase text-emerald-300">Translated Result</span>
-              <div class="flex items-center gap-2">
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center justify-between text-xs text-[#94a3b8] px-1">
+              <span class="font-label-mono-sm font-semibold uppercase text-emerald-300 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Translated Result
+              </span>
+              <div class="flex items-center gap-3">
                 <button class="font-label-mono-sm text-xs text-primary hover:underline flex items-center gap-1" id="btnCopyStandaloneResult">
-                  <span class="material-symbols-outlined text-xs">content_copy</span> Copy
+                  <span class="material-symbols-outlined text-sm">content_copy</span> Copy
                 </button>
                 <button class="font-label-mono-sm text-xs text-amber-400 hover:underline flex items-center gap-1" id="btnStandaloneSaveSnippet">
-                  <span class="material-symbols-outlined text-xs">save</span> Save as Snippet
+                  <span class="material-symbols-outlined text-sm">save</span> Save as Snippet
                 </button>
                 <button class="font-label-mono-sm text-xs text-teal-300 hover:underline flex items-center gap-1" id="btnStandaloneExplain">
-                  <span class="material-symbols-outlined text-xs">psychology</span> Explain
+                  <span class="material-symbols-outlined text-sm">psychology</span> Explain
                 </button>
               </div>
             </div>
-            <div class="w-full h-80 bg-[#060e20] border border-[#1e293b] rounded-lg p-3.5 font-code-block text-xs text-emerald-300 overflow-y-auto leading-relaxed select-text shadow-inner" id="standaloneResultCanvas">
+            <div class="w-full h-88 md:h-96 bg-[#060e20] border border-[#1e293b] rounded-2xl p-5 font-code-block text-xs text-emerald-300 overflow-y-auto leading-relaxed select-text shadow-inner" id="standaloneResultCanvas">
               <span class="text-[#64748b] italic">// Click "Translate Now" to generate idiomatic translation with asymptotic invariance...</span>
             </div>
           </div>
         </div>
 
         <!-- Idiomatic Notes Output -->
-        <div class="bg-[#0b1326] border border-[#1e293b] p-4 rounded-lg flex flex-col gap-2" id="standaloneNotesContainer">
-          <span class="font-label-mono-sm text-xs font-semibold text-secondary uppercase">Algorithmic Parity &amp; Memory Safety Notes</span>
-          <p class="text-xs text-[#94a3b8]" id="standaloneNotesText">Translations preserve asymptotic time/space complexities and adapt idiomatic standard libraries (e.g. `std::priority_queue` &harr; Python `heapq` &harr; Rust `BinaryHeap`).</p>
+        <div class="bg-[#0b1326] border border-[#1e293b] p-5 rounded-2xl flex flex-col gap-2.5" id="standaloneNotesContainer">
+          <span class="font-label-mono-sm text-xs font-semibold text-secondary uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">verified</span> Algorithmic Parity &amp; Memory Safety Notes
+          </span>
+          <p class="text-xs md:text-sm text-[#cbd5e1] leading-relaxed" id="standaloneNotesText">Translations preserve asymptotic time/space complexities and adapt idiomatic standard libraries (e.g. `std::priority_queue` &harr; Python `heapq` &harr; Rust `BinaryHeap`).</p>
         </div>
       </div>
     </section>
 
     <!-- ================= VIEW 4: SETTINGS & BACKUP ================= -->
-    <section class="hidden p-6 flex flex-col gap-6" id="viewSettings">
-      <div class="bg-[#131b2e] border border-[#1e293b] p-6 rounded-xl shadow-lg flex flex-col gap-5 max-w-4xl">
+    <section class="hidden px-6 py-10 md:px-10 md:py-14 flex flex-col gap-10 max-w-5xl mx-auto" id="viewSettings">
+      <div class="bg-[#131b2e] border border-[#1e293b] p-8 md:p-10 rounded-3xl shadow-xl flex flex-col gap-8 max-w-4xl">
         <div>
-          <h1 class="font-headline-lg text-2xl text-[#dae2fd] tracking-tight font-semibold">Settings &amp; Storage Backup</h1>
-          <p class="text-xs text-[#94a3b8] mt-1">Manage local database persistence, JSON import/export, Markdown compiled archives, and curriculum resets.</p>
+          <h1 class="font-headline-lg text-2xl md:text-3xl text-[#dae2fd] tracking-tight font-semibold">Settings &amp; Storage Backup</h1>
+          <p class="text-xs md:text-sm text-[#94a3b8] mt-2 leading-relaxed">Manage local database persistence, JSON import/export, Markdown compiled archives, and curriculum resets.</p>
         </div>
 
         <!-- Database Health Card -->
-        <div class="bg-[#0b1326] border border-[#1e293b] p-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-[#0b1326] border border-[#1e293b] p-6 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-6 shadow-inner">
           <div class="flex flex-col">
-            <span class="font-label-mono-sm text-[10px] text-[#94a3b8] uppercase">Storage Engine</span>
-            <span class="font-headline-sm text-sm text-[#dae2fd] font-semibold mt-1">Local JSON / SQLite File</span>
-            <span class="text-[11px] text-emerald-400 mt-0.5">data/snippets.json</span>
+            <span class="font-label-mono-sm text-[10.5px] text-[#94a3b8] uppercase font-semibold">Storage Engine</span>
+            <span class="font-headline-sm text-base text-[#dae2fd] font-semibold mt-1">Local JSON / SQLite File</span>
+            <span class="text-xs text-emerald-400 mt-1">data/snippets.json</span>
           </div>
           <div class="flex flex-col">
-            <span class="font-label-mono-sm text-[10px] text-[#94a3b8] uppercase">Current Capacity</span>
-            <span class="font-headline-sm text-sm text-[#dae2fd] font-semibold mt-1" id="settingsQuotaText">8 / 500 Snippets</span>
-            <span class="text-[11px] text-amber-400 mt-0.5" id="settingsQuotaPercent">1.6% capacity used</span>
+            <span class="font-label-mono-sm text-[10.5px] text-[#94a3b8] uppercase font-semibold">Current Capacity</span>
+            <span class="font-headline-sm text-base text-[#dae2fd] font-semibold mt-1" id="settingsQuotaText">14 / 500 Snippets</span>
+            <span class="text-xs text-amber-400 mt-1" id="settingsQuotaPercent">2.8% capacity used</span>
           </div>
           <div class="flex flex-col">
-            <span class="font-label-mono-sm text-[10px] text-[#94a3b8] uppercase">Sync Status</span>
-            <span class="font-headline-sm text-sm text-emerald-400 font-semibold mt-1 flex items-center gap-1">
-              <span class="material-symbols-outlined text-sm">cloud_done</span> Up to date
+            <span class="font-label-mono-sm text-[10.5px] text-[#94a3b8] uppercase font-semibold">Sync Status</span>
+            <span class="font-headline-sm text-base text-emerald-400 font-semibold mt-1 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-base">cloud_done</span> Up to date
             </span>
-            <span class="text-[11px] text-[#94a3b8] mt-0.5">Real-time disk persistence</span>
+            <span class="text-xs text-[#94a3b8] mt-1">Real-time disk persistence</span>
           </div>
         </div>
 
         <!-- Export & Backup Actions -->
-        <div class="flex flex-col gap-3 pt-2">
-          <h3 class="font-body-md text-sm font-semibold text-[#dae2fd]">Vault Backup &amp; Portability</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <button class="p-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-slate-500 text-left flex flex-col gap-1 transition-all" id="btnDownloadMarkdown">
-              <div class="flex items-center gap-1.5 text-emerald-400 font-semibold text-xs">
-                <span class="material-symbols-outlined text-sm">description</span>
+        <div class="flex flex-col gap-4 pt-2">
+          <h3 class="font-body-md text-base font-semibold text-[#dae2fd]">Vault Backup &amp; Portability</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <button class="p-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-slate-500 text-left flex flex-col gap-2 transition-all shadow-sm" id="btnDownloadMarkdown">
+              <div class="flex items-center gap-2 text-emerald-400 font-semibold text-xs">
+                <span class="material-symbols-outlined text-base">description</span>
                 <span>Download Markdown</span>
               </div>
-              <span class="text-[11px] text-[#94a3b8]">Export entire library with code blocks, learning notes, and complexity.</span>
+              <span class="text-xs text-[#94a3b8] leading-relaxed">Export entire library with code blocks, learning notes, and complexity.</span>
             </button>
 
-            <button class="p-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-slate-500 text-left flex flex-col gap-1 transition-all" id="btnDownloadJson">
-              <div class="flex items-center gap-1.5 text-teal-400 font-semibold text-xs">
-                <span class="material-symbols-outlined text-sm">data_object</span>
+            <button class="p-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-slate-500 text-left flex flex-col gap-2 transition-all shadow-sm" id="btnDownloadJson">
+              <div class="flex items-center gap-2 text-teal-400 font-semibold text-xs">
+                <span class="material-symbols-outlined text-base">data_object</span>
                 <span>Download JSON</span>
               </div>
-              <span class="text-[11px] text-[#94a3b8]">Backup raw structured JSON database file for easy machine transfer.</span>
+              <span class="text-xs text-[#94a3b8] leading-relaxed">Backup raw structured JSON database file for easy machine transfer.</span>
             </button>
 
-            <button class="p-3 rounded-lg bg-[#0b1326] border border-[#1e293b] hover:border-slate-500 text-left flex flex-col gap-1 transition-all" id="btnCopyAllMarkdown">
-              <div class="flex items-center gap-1.5 text-amber-400 font-semibold text-xs">
-                <span class="material-symbols-outlined text-sm">content_copy</span>
+            <button class="p-4 rounded-xl bg-[#0b1326] border border-[#1e293b] hover:border-slate-500 text-left flex flex-col gap-2 transition-all shadow-sm" id="btnCopyAllMarkdown">
+              <div class="flex items-center gap-2 text-amber-400 font-semibold text-xs">
+                <span class="material-symbols-outlined text-base">content_copy</span>
                 <span>Copy Vault Markdown</span>
               </div>
-              <span class="text-[11px] text-[#94a3b8]">Copy entire compiled library to clipboard in one click.</span>
+              <span class="text-xs text-[#94a3b8] leading-relaxed">Copy entire compiled library to clipboard in one click.</span>
             </button>
           </div>
         </div>
 
         <!-- Import JSON Section (PRD Section 7 & P2) -->
-        <div class="p-4 rounded-lg bg-[#0b1326] border border-[#1e293b] flex flex-col gap-3">
+        <div class="p-6 rounded-2xl bg-[#0b1326] border border-[#1e293b] flex flex-col gap-4">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-base text-emerald-400">upload_file</span>
-              <h4 class="font-body-md text-xs font-semibold text-[#dae2fd]">Import JSON Snippets</h4>
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-lg text-emerald-400">upload_file</span>
+              <h4 class="font-body-md text-sm font-semibold text-[#dae2fd]">Import JSON Snippets</h4>
             </div>
-            <span class="font-label-mono-sm text-[10px] text-[#94a3b8]">Deduplication &amp; Validation</span>
+            <span class="font-label-mono-sm text-xs text-[#94a3b8]">Deduplication &amp; Validation</span>
           </div>
-          <div class="flex flex-col sm:flex-row items-center gap-3">
-            <input type="file" id="inputFileImport" accept=".json" class="text-xs text-[#94a3b8] file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#131b2e] file:text-emerald-400 hover:file:bg-[#1e293b] cursor-pointer"/>
-            <button class="px-4 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-colors whitespace-nowrap" id="btnTriggerImport">
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <input type="file" id="inputFileImport" accept=".json" class="text-xs text-[#94a3b8] file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-[#131b2e] file:text-emerald-400 hover:file:bg-[#1e293b] cursor-pointer"/>
+            <button class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-colors whitespace-nowrap shadow-sm" id="btnTriggerImport">
               Upload &amp; Merge
             </button>
           </div>
         </div>
 
         <!-- Reset to Seed Vault -->
-        <div class="p-4 rounded-lg bg-rose-950/20 border border-rose-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-2">
+        <div class="p-6 rounded-2xl bg-rose-950/20 border border-rose-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
           <div class="flex flex-col">
-            <span class="font-headline-sm text-xs font-semibold text-rose-300">Reset to Stanford CS Curriculum Seed</span>
-            <span class="text-[11px] text-[#94a3b8] mt-0.5">Restores standard seed snippets (LRU Cache, Dijkstra C++, Debounce Hook, Fast I/O, etc.).</span>
+            <span class="font-headline-sm text-sm font-semibold text-rose-300">Reset to Stanford CS Curriculum Seed</span>
+            <span class="text-xs text-[#94a3b8] mt-1 leading-relaxed">Restores standard seed snippets (LRU Cache, Dijkstra C++, Debounce Hook, Fast I/O, etc.).</span>
           </div>
-          <button class="px-3.5 py-1.5 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-300 hover:bg-rose-500 hover:text-white transition-all text-xs font-semibold whitespace-nowrap" id="btnResetToDefaults">
+          <button class="px-4 py-2.5 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 hover:bg-rose-500 hover:text-white transition-all text-xs font-semibold whitespace-nowrap" id="btnResetToDefaults">
             Reset to Defaults
           </button>
         </div>
@@ -1260,29 +1270,29 @@ Peak RSS: 4.2 MB.
   <!-- ================= MODALS ================= -->
 
   <!-- 1. Create / Edit Snippet Modal (PRD Section 6 & 7) -->
-  <div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" id="modalSnippet">
-    <div class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-2xl w-full max-w-2xl max-h-[92vh] overflow-y-auto flex flex-col">
-      <div class="p-4 border-b border-[#1e293b] flex items-center justify-between">
-        <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold" id="modalSnippetTitle">Add New Code Snippet</h3>
-        <button class="p-1 rounded text-[#94a3b8] hover:text-[#dae2fd]" id="btnCloseSnippetModal">
-          <span class="material-symbols-outlined text-base">close</span>
+  <div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 modal-backdrop" id="modalSnippet">
+    <div class="bg-[#131b2e] border border-[#1e293b] rounded-3xl shadow-2xl w-full max-w-2xl max-h-[92vh] overflow-y-auto flex flex-col">
+      <div class="p-6 md:p-7 border-b border-[#1e293b] flex items-center justify-between">
+        <h3 class="font-headline-sm text-lg text-[#dae2fd] font-semibold" id="modalSnippetTitle">Add New Code Snippet</h3>
+        <button class="p-1.5 rounded-xl text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] transition-colors" id="btnCloseSnippetModal">
+          <span class="material-symbols-outlined text-lg">close</span>
         </button>
       </div>
 
-      <form class="p-5 flex flex-col gap-4" id="formSnippet">
+      <form class="p-6 md:p-8 flex flex-col gap-6" id="formSnippet">
         <input type="hidden" id="inputSnippetId"/>
 
         <!-- Title -->
-        <div class="flex flex-col gap-1">
-          <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetTitle">Snippet Title * (Required)</label>
-          <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60" id="inputSnippetTitle" placeholder="e.g. Red-Black Tree Left-Leaning Balance Rotations" required type="text"/>
+        <div class="flex flex-col gap-2">
+          <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetTitle">Snippet Title * (Required)</label>
+          <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-4 py-3 text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 shadow-inner" id="inputSnippetTitle" placeholder="e.g. Red-Black Tree Left-Leaning Balance Rotations" required type="text"/>
         </div>
 
         <!-- Grid: Language, Category, Course -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="selectSnippetLanguage">Language * (Required)</label>
-            <select class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60" id="selectSnippetLanguage" required>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="flex flex-col gap-2">
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="selectSnippetLanguage">Language * (Required)</label>
+            <select class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-3.5 py-3 text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 shadow-inner" id="selectSnippetLanguage" required>
               <option value="python">Python</option>
               <option value="cpp">C++</option>
               <option value="typescript">TypeScript</option>
@@ -1293,75 +1303,75 @@ Peak RSS: 4.2 MB.
             </select>
           </div>
 
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetCategory">Category</label>
-            <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60" id="inputSnippetCategory" placeholder="e.g. Graph Algorithms" type="text" value="Algorithms"/>
+          <div class="flex flex-col gap-2">
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetCategory">Category</label>
+            <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-3.5 py-3 text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 shadow-inner" id="inputSnippetCategory" placeholder="e.g. Graph Algorithms" type="text" value="Algorithms"/>
           </div>
 
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetCourse">Course / Registry</label>
-            <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60" id="inputSnippetCourse" placeholder="e.g. CS 161: Algorithms" type="text" value="CS 106B: Data Structures"/>
+          <div class="flex flex-col gap-2">
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetCourse">Course / Registry</label>
+            <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-3.5 py-3 text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 shadow-inner" id="inputSnippetCourse" placeholder="e.g. CS 161: Algorithms" type="text" value="CS 106B: Data Structures"/>
           </div>
         </div>
 
         <!-- Grid: Time Complexity, Space Complexity, Tags -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetTime">Time Complexity</label>
-            <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 font-code-block" id="inputSnippetTime" placeholder="e.g. O(1) or O(N log N)" type="text" value="O(1)"/>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="flex flex-col gap-2">
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetTime">Time Complexity</label>
+            <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-3.5 py-3 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 font-code-block shadow-inner" id="inputSnippetTime" placeholder="e.g. O(1) or O(N log N)" type="text" value="O(1)"/>
           </div>
 
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetSpace">Space Complexity</label>
-            <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 font-code-block" id="inputSnippetSpace" placeholder="e.g. O(1) or O(N)" type="text" value="O(1)"/>
+          <div class="flex flex-col gap-2">
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetSpace">Space Complexity</label>
+            <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-3.5 py-3 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 font-code-block shadow-inner" id="inputSnippetSpace" placeholder="e.g. O(1) or O(N)" type="text" value="O(1)"/>
           </div>
 
-          <div class="flex flex-col gap-1">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetTags">Tags (comma-separated)</label>
-            <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60" id="inputSnippetTags" placeholder="recursion, graph, heap" type="text"/>
+          <div class="flex flex-col gap-2">
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetTags">Tags (comma-separated)</label>
+            <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-3.5 py-3 text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 shadow-inner" id="inputSnippetTags" placeholder="recursion, graph, heap" type="text"/>
           </div>
         </div>
 
         <!-- Description (Context) -->
-        <div class="flex flex-col gap-1">
-          <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="inputSnippetDesc">Context &amp; Problem Rationale</label>
-          <input class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60" id="inputSnippetDesc" placeholder="Brief 1-sentence summary of what this code does and why it was saved..."/>
+        <div class="flex flex-col gap-2">
+          <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="inputSnippetDesc">Context &amp; Problem Rationale</label>
+          <input class="bg-[#0b1326] border border-[#1e293b] rounded-xl px-4 py-3 text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 shadow-inner" id="inputSnippetDesc" placeholder="Brief 1-sentence summary of what this code does and why it was saved..."/>
         </div>
 
         <!-- Learning Notes (PRD Core Feature) -->
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-2">
           <div class="flex items-center justify-between">
             <label class="font-label-mono-sm text-xs text-amber-400 font-semibold" for="inputSnippetNotes">Learning Notes (Key insights &amp; how to adapt this)</label>
-            <span class="font-label-mono-sm text-[10.5px] text-[#94a3b8]">PRD Core Field</span>
+            <span class="font-label-mono-sm text-[11px] text-[#94a3b8]">PRD Core Field</span>
           </div>
-          <textarea class="bg-[#0b1326] border border-[#1e293b] rounded-lg p-2.5 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 h-20 leading-relaxed placeholder-[#64748b]" id="inputSnippetNotes" placeholder="What key invariants did you learn? What should you watch out for on an exam? How would you adapt this for different inputs?"></textarea>
+          <textarea class="bg-[#0b1326] border border-[#1e293b] rounded-xl p-3.5 text-xs md:text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 h-24 leading-relaxed placeholder-[#64748b] shadow-inner" id="inputSnippetNotes" placeholder="What key invariants did you learn? What should you watch out for on an exam? How would you adapt this for different inputs?"></textarea>
         </div>
 
         <!-- Checkboxes: Pinned & Starred -->
-        <div class="flex items-center gap-4 text-xs text-[#cbd5e1]">
-          <label class="flex items-center gap-1.5 cursor-pointer">
-            <input class="rounded border-slate-700 text-emerald-500 focus:ring-0 bg-[#0b1326]" id="checkboxSnippetPinned" type="checkbox"/>
+        <div class="flex items-center gap-6 text-xs text-[#cbd5e1] py-1">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input class="rounded border-slate-700 text-emerald-500 focus:ring-0 bg-[#0b1326] w-4 h-4" id="checkboxSnippetPinned" type="checkbox"/>
             <span>Pin to Top of Vault</span>
           </label>
-          <label class="flex items-center gap-1.5 cursor-pointer">
-            <input class="rounded border-slate-700 text-amber-500 focus:ring-0 bg-[#0b1326]" id="checkboxSnippetStarred" type="checkbox"/>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input class="rounded border-slate-700 text-amber-500 focus:ring-0 bg-[#0b1326] w-4 h-4" id="checkboxSnippetStarred" type="checkbox"/>
             <span>Favorite / Star</span>
           </label>
         </div>
 
         <!-- Code Block (Required) -->
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-2">
           <div class="flex items-center justify-between">
-            <label class="font-label-mono-sm text-xs text-[#94a3b8]" for="textareaSnippetCode">Code Body * (Required)</label>
+            <label class="font-label-mono-sm text-xs text-[#94a3b8] font-medium" for="textareaSnippetCode">Code Body * (Required)</label>
             <span class="font-label-mono-sm text-[11px] text-[#64748b]">Monospace Editor</span>
           </div>
-          <textarea class="w-full h-44 bg-[#060e20] border border-[#1e293b] rounded-lg p-3 font-code-block text-xs text-[#cbd5e1] focus:outline-none focus:border-emerald-500/60 leading-relaxed" id="textareaSnippetCode" placeholder="// Enter complete snippet implementation here..." required></textarea>
+          <textarea class="w-full h-48 bg-[#060e20] border border-[#1e293b] rounded-xl p-4 font-code-block text-xs md:text-sm text-[#cbd5e1] focus:outline-none focus:border-emerald-500/60 leading-relaxed shadow-inner" id="textareaSnippetCode" placeholder="// Enter complete snippet implementation here..." required></textarea>
         </div>
 
         <!-- Modal Footer Actions -->
-        <div class="pt-3 border-t border-[#1e293b] flex items-center justify-end gap-2">
-          <button class="px-4 py-2 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1e293b] text-xs font-semibold" id="btnCancelSnippetModal" type="button">Cancel</button>
-          <button class="px-5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs shadow-[0_0_15px_rgba(16,185,129,0.3)]" type="submit">Save Snippet</button>
+        <div class="pt-4 border-t border-[#1e293b] flex items-center justify-end gap-3">
+          <button class="px-5 py-2.5 rounded-xl bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1e293b] text-xs font-semibold transition-colors" id="btnCancelSnippetModal" type="button">Cancel</button>
+          <button class="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all" type="submit">Save Snippet</button>
         </div>
       </form>
     </div>
@@ -1369,55 +1379,55 @@ Peak RSS: 4.2 MB.
 
   <!-- 2. Delete Confirmation Modal -->
   <div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" id="modalDelete">
-    <div class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-2xl w-full max-w-md p-5 flex flex-col gap-3">
-      <div class="w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center">
-        <span class="material-symbols-outlined text-xl">delete_forever</span>
+    <div class="bg-[#131b2e] border border-[#1e293b] rounded-3xl shadow-2xl w-full max-w-md p-7 flex flex-col gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center shadow-inner">
+        <span class="material-symbols-outlined text-2xl">delete_forever</span>
       </div>
-      <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">Delete Snippet?</h3>
-      <p class="text-xs text-[#94a3b8]">Are you sure you want to delete <strong class="text-white" id="deleteSnippetTitleText">this snippet</strong>? This operation cannot be undone.</p>
-      <div class="pt-3 flex items-center justify-end gap-2">
-        <button class="px-3 py-1.5 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] text-xs font-semibold" id="btnCancelDelete">Cancel</button>
-        <button class="px-4 py-1.5 rounded-lg bg-rose-500 hover:bg-rose-600 text-white font-semibold text-xs" id="btnConfirmDelete">Delete</button>
+      <h3 class="font-headline-sm text-lg text-[#dae2fd] font-semibold">Delete Snippet?</h3>
+      <p class="text-xs md:text-sm text-[#94a3b8] leading-relaxed">Are you sure you want to delete <strong class="text-white" id="deleteSnippetTitleText">this snippet</strong>? This operation cannot be undone.</p>
+      <div class="pt-4 border-t border-[#1e293b] flex items-center justify-end gap-3">
+        <button class="px-4 py-2 rounded-xl bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] text-xs font-semibold hover:bg-[#1e293b] transition-colors" id="btnCancelDelete">Cancel</button>
+        <button class="px-5 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-semibold text-xs shadow-lg transition-colors" id="btnConfirmDelete">Delete</button>
       </div>
     </div>
   </div>
 
   <!-- 3. Edit Learning Notes Quick Modal -->
   <div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" id="modalEditNotes">
-    <div class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-2xl w-full max-w-lg p-5 flex flex-col gap-3">
-      <div class="flex items-center justify-between pb-2 border-b border-[#1e293b]">
-        <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-base text-amber-400">menu_book</span>
-          <h3 class="font-headline-sm text-sm text-[#dae2fd] font-semibold">Update Learning Notes</h3>
+    <div class="bg-[#131b2e] border border-[#1e293b] rounded-3xl shadow-2xl w-full max-w-lg p-7 flex flex-col gap-4">
+      <div class="flex items-center justify-between pb-3 border-b border-[#1e293b]">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-lg text-amber-400">menu_book</span>
+          <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">Update Learning Notes</h3>
         </div>
-        <button class="p-1 rounded text-[#94a3b8] hover:text-[#dae2fd]" id="btnCloseEditNotes">
-          <span class="material-symbols-outlined text-sm">close</span>
+        <button class="p-1.5 rounded-xl text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] transition-colors" id="btnCloseEditNotes">
+          <span class="material-symbols-outlined text-base">close</span>
         </button>
       </div>
-      <p class="text-xs text-[#94a3b8]">Record what you learned from this pattern, key edge-case gotchas, or how to adapt it for future homework/projects.</p>
-      <textarea class="w-full h-36 bg-[#0b1326] border border-[#1e293b] rounded-lg p-3 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 leading-relaxed placeholder-[#64748b]" id="textareaQuickLearningNotes" placeholder="Record your learning notes here..."></textarea>
-      <div class="flex items-center justify-end gap-2 pt-1">
-        <button class="px-3 py-1.5 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] text-xs font-semibold" id="btnCancelEditNotes">Cancel</button>
-        <button class="px-4 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs" id="btnSaveQuickLearningNotes">Save Notes</button>
+      <p class="text-xs md:text-sm text-[#94a3b8] leading-relaxed">Record what you learned from this pattern, key edge-case gotchas, or how to adapt it for future homework/projects.</p>
+      <textarea class="w-full h-40 bg-[#0b1326] border border-[#1e293b] rounded-2xl p-4 text-xs md:text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 leading-relaxed placeholder-[#64748b] shadow-inner" id="textareaQuickLearningNotes" placeholder="Record your learning notes here..."></textarea>
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button class="px-4 py-2 rounded-xl bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] text-xs font-semibold hover:bg-[#1e293b] transition-colors" id="btnCancelEditNotes">Cancel</button>
+        <button class="px-5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs shadow-lg transition-colors" id="btnSaveQuickLearningNotes">Save Notes</button>
       </div>
     </div>
   </div>
 
   <!-- 4. Add Invariant Annotation Modal -->
   <div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" id="modalAnnotation">
-    <div class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-2xl w-full max-w-md p-5 flex flex-col gap-3">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-sm text-primary">edit_note</span>
-          <h3 class="font-headline-sm text-sm text-[#dae2fd] font-semibold">Attach Invariant Annotation</h3>
+    <div class="bg-[#131b2e] border border-[#1e293b] rounded-3xl shadow-2xl w-full max-w-md p-7 flex flex-col gap-4">
+      <div class="flex items-center justify-between pb-3 border-b border-[#1e293b]">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-base text-primary">edit_note</span>
+          <h3 class="font-headline-sm text-base text-[#dae2fd] font-semibold">Attach Invariant Annotation</h3>
         </div>
-        <span class="font-label-mono-sm text-xs text-primary" id="annotationLineNumBadge">Line 18</span>
+        <span class="font-label-mono-sm text-xs text-primary px-2 py-0.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 font-semibold" id="annotationLineNumBadge">Line 18</span>
       </div>
       <input type="hidden" id="annotationTargetLine"/>
-      <textarea class="w-full h-24 bg-[#0b1326] border border-[#1e293b] rounded-lg p-2.5 text-xs text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 placeholder-[#64748b]" id="textareaAnnotationText" placeholder="Record your invariant proof note, edge-case check, or exam reminder..."></textarea>
-      <div class="flex items-center justify-end gap-2 pt-1">
-        <button class="px-3 py-1.5 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] text-xs font-semibold" id="btnCancelAnnotation">Cancel</button>
-        <button class="px-4 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs" id="btnSaveAnnotation">Save Annotation</button>
+      <textarea class="w-full h-28 bg-[#0b1326] border border-[#1e293b] rounded-2xl p-3.5 text-xs md:text-sm text-[#dae2fd] focus:outline-none focus:border-emerald-500/60 placeholder-[#64748b] leading-relaxed shadow-inner" id="textareaAnnotationText" placeholder="Record your invariant proof note, edge-case check, or exam reminder..."></textarea>
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button class="px-4 py-2 rounded-xl bg-[#0b1326] border border-[#1e293b] text-[#cbd5e1] text-xs font-semibold hover:bg-[#1e293b] transition-colors" id="btnCancelAnnotation">Cancel</button>
+        <button class="px-5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs shadow-lg transition-colors" id="btnSaveAnnotation">Save Annotation</button>
       </div>
     </div>
   </div>

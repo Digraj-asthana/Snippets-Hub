@@ -61,10 +61,45 @@
 .code-canvas {
   background: #060e20;
   border: 1px solid #1e293b;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.75;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Spacious Container & Section Layouts */
+.section-spacious {
+  padding: 2.5rem 1.5rem;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .section-spacious {
+    padding: 3.5rem 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-spacious {
+    padding: 4.5rem 3.5rem;
+  }
+}
+
+.card-spacious {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+}
+@media (min-width: 768px) {
+  .card-spacious {
+    padding: 2.25rem;
+  }
+}
+
+/* Typography line heights */
+.text-spacious {
+  line-height: 1.8;
+  letter-spacing: 0.01em;
 }
 
 /* Syntax Highlighting Tokens */
