@@ -1344,7 +1344,7 @@ function loadSocraticChat(snippet) {
       },
       {
         sender: 'mentor',
-        author: 'Stanford Algorithmic Mentor',
+        author: 'Algorithmic Mentor • GL Bajaj CSAI',
         role: 'CS TA Bot',
         text: `Great question. When studying ${snippet.title}, verify the 3 foundational pillars:
 1. Base Anchor: Check initial setup on empty or zero-bound inputs.
@@ -1473,7 +1473,7 @@ function setupSocraticInput(snippet) {
         const sol = data.data;
         STATE.socraticChat.push({
           sender: 'mentor',
-          author: sol.title || 'Stanford Algorithmic Mentor',
+          author: sol.title || 'Algorithmic Mentor • GL Bajaj CSAI',
           role: 'CS TA Bot',
           text: sol.approach || sol.response || 'Analyzing invariant boundaries...',
           hints: sol.progressiveHints || [],
@@ -1855,6 +1855,9 @@ function setupEventListeners() {
 
   if (globalSearch) {
     globalSearch.addEventListener('input', (e) => {
+      if (STATE.currentView !== 'snippets') {
+        switchView('snippets');
+      }
       if (explorerSearch) explorerSearch.value = e.target.value;
       onSearch(e.target.value);
     });
@@ -2264,7 +2267,7 @@ function setupSettingsActions() {
 
   if (btnReset) {
     btnReset.onclick = async () => {
-      if (confirm('Are you sure you want to restore Snippets Hub to Stanford CS curriculum defaults?')) {
+      if (confirm('Are you sure you want to restore Snippets Hub to curriculum defaults?')) {
         try {
           const res = await fetch('/api/reset', { method: 'POST' });
           const data = await res.json();
