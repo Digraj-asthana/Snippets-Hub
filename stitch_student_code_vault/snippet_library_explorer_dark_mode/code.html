@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#0b1326", "on-secondary-fixed": "#00201c", "surface-dim": "#0b1326", "primary-fixed": "#6ffbbe", "on-tertiary": "#472a00", "on-error-container": "#ffdad6", "outline": "#86948a", "outline-variant": "#1e293b", "primary-container": "#10b981", "surface-container-lowest": "#060e20", "on-tertiary-fixed": "#2a1700", "error-container": "#93000a", "surface-bright": "#31394d", "tertiary-fixed-dim": "#ffb95f", "secondary-fixed-dim": "#4fdbc8", "surface-tint": "#4edea3", "on-primary-fixed": "#002113", "on-secondary-fixed-variant": "#005048", "on-secondary": "#003731", "on-error": "#690005", "secondary-fixed": "#71f8e4", "primary-fixed-dim": "#4edea3", "primary": "#4edea3", "tertiary-fixed": "#ffddb8", "on-primary-fixed-variant": "#005236", "inverse-on-surface": "#283044", "on-primary-container": "#00422b", "tertiary-container": "#e29100", "surface-variant": "#2d3449", "on-background": "#dae2fd", "inverse-surface": "#dae2fd", "on-tertiary-container": "#523200", "surface-container-high": "#222a3d", "secondary-container": "#04b4a2", "inverse-primary": "#006c49", "on-tertiary-fixed-variant": "#653e00", "tertiary": "#ffb95f", "surface-container": "#171f33", "on-surface": "#dae2fd", "error": "#ffb4ab", "surface-container-low": "#131b2e", "on-surface-variant": "#94a3b8", "surface-container-highest": "#2d3449", "secondary": "#4fdbc8", "background": "#0b1326", "on-secondary-container": "#003f38", "on-primary": "#003824" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-desktop": "1.5rem", "space-sm": "0.5rem", "space-lg": "1.25rem", "space-md": "0.75rem", "space-xs": "0.25rem", "margin": "1rem", "margin-desktop": "2rem", "space-xl": "2rem", "gutter": "1rem" }, "fontFamily": { "code-block": [ "JetBrains Mono" ], "headline-xl": [ "Inter" ], "body-lg": [ "Inter" ], "body-sm": [ "Inter" ], "headline-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "label-mono-md": [ "JetBrains Mono" ], "headline-xl-mobile": [ "Inter" ], "body-md": [ "Inter" ], "headline-lg": [ "Inter" ] }, "fontSize": { "code-block": [ "12.5px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-xl": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "label-mono-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "label-mono-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-xl-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-[#0b1326] font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-[#0f172a] border-r border-[#1e293b] z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_4px_24px_rgba(0,0,0,0.5)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="SyntaxVault Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VdFmiqRNKjjupt42OnkIV3Y-NUZhNbG9stH862c0jGJTJp9dRtXzuaZxevuoYBS6WxbqiBRRScUUAwx6mW-ctonXAIyLIkbHvpNVeIKnbCKbpX0bO6KkQE6sWFAd3U3gWSTOVeF5XbXucIJwFFhkxm_tVf8OZYUEOfkWCWiR1s1xFravaquffYCMfi2nGQfYdER4kqqbl_23jeHy6dK_wW57EvaAH5sD4pJFhJ8jWShrI9PI7jq9ZaglD0"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-[#dae2fd] tracking-tight">SyntaxVault</span><span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] tracking-widest text-[10px]">STUDENT WORKBENCH</span></div></div><div class="px-space-md mb-space-md"><div class="bg-[#131b2e] border border-[#1e293b] p-space-xs rounded-lg flex items-center gap-space-xs text-[#94a3b8]"><span class="material-symbols-outlined text-sm text-emerald-400">terminal</span><span class="font-label-mono-sm text-label-mono-sm text-[#dae2fd] font-medium">vault: ~/stanford-cs</span></div></div><nav class="flex-1 px-space-md flex flex-col gap-space-xs overflow-y-auto" data-active-classes="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold"><div class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-[#64748b] uppercase tracking-wider text-[10px]">Workspace</div><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-colors bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-medium" data-path="snippets" href="#"><span class="material-symbols-outlined text-base text-emerald-400">folder_code</span><span class="font-body-md text-body-md">Snippets</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] transition-colors" data-path="ai-studio" href="#"><span class="material-symbols-outlined text-base">psychology</span><span class="font-body-md text-body-md">AI Studio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] transition-colors" data-path="translate" href="#"><span class="material-symbols-outlined text-base">compare_arrows</span><span class="font-body-md text-body-md">Translate</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] transition-colors" data-path="new-snippet" href="#"><span class="material-symbols-outlined text-base">edit_document</span><span class="font-body-md text-body-md">New Snippet</span></a><div class="mt-space-md px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-[#64748b] uppercase tracking-wider text-[10px]">System</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1e293b]/70 hover:text-[#dae2fd] transition-colors" data-path="settings-sync" href="#"><span class="material-symbols-outlined text-base">sync_saved_locally</span><span class="font-body-md text-body-md">Settings &amp; Sync</span></a></nav><div class="px-space-md pt-space-md bg-[#0f172a]"><div class="p-space-sm rounded-lg bg-[#131b2e] border border-[#1e293b] flex items-center justify-between"><div class="flex flex-col"><span class="font-label-mono-sm text-label-mono-sm text-[#dae2fd] font-semibold">Local SQLite</span><span class="font-label-mono-sm text-label-mono-sm text-emerald-400">Synced 2m ago</span></div><span class="material-symbols-outlined text-emerald-400 text-base">cloud_done</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-[#0b1326]/90 backdrop-blur-xl border-b border-[#1e293b] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center bg-[#131b2e] border border-[#1e293b] px-space-md py-space-xs rounded-lg gap-space-sm text-[#94a3b8] w-80 focus-within:border-emerald-500/50 transition-colors"><span class="material-symbols-outlined text-sm">search</span><span class="font-body-sm text-body-sm text-[#94a3b8]">Search snippets, proofs, algorithms...</span><kbd class="ml-auto font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-[#1e293b] rounded text-[#94a3b8] border border-slate-700">⌘K</kbd></div><span class="font-label-mono-sm text-label-mono-sm px-space-xs py-0.5 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">Student Edition</span></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs bg-emerald-500 text-slate-950 font-semibold font-body-md text-body-md px-space-md py-space-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.3)]" data-path="new-snippet" href="#"><span class="material-symbols-outlined text-sm font-bold">add</span><span>New Snippet</span></a><button class="p-space-xs rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors relative border border-[#1e293b]" type="button"><span class="material-symbols-outlined text-base">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-[#0b1326]"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-[#334155]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCilZLUGfEQbGJjuf3C_51OayyIy0EcHyis2v0UhrPgRqJYZS2JUQ6y8QrJgo3SOi1RXgm86Q3K3tD-uVbNbsSpzVA-UQg6MNJwR-wJrisAFoT17CK2z20VkkYxBNkUY83JP9e9de9kmedfbkI-YI5PcMv2M-z_xNpdda5Ben3GfqFcQUGTHfxva_TFmv8Y6Co5xbJeZuwpVSbwVtHHRHUns9hokxXIv3ReLhNeG3_FB-51YUlOQVrVew"/><div class="flex flex-col text-left leading-tight"><span class="font-body-sm text-body-sm font-semibold text-[#dae2fd]">Maya Lin</span><span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">CS Major @ Stanford</span></div></div></div></header><main class="relative pt-16 bg-[#0b1326] min-h-screen"><div class="flex flex-col w-full">
+<!-- Workbench Main Content Pane: Split Layout -->
+<div class="flex flex-col xl:flex-row gap-gutter-desktop p-gutter-desktop min-w-0">
+<!-- Left Taxonomic Hierarchy / Filter Ledger (Sticky on Desktop) -->
+<aside class="w-full xl:w-72 flex-shrink-0 flex flex-col gap-space-lg">
+<!-- Vault Status & Storage Meter Card -->
+<div class="bg-[#131b2e] border border-[#1e293b] p-space-md rounded-xl shadow-lg flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#dae2fd] uppercase tracking-wider font-semibold">Ledger Quota</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-amber-400 font-medium">142 / 500</span>
+</div>
+<!-- Minimal Progress Bar -->
+<div class="w-full bg-[#1e293b] h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full transition-all duration-500" style="width: 28.4%"></div>
+</div>
+<div class="flex items-center justify-between text-[#94a3b8] pt-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm">28.4% capacity</span>
+<span class="font-label-mono-sm text-label-mono-sm text-emerald-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">sync</span> 2m ago
+          </span>
+</div>
+</div>
+<!-- Filter Controls: Courses, Languages, Taxonomy Tags -->
+<div class="bg-[#131b2e] border border-[#1e293b] p-space-lg rounded-xl shadow-lg flex flex-col gap-space-lg">
+<!-- Courses / Collections -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider">Courses &amp; Registries</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">5</span>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-medium transition-colors" href="#">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-sm text-emerald-400">menu_book</span>
+                CS 106B: Data Structures
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-[#0b1326] text-emerald-300 border border-emerald-500/20">48</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" href="#">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-sm text-[#94a3b8]">account_tree</span>
+                CS 161: Algorithms
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-[#0b1326] text-[#94a3b8]">36</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" href="#">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-sm text-[#94a3b8]">memory</span>
+                CS 110: Systems
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-[#0b1326] text-[#94a3b8]">22</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" href="#">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-sm text-amber-400">code_blocks</span>
+                LeetCode &amp; Interviews
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-[#0b1326] text-[#94a3b8]">27</span>
+</a>
+<a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" href="#">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-sm text-teal-400">terminal</span>
+                Personal Web Projects
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded bg-[#0b1326] text-[#94a3b8]">9</span>
+</a>
+</div>
+</div>
+<!-- Languages Breakdown -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider">Dialect / Language</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">71 items</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5">
+<button class="flex items-center justify-between px-space-sm py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] hover:border-slate-600 transition-colors" type="button">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Python
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">24</span>
+</button>
+<button class="flex items-center justify-between px-space-sm py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] hover:border-slate-600 transition-colors" type="button">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>C++
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">18</span>
+</button>
+<button class="flex items-center justify-between px-space-sm py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] hover:border-slate-600 transition-colors" type="button">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>TypeScript
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">15</span>
+</button>
+<button class="flex items-center justify-between px-space-sm py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] hover:border-slate-600 transition-colors" type="button">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Rust
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">6</span>
+</button>
+<button class="flex items-center justify-between px-space-sm py-1 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] hover:border-slate-600 transition-colors col-span-2" type="button">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>SQL (Postgres &amp; SQLite)
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">8</span>
+</button>
+</div>
+</div>
+<!-- Quick Tags Filter Cloud -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-[#dae2fd] font-semibold uppercase tracking-wider">Algorithmic Taxonomy</span>
+<button class="font-label-mono-sm text-label-mono-sm text-emerald-400 hover:underline">Reset</button>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] font-label-mono-sm text-label-mono-sm cursor-pointer hover:bg-slate-700 transition-colors border border-slate-700">
+              #recursion
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-label-mono-sm text-label-mono-sm cursor-pointer">
+              #graph-traversal <span class="material-symbols-outlined text-xs">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] font-label-mono-sm text-label-mono-sm cursor-pointer hover:bg-slate-700 transition-colors border border-slate-700">
+              #dynamic-programming
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] font-label-mono-sm text-label-mono-sm cursor-pointer hover:bg-slate-700 transition-colors border border-slate-700">
+              #concurrency
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] font-label-mono-sm text-label-mono-sm cursor-pointer hover:bg-slate-700 transition-colors border border-slate-700">
+              #fast-io
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] font-label-mono-sm text-label-mono-sm cursor-pointer hover:bg-slate-700 transition-colors border border-slate-700">
+              #two-pointers
+            </span>
+</div>
+</div>
+<!-- Visual Analytics: Activity & Distribution Sparkline -->
+<div class="bg-[#0b1326] border border-[#1e293b] p-space-md rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-[#dae2fd]">
+<span class="font-label-mono-sm text-label-mono-sm font-semibold uppercase">Revision Velocity</span>
+<span class="font-label-mono-sm text-label-mono-sm text-emerald-400">+14 this week</span>
+</div>
+<!-- Sparkline SVG -->
+<div class="h-10 w-full flex items-end">
+<svg class="w-full h-8 text-emerald-400" fill="none" viewbox="0 0 120 30">
+<path d="M0,24 Q10,20 20,22 T40,12 T60,18 T80,8 T100,14 T120,4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0,24 Q10,20 20,22 T40,12 T60,18 T80,8 T100,14 T120,4 L120,30 L0,30 Z" fill="currentColor" fill-opacity="0.18"></path>
+</svg>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">Midterm revision peak active</span>
+</div>
+</div>
+<!-- Quick Vault Export Action -->
+<button class="w-full py-space-sm px-space-md rounded-lg bg-[#131b2e] border border-[#1e293b] text-[#dae2fd] font-body-sm text-body-sm hover:bg-[#1e293b] hover:border-slate-600 transition-colors flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-sm text-emerald-400">download</span>
+<span>Dump Collection as Markdown</span>
+</button>
+</aside>
+<!-- Main Explorer Section -->
+<section class="flex-1 min-w-0 flex flex-col gap-space-lg">
+<!-- Workbench Header: Filter strip, semantic search, display switches -->
+<div class="bg-[#131b2e] border border-[#1e293b] p-space-lg rounded-xl shadow-lg flex flex-col gap-space-md">
+<!-- Upper Header Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-baseline gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-[#dae2fd] tracking-tight">All Snippets</h1>
+<span class="font-label-mono-md text-label-mono-md text-[#94a3b8]">142 total assets</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Sort dropdown mockup -->
+<div class="flex items-center bg-[#0b1326] border border-[#1e293b] px-space-md py-1.5 rounded-lg text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm mr-1">Sort:</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#dae2fd]">Recently Modified</span>
+<span class="material-symbols-outlined text-sm ml-1 text-[#94a3b8]">expand_more</span>
+</div>
+<!-- View toggle: Grid vs Table -->
+<div class="flex items-center bg-[#0b1326] border border-[#1e293b] p-0.5 rounded-lg">
+<button class="px-2.5 py-1 rounded bg-[#1e293b] text-emerald-400 shadow-xs flex items-center gap-1 border border-slate-700/60" title="Grid View" type="button">
+<span class="material-symbols-outlined text-base">grid_view</span>
+<span class="font-label-mono-sm text-label-mono-sm font-semibold hidden sm:inline">Grid</span>
+</button>
+<button class="px-2.5 py-1 rounded text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1" title="Table View" type="button">
+<span class="material-symbols-outlined text-base">table_rows</span>
+<span class="font-label-mono-sm text-label-mono-sm hidden sm:inline">List</span>
+</button>
+</div>
+<button class="p-2 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#94a3b8] hover:text-[#dae2fd] hover:bg-[#1e293b] transition-colors" title="Reload Vault" type="button">
+<span class="material-symbols-outlined text-base">refresh</span>
+</button>
+</div>
+</div>
+<!-- Prominent Semantic Search Input Field -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-space-md flex items-center pointer-events-none text-[#94a3b8]">
+<span class="material-symbols-outlined text-lg text-emerald-400">search_insights</span>
+</div>
+<input class="w-full bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] font-body-md text-body-md pl-10 pr-24 py-space-sm rounded-lg placeholder-[#64748b] focus:outline-none focus:border-emerald-500/60 transition-colors shadow-inner" placeholder='Search snippets by code, comment, syntax, or plain English concept (e.g. "binary search tree rebalancing")...' type="text" value=""/>
+<div class="absolute inset-y-0 right-0 pr-space-md flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded shadow-xs">⌥ Semantics</span>
+<kbd class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] bg-[#1e293b] px-1.5 py-0.5 rounded border border-slate-700">⌘K</kbd>
+</div>
+</div>
+<!-- Language Pill Filter Row -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm uppercase text-[#64748b] mr-1 flex-shrink-0 text-[11px]">Filter:</span>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-emerald-500 text-slate-950 font-semibold whitespace-nowrap shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+            All (142)
+          </button>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors">
+            Python (24)
+          </button>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors">
+            C++ (18)
+          </button>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors">
+            TypeScript (15)
+          </button>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors">
+            Rust (6)
+          </button>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors">
+            SQL (8)
+          </button>
+<button class="px-3 py-1 rounded-full font-label-mono-sm text-label-mono-sm bg-[#0b1326] border border-[#1e293b] hover:border-slate-600 text-[#dae2fd] whitespace-nowrap transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">add</span> Custom Query
+          </button>
+</div>
+</div>
+<!-- Snippet Cards Grid (High Fidelity Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop min-w-0">
+<!-- CARD 1: Pinned Python LRU Cache (Full Width Feature Card) -->
+<article class="col-span-1 md:col-span-2 bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-space-lg flex flex-col gap-space-md transition-all hover:border-slate-600/70">
+<!-- Card Header & Metadata -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-label-mono-sm text-label-mono-sm font-semibold">
+<span class="material-symbols-outlined text-xs">push_pin</span> PINNED ARCHIVE
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-label-mono-sm">
+                Python 3.11
+              </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">schedule</span> CS 106B • Updated 4h ago
+              </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 font-label-mono-sm text-label-mono-sm font-semibold">
+                Time: O(1) avg
+              </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] text-[#94a3b8] font-label-mono-sm text-label-mono-sm">
+                Space: O(capacity)
+              </span>
+<button class="p-1 rounded text-amber-400 hover:bg-[#1e293b] transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-base">star</span>
+</button>
+</div>
+</div>
+<!-- Snippet Title & Plain English Rationale -->
+<div class="flex flex-col gap-0.5">
+<h2 class="font-headline-sm text-headline-sm text-[#dae2fd] font-semibold flex items-center gap-space-xs">
+<span>LRU Cache with Doubly Linked List &amp; Hash Map</span>
+</h2>
+<p class="font-body-sm text-body-sm text-[#94a3b8]">
+              Guarantees strict constant time amortized operations for <code class="bg-[#0b1326] border border-[#1e293b] px-1 py-0.5 rounded font-label-mono-sm text-emerald-300">get()</code> and <code class="bg-[#0b1326] border border-[#1e293b] px-1 py-0.5 rounded font-label-mono-sm text-emerald-300">put()</code> by pinning sentinel nodes to head and tail.
+            </p>
+</div>
+<!-- Code Snippet Sunken Canvas -->
+<div class="bg-[#060e20] border border-[#1e293b] rounded-lg overflow-hidden flex flex-col font-code-block text-code-block shadow-inner">
+<div class="bg-[#0b1326] border-b border-[#1e293b] px-space-md py-1.5 flex items-center justify-between text-[#94a3b8]">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] ml-2">lru_cache.py</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-[#64748b]">38 lines</span>
+<button class="text-[#94a3b8] hover:text-[#dae2fd] flex items-center gap-1 font-label-mono-sm text-label-mono-sm" title="Copy code to clipboard">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy
+                </button>
+</div>
+</div>
+<div class="p-space-md overflow-x-auto leading-relaxed select-all text-slate-200">
+<pre class="m-0"><span class="text-[#475569]">01</span>  <span class="text-amber-400 font-semibold">class</span> <span class="text-emerald-300">Node</span>:
+<span class="text-[#475569]">02</span>      <span class="text-amber-400 font-semibold">def</span> <span class="text-emerald-300">__init__</span>(self, key: <span class="text-teal-300">int</span>, val: <span class="text-teal-300">int</span>):
+<span class="text-[#475569]">03</span>          self.key, self.val = key, val
+<span class="text-[#475569]">04</span>          self.prev = self.next = <span class="text-teal-300">None</span>
+<span class="text-[#475569]">05</span>  
+<span class="text-[#475569]">06</span>  <span class="text-amber-400 font-semibold">class</span> <span class="text-emerald-300">LRUCache</span>:
+<span class="text-[#475569]">07</span>      <span class="text-amber-400 font-semibold">def</span> <span class="text-emerald-300">__init__</span>(self, capacity: <span class="text-teal-300">int</span>):
+<span class="text-[#475569]">08</span>          self.cap, self.cache = capacity, {}
+<span class="text-[#475569]">09</span>          self.head, self.tail = Node(<span class="text-amber-300">0</span>, <span class="text-amber-300">0</span>), Node(<span class="text-amber-300">0</span>, <span class="text-amber-300">0</span>)
+<span class="text-[#475569]">10</span>          self.head.next, self.tail.prev = self.tail, self.head
+<span class="text-[#475569]">11</span>  
+<span class="text-[#475569]">12</span>      <span class="text-amber-400 font-semibold">def</span> <span class="text-emerald-300">get</span>(self, key: <span class="text-teal-300">int</span>) -&gt; <span class="text-teal-300">int</span>:
+<span class="text-[#475569]">13</span>          <span class="text-amber-400 font-semibold">if</span> key <span class="text-amber-400 font-semibold">in</span> self.cache:
+<span class="text-[#475569]">14</span>              self._remove(self.cache[key])
+<span class="text-[#475569]">15</span>              self._insert(self.cache[key])
+<span class="text-[#475569]">16</span>              <span class="text-amber-400 font-semibold">return</span> self.cache[key].val
+<span class="text-[#475569]">17</span>          <span class="text-amber-400 font-semibold">return</span> -<span class="text-amber-300">1</span></pre>
+</div>
+</div>
+<!-- Bottom Card Footer & Action Toolbar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#data-structures</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#systems</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#medium</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#hash-map</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-semibold font-body-sm text-body-sm hover:bg-emerald-400 transition-colors flex items-center gap-1 shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+<span class="material-symbols-outlined text-sm font-bold">psychology</span>
+<span>Explain with AI</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-[#0b1326] border border-[#1e293b] text-[#dae2fd] font-body-sm text-body-sm hover:bg-[#1e293b] hover:border-slate-600 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-teal-400">compare_arrows</span>
+<span>Translate (C++)</span>
+</button>
+<button class="p-1.5 rounded-lg text-[#94a3b8] hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" title="Snippet Menu">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 2: C++ Dijkstra's Shortest Path -->
+<article class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-space-lg flex flex-col justify-between gap-space-md transition-all hover:border-slate-600/70">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 font-label-mono-sm text-label-mono-sm">
+                  C++20
+                </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">CS 161</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-label-mono-sm text-label-mono-sm font-semibold">
+                  O((V + E) log V)
+                </span>
+<button class="p-1 rounded text-amber-400 transition-colors" title="Star snippet">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#dae2fd] font-semibold">Dijkstra's Shortest Path with Min-Priority Queue</h2>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                Adjacency-list formulation using <code class="bg-[#0b1326] border border-[#1e293b] px-1 py-0.5 rounded font-label-mono-sm text-emerald-300">std::greater</code> comparator over a min-heap.
+              </p>
+</div>
+<!-- Code Preview -->
+<div class="bg-[#060e20] border border-[#1e293b] rounded-lg p-space-md font-code-block text-code-block overflow-x-auto shadow-inner text-slate-200">
+<pre class="m-0"><span class="text-[#475569]">01</span>  <span class="text-amber-400 font-semibold">priority_queue</span>&lt;pair&lt;<span class="text-teal-300">int</span>, <span class="text-teal-300">int</span>&gt;, 
+<span class="text-[#475569]">02</span>                 vector&lt;pair&lt;<span class="text-teal-300">int</span>, <span class="text-teal-300">int</span>&gt;&gt;, 
+<span class="text-[#475569]">03</span>                 greater&lt;pair&lt;<span class="text-teal-300">int</span>, <span class="text-teal-300">int</span>&gt;&gt;&gt; pq;
+<span class="text-[#475569]">04</span>  pq.push({<span class="text-amber-300">0</span>, src}); dist[src] = <span class="text-amber-300">0</span>;
+<span class="text-[#475569]">05</span>  <span class="text-amber-400 font-semibold">while</span> (!pq.empty()) {
+<span class="text-[#475569]">06</span>      <span class="text-amber-400 font-semibold">auto</span> [d, u] = pq.top(); pq.pop();
+<span class="text-[#475569]">07</span>      <span class="text-amber-400 font-semibold">if</span> (d &gt; dist[u]) <span class="text-amber-400 font-semibold">continue</span>;
+<span class="text-[#475569]">08</span>      <span class="text-amber-400 font-semibold">for</span> (<span class="text-amber-400 font-semibold">auto</span>&amp; [v, w] : adj[u]) { ...</pre>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-none">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#graph</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#algorithms</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#greedy</span>
+</div>
+<div class="flex items-center gap-space-xs text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm">42 lines</span>
+<button class="p-1 rounded hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" title="Copy code">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 3: TypeScript Debounce & Throttle Hook -->
+<article class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-space-lg flex flex-col justify-between gap-space-md transition-all hover:border-slate-600/70">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-label-mono-sm">
+                  TypeScript 5.2
+                </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">Personal Projects</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] text-teal-300 font-label-mono-sm text-label-mono-sm">
+                  O(1)
+                </span>
+<button class="p-1 rounded text-[#94a3b8] hover:text-amber-400 transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-base">star_outline</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#dae2fd] font-semibold">Debounce &amp; Throttle Hook Implementation</h2>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                Type-safe React hooks handling cleanup timers, leading/trailing execution flags.
+              </p>
+</div>
+<!-- Code Preview -->
+<div class="bg-[#060e20] border border-[#1e293b] rounded-lg p-space-md font-code-block text-code-block overflow-x-auto shadow-inner text-slate-200">
+<pre class="m-0"><span class="text-[#475569]">01</span>  <span class="text-amber-400 font-semibold">export function</span> <span class="text-emerald-300">useDebounce</span>&lt;T&gt;(val: T, delay: <span class="text-teal-300">number</span>): T {
+<span class="text-[#475569]">02</span>    <span class="text-amber-400 font-semibold">const</span> [debounced, setDebounced] = useState&lt;T&gt;(val);
+<span class="text-[#475569]">03</span>    useEffect(() =&gt; {
+<span class="text-[#475569]">04</span>      <span class="text-amber-400 font-semibold">const</span> handler = setTimeout(() =&gt; setDebounced(val), delay);
+<span class="text-[#475569]">05</span>      <span class="text-amber-400 font-semibold">return</span> () =&gt; clearTimeout(handler);
+<span class="text-[#475569]">06</span>    }, [val, delay]);
+<span class="text-[#475569]">07</span>    <span class="text-amber-400 font-semibold">return</span> debounced;
+<span class="text-[#475569]">08</span>  }</pre>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#web-dev</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#react</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#hooks</span>
+</div>
+<div class="flex items-center gap-space-xs text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm">29 lines</span>
+<button class="p-1 rounded hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" title="Copy code">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 4: C++ Fast I/O & Modular Arithmetic Template -->
+<article class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-space-lg flex flex-col justify-between gap-space-md transition-all hover:border-slate-600/70">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 font-label-mono-sm text-label-mono-sm">
+                  C++20
+                </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">LeetCode &amp; Prep</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-label-mono-sm text-label-mono-sm font-semibold">
+                  O(log MOD)
+                </span>
+<button class="p-1 rounded text-[#94a3b8] hover:text-amber-400 transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-base">star_outline</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#dae2fd] font-semibold">Fast I/O &amp; Modular Arithmetic Template</h2>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                Competitive programming snippet with fast stream untying, Fermat's Little Theorem modular inverse.
+              </p>
+</div>
+<!-- Code Preview -->
+<div class="bg-[#060e20] border border-[#1e293b] rounded-lg p-space-md font-code-block text-code-block overflow-x-auto shadow-inner text-slate-200">
+<pre class="m-0"><span class="text-[#475569]">01</span>  <span class="text-amber-400 font-semibold">auto</span> fast_io = []() {
+<span class="text-[#475569]">02</span>      ios_base::sync_with_stdio(<span class="text-amber-300">false</span>);
+<span class="text-[#475569]">03</span>      cin.tie(<span class="text-teal-300">nullptr</span>); cout.tie(<span class="text-teal-300">nullptr</span>);
+<span class="text-[#475569]">04</span>      <span class="text-amber-400 font-semibold">return</span> <span class="text-amber-300">0</span>;
+<span class="text-[#475569]">05</span>  }();
+<span class="text-[#475569]">06</span>  <span class="text-teal-300">long long</span> <span class="text-emerald-300">mod_pow</span>(<span class="text-teal-300">long long</span> b, <span class="text-teal-300">long long</span> e, <span class="text-teal-300">long long</span> m) {
+<span class="text-[#475569]">07</span>      <span class="text-teal-300">long long</span> r = <span class="text-amber-300">1</span>;
+<span class="text-[#475569]">08</span>      <span class="text-amber-400 font-semibold">while</span>(e &gt; <span class="text-amber-300">0</span>) { <span class="text-amber-400 font-semibold">if</span>(e &amp; <span class="text-amber-300">1</span>) r = (r * b) % m; b = (b * b) % m; e &gt;&gt;= <span class="text-amber-300">1</span>; }
+<span class="text-[#475569]">09</span>      <span class="text-amber-400 font-semibold">return</span> r;
+<span class="text-[#475569]">10</span>  }</pre>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#fast-io</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#math</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#competitive</span>
+</div>
+<div class="flex items-center gap-space-xs text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm">24 lines</span>
+<button class="p-1 rounded hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" title="Copy code">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 5: Python 0/1 Knapsack DP Table -->
+<article class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-space-lg flex flex-col justify-between gap-space-md transition-all hover:border-slate-600/70">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-label-mono-sm">
+                  Python 3.11
+                </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">CS 161</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-label-mono-sm text-label-mono-sm font-semibold">
+                  O(N × W)
+                </span>
+<button class="p-1 rounded text-[#94a3b8] hover:text-amber-400 transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-base">star_outline</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#dae2fd] font-semibold">0/1 Knapsack Bottom-Up DP Table</h2>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                Dynamic programming table builder with 1D memory compression state rollback.
+              </p>
+</div>
+<!-- Code Preview -->
+<div class="bg-[#060e20] border border-[#1e293b] rounded-lg p-space-md font-code-block text-code-block overflow-x-auto shadow-inner text-slate-200">
+<pre class="m-0"><span class="text-[#475569]">01</span>  <span class="text-amber-400 font-semibold">def</span> <span class="text-emerald-300">knapsack</span>(weights: list[<span class="text-teal-300">int</span>], values: list[<span class="text-teal-300">int</span>], W: <span class="text-teal-300">int</span>):
+<span class="text-[#475569]">02</span>      dp = [<span class="text-amber-300">0</span>] * (W + <span class="text-amber-300">1</span>)
+<span class="text-[#475569]">03</span>      <span class="text-amber-400 font-semibold">for</span> w_item, val <span class="text-amber-400 font-semibold">in</span> zip(weights, values):
+<span class="text-[#475569]">04</span>          <span class="text-amber-400 font-semibold">for</span> w <span class="text-amber-400 font-semibold">in</span> range(W, w_item - <span class="text-amber-300">1</span>, -<span class="text-amber-300">1</span>):
+<span class="text-[#475569]">05</span>              dp[w] = max(dp[w], dp[w - w_item] + val)
+<span class="text-[#475569]">06</span>      <span class="text-amber-400 font-semibold">return</span> dp[W]</pre>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#dynamic-programming</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#optimization</span>
+</div>
+<div class="flex items-center gap-space-xs text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm">18 lines</span>
+<button class="p-1 rounded hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" title="Copy code">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 6: Rust Thread-Safe Worker Pool -->
+<article class="bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg p-space-lg flex flex-col justify-between gap-space-md transition-all hover:border-slate-600/70">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-[#1e293b] text-[#dae2fd] border border-slate-700 font-label-mono-sm text-label-mono-sm">
+                  Rust 1.76
+                </span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">CS 110</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 font-label-mono-sm text-label-mono-sm font-semibold">
+                  Zero Alloc Queue
+                </span>
+<button class="p-1 rounded text-[#94a3b8] hover:text-amber-400 transition-colors" title="Bookmark">
+<span class="material-symbols-outlined text-base">star_outline</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#dae2fd] font-semibold">Thread-Safe Worker Pool with Channels</h2>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                Crossbeam bounded channel dispatch with graceful shutdown signals and RAII join guards.
+              </p>
+</div>
+<!-- Code Preview -->
+<div class="bg-[#060e20] border border-[#1e293b] rounded-lg p-space-md font-code-block text-code-block overflow-x-auto shadow-inner text-slate-200">
+<pre class="m-0"><span class="text-[#475569]">01</span>  <span class="text-amber-400 font-semibold">pub struct</span> <span class="text-emerald-300">ThreadPool</span> {
+<span class="text-[#475569]">02</span>      workers: Vec&lt;Worker&gt;,
+<span class="text-[#475569]">03</span>      sender: Option&lt;mpsc::Sender&lt;Job&gt;&gt;,
+<span class="text-[#475569]">04</span>  }
+<span class="text-[#475569]">05</span>  <span class="text-amber-400 font-semibold">impl</span> <span class="text-emerald-300">ThreadPool</span> {
+<span class="text-[#475569]">06</span>      <span class="text-amber-400 font-semibold">pub fn</span> <span class="text-emerald-300">execute</span>&lt;F&gt;(&amp;self, f: F) 
+<span class="text-[#475569]">07</span>      <span class="text-teal-300">where</span> F: FnOnce() + Send + <span class="text-amber-300">'static</span> {
+<span class="text-[#475569]">08</span>          <span class="text-amber-400 font-semibold">let</span> job = Box::new(f);
+<span class="text-[#475569]">09</span>          self.sender.as_ref().unwrap().send(job).unwrap();
+<span class="text-[#475569]">10</span>      }
+<span class="text-[#475569]">11</span>  }</pre>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#concurrency</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#systems</span>
+<span class="px-2 py-0.5 rounded bg-[#0b1326] border border-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#94a3b8]">#rust</span>
+</div>
+<div class="flex items-center gap-space-xs text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm">54 lines</span>
+<button class="p-1 rounded hover:bg-[#1e293b] hover:text-[#dae2fd] transition-colors" title="Copy code">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination / Vault Ledger Bottom Status -->
+<div class="flex items-center justify-between p-space-md bg-[#131b2e] border border-[#1e293b] rounded-xl shadow-lg text-[#94a3b8]">
+<span class="font-label-mono-sm text-label-mono-sm">Showing 1 – 6 of 142 snippets</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1 rounded bg-[#0b1326] border border-[#1e293b] text-[#64748b] font-label-mono-sm text-label-mono-sm opacity-50 cursor-not-allowed">Previous</button>
+<span class="px-2.5 py-1 rounded bg-emerald-500 text-slate-950 font-label-mono-sm text-label-mono-sm font-semibold shadow-[0_0_10px_rgba(16,185,129,0.3)]">1</span>
+<button class="px-2.5 py-1 rounded hover:bg-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#dae2fd] transition-colors">2</button>
+<button class="px-2.5 py-1 rounded hover:bg-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#dae2fd] transition-colors">3</button>
+<span class="font-label-mono-sm text-label-mono-sm text-[#64748b]">...</span>
+<button class="px-2.5 py-1 rounded hover:bg-[#1e293b] font-label-mono-sm text-label-mono-sm text-[#dae2fd] transition-colors">24</button>
+<button class="px-3 py-1 rounded bg-[#0b1326] border border-[#1e293b] hover:bg-[#1e293b] text-[#dae2fd] font-label-mono-sm text-label-mono-sm transition-colors">Next</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Simple interactive copy micro-interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('button[title*="Copy"], button[title*="copy"]');
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-xs text-emerald-400">check</span> <span class="text-emerald-400">Copied</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 1800);
+      });
+    });
+  });
+</script></main></div></body></html>

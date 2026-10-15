@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface": "#0b1326",
+        "on-secondary-fixed": "#00201c",
+        "surface-dim": "#0b1326",
+        "primary-fixed": "#6ffbbe",
+        "on-tertiary": "#472a00",
+        "on-error-container": "#ffdad6",
+        "outline": "#86948a",
+        "outline-variant": "#1e293b",
+        "primary-container": "#10b981",
+        "surface-container-lowest": "#060e20",
+        "on-tertiary-fixed": "#2a1700",
+        "error-container": "#93000a",
+        "surface-bright": "#31394d",
+        "tertiary-fixed-dim": "#ffb95f",
+        "secondary-fixed-dim": "#4fdbc8",
+        "surface-tint": "#4edea3",
+        "on-primary-fixed": "#002113",
+        "on-secondary-fixed-variant": "#005048",
+        "on-secondary": "#003731",
+        "on-error": "#690005",
+        "secondary-fixed": "#71f8e4",
+        "primary-fixed-dim": "#4edea3",
+        "primary": "#4edea3",
+        "tertiary-fixed": "#ffddb8",
+        "on-primary-fixed-variant": "#005236",
+        "inverse-on-surface": "#283044",
+        "on-primary-container": "#003824",
+        "tertiary-container": "#e29100",
+        "surface-variant": "#2d3449",
+        "on-background": "#dae2fd",
+        "inverse-surface": "#dae2fd",
+        "on-tertiary-container": "#523200",
+        "surface-container-high": "#222a3d",
+        "secondary-container": "#04b4a2",
+        "inverse-primary": "#006c49",
+        "on-tertiary-fixed-variant": "#653e00",
+        "tertiary": "#ffb95f",
+        "surface-container": "#171f33",
+        "on-surface": "#dae2fd",
+        "error": "#ffb4ab",
+        "surface-container-low": "#131b2e",
+        "on-surface-variant": "#94a3b8",
+        "surface-container-highest": "#2d3449",
+        "secondary": "#4fdbc8",
+        "background": "#0b1326",
+        "on-secondary-container": "#003f38",
+        "on-primary": "#003824"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "gutter-desktop": "1.5rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.25rem",
+        "space-md": "0.75rem",
+        "space-xs": "0.25rem",
+        "margin": "1rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "gutter": "1rem"
+      },
+      "fontFamily": {
+        "code-block": [ "JetBrains Mono" ],
+        "headline-xl": [ "Inter" ],
+        "body-lg": [ "Inter" ],
+        "body-sm": [ "Inter" ],
+        "headline-sm": [ "Inter" ],
+        "label-mono-sm": [ "JetBrains Mono" ],
+        "label-mono-md": [ "JetBrains Mono" ],
+        "headline-xl-mobile": [ "Inter" ],
+        "body-md": [ "Inter" ],
+        "headline-lg": [ "Inter" ]
+      },
+      "fontSize": {
+        "code-block": [ "12.5px", { "lineHeight": "20px", "fontWeight": "400" } ],
+        "headline-xl": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" } ],
+        "body-lg": [ "15px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" } ],
+        "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ],
+        "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" } ],
+        "label-mono-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ],
+        "label-mono-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ],
+        "headline-xl-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ],
+        "body-md": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ],
+        "headline-lg": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" } ]
+      }
+    }
+  }
+};</script></head><body class="bg-[#0b0f17] font-body-md text-[#e2e8f0] antialiased selection:bg-primary-container selection:text-white"><aside class="fixed left-0 top-0 h-full w-64 bg-[#0f172a] border-r border-[#1e293b] z-50 flex flex-col pt-space-md pb-space-lg shadow-[4px_0_24px_rgba(0,0,0,0.5)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="SyntaxVault Logo" class="h-7 w-auto object-contain drop-shadow-[0_0_8px_rgba(78,222,163,0.35)]" src="https://lh3.googleusercontent.com/aida/AEtjO1VdFmiqRNKjjupt42OnkIV3Y-NUZhNbG9stH862c0jGJTJp9dRtXzuaZxevuoYBS6WxbqiBRRScUUAwx6mW-ctonXAIyLIkbHvpNVeIKnbCKbpX0bO6KkQE6sWFAd3U3gWSTOVeF5XbXucIJwFFhkxm_tVf8OZYUEOfkWCWiR1s1xFravaquffYCMfi2nGQfYdER4kqqbl_23jeHy6dK_wW57EvaAH5sD4pJFhJ8jWShrI9PI7jq9ZaglD0"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-[#f1f5f9] tracking-tight font-semibold">SyntaxVault</span><span class="font-label-mono-sm text-label-mono-sm text-primary tracking-widest text-[10px]">STUDENT WORKBENCH</span></div></div><div class="px-space-md mb-space-md"><div class="bg-[#131b2e] border border-[#1e293b] p-space-xs rounded-lg flex items-center gap-space-xs text-[#94a3b8] shadow-inner"><span class="material-symbols-outlined text-sm text-primary">terminal</span><span class="font-label-mono-sm text-label-mono-sm text-[#cbd5e1] font-medium">vault: ~/stanford-cs</span></div></div><nav class="flex-1 px-space-md flex flex-col gap-space-xs overflow-y-auto" data-active-classes="bg-primary/10 text-primary border border-primary/20 font-semibold"><div class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-[#64748b] uppercase tracking-wider font-semibold">Workspace</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1a2236] hover:text-[#f8fafc] border border-transparent transition-all" data-path="snippets" href="#"><span class="material-symbols-outlined text-base">folder_code</span><span class="font-body-md text-body-md">Snippets</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary/15 text-primary border border-primary/30 font-semibold shadow-[0_0_12px_rgba(78,222,163,0.15)]" data-path="ai-studio" href="#"><span class="material-symbols-outlined text-base">psychology</span><span class="font-body-md text-body-md">AI Studio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1a2236] hover:text-[#f8fafc] border border-transparent transition-all" data-path="translate" href="#"><span class="material-symbols-outlined text-base">compare_arrows</span><span class="font-body-md text-body-md">Translate</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1a2236] hover:text-[#f8fafc] border border-transparent transition-all" data-path="new-snippet" href="#"><span class="material-symbols-outlined text-base">edit_document</span><span class="font-body-md text-body-md">New Snippet</span></a><div class="mt-space-md px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-[#64748b] uppercase tracking-wider font-semibold">System</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#94a3b8] hover:bg-[#1a2236] hover:text-[#f8fafc] border border-transparent transition-all" data-path="settings-sync" href="#"><span class="material-symbols-outlined text-base">sync_saved_locally</span><span class="font-body-md text-body-md">Settings &amp; Sync</span></a></nav><div class="px-space-md pt-space-md"><div class="p-space-sm rounded-lg bg-[#131b2e] border border-[#1e293b] flex items-center justify-between"><div class="flex flex-col"><span class="font-label-mono-sm text-label-mono-sm text-[#e2e8f0] font-semibold">Local SQLite</span><span class="font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Synced 2m ago</span></div><span class="material-symbols-outlined text-primary text-base">cloud_done</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-[#0b0f17]/85 backdrop-blur-xl border-b border-[#1e293b] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center bg-[#131b2e] border border-[#1e293b] px-space-md py-space-xs rounded-lg shadow-inner gap-space-sm text-[#94a3b8] w-80 focus-within:border-primary/50 transition-colors"><span class="material-symbols-outlined text-sm text-[#64748b]">search</span><span class="font-body-sm text-body-sm text-[#94a3b8]">Search snippets, proofs, algorithms...</span><kbd class="ml-auto font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 bg-[#0b0f17] border border-[#1e293b] rounded text-[#cbd5e1]">⌘K</kbd></div><span class="font-label-mono-sm text-label-mono-sm px-space-xs py-0.5 rounded-full bg-[#1a2236] border border-[#334155] text-secondary">Student Edition</span></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs bg-primary hover:bg-[#34d399] text-[#003824] font-semibold font-body-md text-body-md px-space-md py-space-xs rounded-lg transition-all shadow-[0_0_16px_rgba(78,222,163,0.25)] hover:shadow-[0_0_20px_rgba(78,222,163,0.4)]" data-path="new-snippet" href="#"><span class="material-symbols-outlined text-sm font-bold">add</span><span>New Snippet</span></a><button class="p-space-xs rounded-lg text-[#94a3b8] hover:bg-[#1a2236] hover:text-[#f8fafc] border border-transparent hover:border-[#1e293b] transition-colors relative" type="button"><span class="material-symbols-outlined text-base">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary ring-2 ring-[#0b0f17]"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCilZLUGfEQbGJjuf3C_51OayyIy0EcHyis2v0UhrPgRqJYZS2JUQ6y8QrJgo3SOi1RXgm86Q3K3tD-uVbNbsSpzVA-UQg6MNJwR-wJrisAFoT17CK2z20VkkYxBNkUY83JP9e9de9kmedfbkI-YI5PcMv2M-z_xNpdda5Ben3GfqFcQUGTHfxva_TFmv8Y6Co5xbJeZuwpVSbwVtHHRHUns9hokxXIv3ReLhNeG3_FB-51YUlOQVrVew"/><div class="flex flex-col text-left leading-tight"><span class="font-body-sm text-body-sm font-semibold text-[#f1f5f9]">Maya Lin</span><span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">CS Major @ Stanford</span></div></div></div></header><main class="relative pt-16 bg-[#0b0f17] min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle ambient decorative glow strictly contained -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 right-12 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-96 left-1/3 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Workspace Context Sub-header -->
+<div class="px-gutter-desktop py-space-sm bg-[#0f172a]/90 backdrop-blur-md border-b border-[#1e293b] flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<a class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-xs text-primary">school</span>
+<span>CS 161 (Algorithms)</span>
+</a>
+<span class="text-[#475569] font-label-mono-sm">/</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">Graph Algorithms</span>
+<span class="text-[#475569] font-label-mono-sm">/</span>
+<span class="font-label-mono-md text-label-mono-md text-[#f1f5f9] font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(78,222,163,0.8)]"></span>
+          dijkstra_min_heap.cpp
+        </span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1 font-label-mono-sm text-label-mono-sm text-[#94a3b8] bg-[#131b2e] border border-[#1e293b] px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-xs text-[#64748b]">history</span>
+<span>v3.2 • Stanford Autumn '24</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-space-sm py-1 rounded bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1a2236] hover:text-[#f8fafc] transition-colors font-label-mono-sm text-label-mono-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs text-tertiary">star</span>
+<span>Starred</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-[#131b2e] border border-[#1e293b] text-[#cbd5e1] hover:bg-[#1a2236] hover:text-[#f8fafc] transition-colors font-label-mono-sm text-label-mono-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs text-secondary">fork_right</span>
+<span>Export Gist</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Master-Detail 2-Column Grid -->
+<div class="px-gutter-desktop py-space-md grid grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Code Inspector & Editor (60% ~ 7 cols desktop) -->
+<section class="col-span-12 xl:col-span-7 flex flex-col gap-space-md min-w-0">
+<!-- Editor Controls Bar -->
+<div class="bg-[#0f172a] border border-[#1e293b] rounded-xl p-space-md shadow-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-primary/10 border border-primary/25 text-primary font-semibold tracking-wider uppercase">C++20</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">std::priority_queue</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#334155]"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#64748b]">32 lines • 942 bytes</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-lg bg-[#131b2e] border border-[#1e293b] hover:bg-[#1a2236] text-[#cbd5e1] transition-colors font-label-mono-sm text-label-mono-sm flex items-center gap-1" id="copyCodeBtn" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary hover:bg-[#34d399] text-[#003824] transition-all font-body-sm text-body-sm font-semibold flex items-center gap-1.5 shadow-[0_0_12px_rgba(78,222,163,0.3)]" type="button">
+<span class="material-symbols-outlined text-sm font-bold">play_arrow</span>
+<span>Run Sandbox</span>
+</button>
+</div>
+</div>
+<!-- Sunken Monastic Code Canvas -->
+<div class="relative rounded-xl overflow-hidden bg-[#060e20] border border-[#1e293b] shadow-2xl text-[#e6edf3]">
+<!-- Code Canvas Header -->
+<div class="bg-[#0b1326] border-b border-[#1e293b] px-space-md py-space-xs flex items-center justify-between select-none">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#ef4444]/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-[#f59e0b]/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-[#10b981]/80 inline-block"></span>
+<span class="ml-2 font-label-mono-sm text-label-mono-sm text-[#94a3b8]">dijkstra_min_heap.cpp</span>
+</div>
+<div class="flex items-center gap-3 font-label-mono-sm text-label-mono-sm text-[#64748b]">
+<span class="flex items-center gap-1 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_6px_rgba(78,222,163,0.8)]"></span> Validated</span>
+<span>UTF-8</span>
+<span>LF</span>
+</div>
+</div>
+<!-- Code View Area with Custom Gutter & Syntax Highlight -->
+<div class="font-code-block text-code-block p-space-md overflow-x-auto leading-6 select-text bg-[#060e20]">
+<!-- Code Line 1 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">1</span>
+<span class="text-[#ffb95f]">#include</span> <span class="text-primary">&lt;iostream&gt;</span>
+</div>
+<!-- Code Line 2 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">2</span>
+<span class="text-[#ffb95f]">#include</span> <span class="text-primary">&lt;vector&gt;</span>
+</div>
+<!-- Code Line 3 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">3</span>
+<span class="text-[#ffb95f]">#include</span> <span class="text-primary">&lt;queue&gt;</span>
+</div>
+<!-- Code Line 4 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">4</span>
+<span class="text-[#ffb95f]">#include</span> <span class="text-primary">&lt;limits&gt;</span>
+</div>
+<!-- Code Line 5 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">5</span>
+<span class="text-[#64748b] italic">// Min-heap state: (distance, vertex_id)</span>
+</div>
+<!-- Code Line 6 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">6</span>
+<span class="text-secondary">using</span> <span class="text-[#facc15]">Edge</span> = std::pair&lt;<span class="text-secondary">int</span>, <span class="text-secondary">int</span>&gt;;
+            </div>
+<!-- Code Line 7 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">7</span>
+<span> </span>
+</div>
+<!-- Code Line 8 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">8</span>
+<span class="text-secondary">std::vector</span>&lt;<span class="text-secondary">int</span>&gt; <span class="text-primary font-medium">dijkstra</span>(<span class="text-secondary">int</span> n, <span class="text-secondary">int</span> src, <span class="text-secondary">const</span> std::vector&lt;std::vector&lt;Edge&gt;&gt;&amp; adj) {
+            </div>
+<!-- Code Line 9 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">9</span>
+<span class="pl-4 text-secondary">const</span> <span class="text-secondary">int</span> INF = std::numeric_limits&lt;<span class="text-secondary">int</span>&gt;::max();
+            </div>
+<!-- Code Line 10 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">10</span>
+<span class="pl-4 text-secondary">std::vector</span>&lt;<span class="text-secondary">int</span>&gt; dist(n, INF);
+            </div>
+<!-- Code Line 11 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">11</span>
+<span class="pl-4">dist[src] = <span class="text-[#38bdf8]">0</span>;</span>
+</div>
+<!-- Code Line 12 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">12</span>
+<span> </span>
+</div>
+<!-- Code Line 13 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">13</span>
+<span class="pl-4 text-[#64748b] italic">// Min-heap ordering: lowest distance on top</span>
+</div>
+<!-- Code Line 14 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">14</span>
+<span class="pl-4 text-secondary">std::priority_queue</span>&lt;Edge, std::vector&lt;Edge&gt;, std::greater&lt;Edge&gt;&gt; pq;
+            </div>
+<!-- Code Line 15 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">15</span>
+<span class="pl-4">pq.push({<span class="text-[#38bdf8]">0</span>, src});</span>
+</div>
+<!-- Code Line 16 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">16</span>
+<span> </span>
+</div>
+<!-- Code Line 17 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">17</span>
+<span class="pl-4"><span class="text-[#ffb95f]">while</span> (!pq.empty()) {</span>
+</div>
+<!-- Code Line 18 (HIGHLIGHTED ANNOTATION LINE) -->
+<div class="relative bg-primary/10 border-y border-primary/20 -mx-space-md px-space-md transition-colors">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary shadow-[0_0_10px_rgba(78,222,163,0.8)]"></div>
+<div class="flex">
+<span class="w-8 text-right pr-4 text-primary font-bold font-label-mono-sm text-label-mono-sm">18</span>
+<span class="pl-8"><span class="text-secondary">auto</span> [d, u] = pq.top(); pq.pop();</span>
+</div>
+</div>
+<!-- Student Annotation Inline Card (Directly attached to Line 18) -->
+<div class="-mx-space-md px-space-md py-space-xs bg-[#0b1326]/60">
+<div class="ml-12 mr-4 my-1 p-space-sm bg-[#131b2e] border border-primary/30 text-[#e2e8f0] rounded-lg shadow-xl flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-primary/20 border border-primary/40 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-xs">notes</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-semibold text-primary">Student Annotation • Maya Lin</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">Yesterday 11:24 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#cbd5e1] mt-0.5">
+<strong class="text-[#f1f5f9] font-semibold">Invariant check:</strong> Why do we check <code class="bg-[#0b0f17] border border-[#1e293b] px-1 py-0.5 rounded text-primary font-code-block text-xs">dist[u] &lt; d</code> right after this? Prevents redundant relaxations on lazy deletions in binary heap!
+                  </p>
+</div>
+</div>
+</div>
+<!-- Code Line 19 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">19</span>
+<span class="pl-8"><span class="text-[#ffb95f]">if</span> (d &gt; dist[u]) <span class="text-[#ffb95f]">continue</span>;</span>
+</div>
+<!-- Code Line 20 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">20</span>
+<span> </span>
+</div>
+<!-- Code Line 21 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">21</span>
+<span class="pl-8 text-[#64748b] italic">// Edge relaxation loop</span>
+</div>
+<!-- Code Line 22 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">22</span>
+<span class="pl-8"><span class="text-[#ffb95f]">for</span> (<span class="text-secondary">const</span> <span class="text-secondary">auto</span>&amp; [v, weight] : adj[u]) {</span>
+</div>
+<!-- Code Line 23 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">23</span>
+<span class="pl-12"><span class="text-[#ffb95f]">if</span> (dist[u] + weight &lt; dist[v]) {</span>
+</div>
+<!-- Code Line 24 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">24</span>
+<span class="pl-16">dist[v] = dist[u] + weight;</span>
+</div>
+<!-- Code Line 25 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">25</span>
+<span class="pl-16">pq.push({dist[v], v});</span>
+</div>
+<!-- Code Line 26 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">26</span>
+<span class="pl-12">}</span>
+</div>
+<!-- Code Line 27 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">27</span>
+<span class="pl-8">}</span>
+</div>
+<!-- Code Line 28 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">28</span>
+<span class="pl-4">}</span>
+</div>
+<!-- Code Line 29 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">29</span>
+<span class="pl-4"><span class="text-[#ffb95f]">return</span> dist;</span>
+</div>
+<!-- Code Line 30 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">30</span>
+<span>}</span>
+</div>
+<!-- Code Line 31 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">31</span>
+<span> </span>
+</div>
+<!-- Code Line 32 -->
+<div class="flex hover:bg-white/[0.03] -mx-space-md px-space-md transition-colors">
+<span class="w-8 text-right pr-4 text-[#475569] select-none font-label-mono-sm text-label-mono-sm">32</span>
+<span class="text-[#64748b] italic">// Test harness verified on Stanford GraphSuite dataset</span>
+</div>
+</div>
+</div>
+<!-- Terminal / Runtime Diagnostics Footer Bar -->
+<div class="bg-[#0f172a] border border-[#1e293b] p-space-md rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md font-semibold text-[#f1f5f9] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">terminal</span>
+<span>Sandbox Test Suite (Local Clang 17.0)</span>
+</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+              All 14 test vectors passing (1.8 ms)
+            </span>
+</div>
+<!-- Mini Inline Performance Visualizer -->
+<div class="p-space-sm bg-[#131b2e] border border-[#1e293b] rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<!-- Inline micro SVG sparkline for run memory stability -->
+<svg class="w-24 h-7 text-primary drop-shadow-[0_0_6px_rgba(78,222,163,0.4)]" fill="none" viewbox="0 0 100 28">
+<path d="M0 24 L18 20 L35 22 L52 14 L70 16 L88 8 L100 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M0 24 L18 20 L35 22 L52 14 L70 16 L88 8 L100 9 V 28 H 0 Z" fill="currentColor" fill-opacity="0.18"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] uppercase">Peak Memory</span>
+<span class="font-label-mono-md text-label-mono-md text-[#f1f5f9] font-semibold">4.2 MB (V=10⁴, E=5×10⁴)</span>
+</div>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<div class="flex flex-col">
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] uppercase">Priority Queue Ops</span>
+<span class="font-label-mono-md text-label-mono-md text-[#f1f5f9] font-semibold">14,289 push / 10,000 pops</span>
+</div>
+<div class="h-6 w-px bg-[#334155]"></div>
+<button class="font-label-mono-sm text-label-mono-sm text-primary hover:text-white flex items-center gap-0.5 transition-colors" type="button">
+<span>View Valgrind Log</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: AI Assistant & Studio (40% ~ 5 cols desktop) -->
+<section class="col-span-12 xl:col-span-5 flex flex-col gap-space-md min-w-0">
+<!-- Studio Panel Header & Tab Switcher -->
+<div class="bg-[#0f172a] border border-[#1e293b] rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-primary/20 border border-primary/40 text-primary flex items-center justify-center shadow-[0_0_10px_rgba(78,222,163,0.2)]">
+<span class="material-symbols-outlined text-sm font-bold">psychology</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-[#f1f5f9] tracking-tight font-semibold">AI Code Companion</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">Socratic Pedagogy Model • v2.4</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded-full bg-secondary/15 border border-secondary/30 text-secondary font-semibold">Guided Mode</span>
+</div>
+<!-- Segmented Tab Navigation -->
+<div class="grid grid-cols-3 gap-1 bg-[#131b2e] border border-[#1e293b] p-1 rounded-lg text-center">
+<button class="py-1 px-2 rounded-md font-label-mono-sm text-label-mono-sm font-semibold bg-[#1a2236] text-primary border border-primary/20 shadow-sm transition-all" type="button">
+              Breakdown
+            </button>
+<button class="py-1 px-2 rounded-md font-label-mono-sm text-label-mono-sm text-[#94a3b8] hover:text-[#f8fafc] transition-all" type="button">
+              Socratic Tutor
+            </button>
+<button class="py-1 px-2 rounded-md font-label-mono-sm text-label-mono-sm text-[#94a3b8] hover:text-[#f8fafc] transition-all" type="button">
+              Complexity
+            </button>
+</div>
+</div>
+<!-- Section 1: One-Click Code Explanation (Curated Academic Digest) -->
+<div class="bg-[#0f172a] border border-[#1e293b] rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-primary">auto_stories</span>
+<h3 class="font-body-lg text-body-lg font-semibold text-[#f1f5f9]">Algorithmic Step Deconstruction</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary bg-primary/10 border border-primary/25 px-2 py-0.5 rounded">Greedy Choice</span>
+</div>
+<!-- Step Progression Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Step 1 -->
+<div class="p-space-sm bg-[#131b2e] border border-[#1e293b] rounded-lg flex items-start gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-[#1a2236] border border-[#334155] text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center shrink-0 mt-0.5 font-bold">1</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-[#f1f5f9]">Distance Table &amp; Base Anchor</span>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                  Initializes all distances to infinity (<code class="font-code-block text-xs bg-[#0b0f17] border border-[#1e293b] text-[#cbd5e1] px-1 py-0.5 rounded">INF</code>) except <code class="font-code-block text-xs bg-[#0b0f17] border border-[#1e293b] text-[#cbd5e1] px-1 py-0.5 rounded">dist[src] = 0</code>. Min-heap is seeded with the origin pair.
+                </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-space-sm bg-[#131b2e] border border-[#1e293b] rounded-lg flex items-start gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-[#1a2236] border border-[#334155] text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center shrink-0 mt-0.5 font-bold">2</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-[#f1f5f9]">Greedy Min-Heap Extraction</span>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                  Continually extracts vertex <code class="font-code-block text-xs bg-[#0b0f17] border border-[#1e293b] text-[#cbd5e1] px-1 py-0.5 rounded">u</code> having minimum provisional distance. Stale entries with higher costs are skipped instantly.
+                </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-space-sm bg-[#131b2e] border border-[#1e293b] rounded-lg flex items-start gap-space-sm">
+<span class="w-5 h-5 rounded-full bg-[#1a2236] border border-[#334155] text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center shrink-0 mt-0.5 font-bold">3</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-[#f1f5f9]">Edge Relaxation Invariant</span>
+<p class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5">
+                  For each incident edge <code class="font-code-block text-xs bg-[#0b0f17] border border-[#1e293b] text-[#cbd5e1] px-1 py-0.5 rounded">(u, v)</code>, checks if <code class="font-code-block text-xs bg-[#0b0f17] border border-[#1e293b] text-[#cbd5e1] px-1 py-0.5 rounded">dist[u] + w &lt; dist[v]</code>. If satisfied, updates distance and pushes new candidate to queue.
+                </p>
+</div>
+</div>
+</div>
+<!-- Mathematical Rigor / Complexity Dual-Badge -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm bg-[#131b2e] border border-[#1e293b] rounded-lg flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] uppercase font-semibold">Time Complexity</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">Optimal</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#f1f5f9] font-bold tracking-tight mt-1 text-primary">O((V + E) log V)</span>
+<span class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5 leading-tight">
+                V heap extractions + at most E decrease-key equivalent pushes.
+              </span>
+</div>
+<div class="p-space-sm bg-[#131b2e] border border-[#1e293b] rounded-lg flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] uppercase font-semibold">Auxiliary Space</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] font-medium">Memory</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#f1f5f9] font-bold tracking-tight mt-1 text-secondary">O(V + E)</span>
+<span class="font-body-sm text-body-sm text-[#94a3b8] mt-0.5 leading-tight">
+                Stores graph representation and at most E items in the priority queue.
+              </span>
+</div>
+</div>
+</div>
+<!-- Section 2: Socratic Solution Assistance (Scholarly Guidance Dialogue) -->
+<div class="bg-[#0f172a] border border-[#1e293b] rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-tertiary">forum</span>
+<h3 class="font-body-lg text-body-lg font-semibold text-[#f1f5f9]">Socratic Dialogue</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8]">Topic: Graph Edge Constraints</span>
+</div>
+<!-- Dialogue Thread -->
+<div class="flex flex-col gap-space-md">
+<!-- Student Bubble -->
+<div class="flex items-start gap-space-sm self-end max-w-[88%]">
+<div class="p-space-sm bg-primary/20 border border-primary/35 text-[#e2e8f0] rounded-xl rounded-tr-none shadow-md text-right">
+<span class="font-label-mono-sm text-label-mono-sm text-primary block text-right font-medium">Maya Lin • Student</span>
+<p class="font-body-sm text-body-sm mt-0.5 text-left text-[#cbd5e1]">
+                  What happens if our graph contains negative edge weights? Will Dijkstra's still terminate with correct paths?
+                </p>
+</div>
+<img alt="Maya Lin" class="w-7 h-7 rounded-full object-cover shrink-0 mt-1 ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCilZLUGfEQbGJjuf3C_51OayyIy0EcHyis2v0UhrPgRqJYZS2JUQ6y8QrJgo3SOi1RXgm86Q3K3tD-uVbNbsSpzVA-UQg6MNJwR-wJrisAFoT17CK2z20VkkYxBNkUY83JP9e9de9kmedfbkI-YI5PcMv2M-z_xNpdda5Ben3GfqFcQUGTHfxva_TFmv8Y6Co5xbJeZuwpVSbwVtHHRHUns9hokxXIv3ReLhNeG3_FB-51YUlOQVrVew"/>
+</div>
+<!-- Socratic AI Response -->
+<div class="flex items-start gap-space-sm max-w-[92%]">
+<div class="w-7 h-7 rounded-full bg-tertiary/20 border border-tertiary/40 text-tertiary flex items-center justify-center shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-xs">school</span>
+</div>
+<div class="p-space-md bg-[#131b2e] border border-[#1e293b] text-[#e2e8f0] rounded-xl rounded-tl-none shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-tertiary">Stanford Algorithmic Mentor</span>
+<span class="font-label-mono-sm text-label-mono-sm text-[#64748b]">CS 161 TA Bot</span>
+</div>
+<p class="font-body-sm text-body-sm leading-relaxed text-[#cbd5e1]">
+                  Consider the fundamental <em>greedy assumption</em> in Dijkstra: once a node is popped from the priority queue, its computed shortest path is permanently finalized. 
+                </p>
+<!-- Socratic Question Callout -->
+<div class="p-space-sm bg-tertiary/10 border border-tertiary/25 rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-sm text-tertiary mt-0.5 shrink-0">lightbulb</span>
+<p class="font-body-sm text-body-sm text-[#fed7aa] font-medium">
+                    If an edge out of a distant node has weight <code class="font-code-block text-xs bg-[#0b0f17] border border-tertiary/30 text-tertiary px-1 py-0.5 rounded">-10</code>, could it retroactively provide a shorter route to an already "finalized" vertex?
+                  </p>
+</div>
+<!-- Handcrafted Inline SVG Edge Counterexample Diagram -->
+<div class="bg-[#0b0f17] border border-[#1e293b] p-space-sm rounded-lg flex flex-col items-center">
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] mb-1 self-start">Counterexample Graph Schema:</span>
+<svg class="w-full max-w-xs h-24" fill="none" viewbox="0 0 320 90">
+<!-- Nodes -->
+<circle cx="40" cy="45" fill="#10b981" r="16"></circle>
+<text fill="#003824" font-family="JetBrains Mono" font-size="11" font-weight="bold" text-anchor="middle" x="40" y="49">S</text>
+<circle cx="160" cy="20" fill="#1e293b" r="16" stroke="#334155" stroke-width="1.5"></circle>
+<text fill="#e2e8f0" font-family="JetBrains Mono" font-size="11" font-weight="bold" text-anchor="middle" x="160" y="24">A</text>
+<circle cx="280" cy="45" fill="#1e293b" r="16" stroke="#334155" stroke-width="1.5"></circle>
+<text fill="#e2e8f0" font-family="JetBrains Mono" font-size="11" font-weight="bold" text-anchor="middle" x="280" y="49">B</text>
+<!-- Edges with Labels -->
+<!-- S -> A -->
+<path d="M54 36 L144 23" marker-end="url(#arrow)" stroke="#64748b" stroke-width="1.5"></path>
+<text fill="#cbd5e1" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="96" y="22">+2</text>
+<!-- S -> B -->
+<path d="M56 47 L262 47" stroke="#64748b" stroke-width="1.5"></path>
+<text fill="#cbd5e1" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="160" y="60">+5</text>
+<!-- A -> B with negative weight -->
+<path d="M174 27 L266 40" stroke="#f87171" stroke-dasharray="3 3" stroke-width="2"></path>
+<text fill="#f87171" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="226" y="24">-4</text>
+<defs>
+<marker id="arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"></path>
+</marker>
+</defs>
+</svg>
+<span class="font-label-mono-sm text-label-mono-sm text-[#94a3b8] italic text-center mt-1">
+                    Dijkstra explores S→A first (cost 2) and locks it before evaluating longer negative chains.
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-[#94a3b8]">
+                  For graphs with potential negative weights without negative cycles, review the <strong class="text-[#f1f5f9]">Bellman-Ford algorithm</strong> (<code class="font-code-block text-xs bg-[#0b0f17] border border-[#1e293b] text-primary px-1 py-0.5 rounded">O(VE)</code>) or <strong class="text-[#f1f5f9]">Johnson's Algorithm</strong> for re-weighting.
+                </p>
+</div>
+</div>
+</div>
+<!-- Quick Action Exploration Prompts -->
+<div class="pt-space-xs flex flex-col gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-[#64748b] uppercase tracking-wider font-semibold">Suggested Exploration Branches</span>
+<div class="flex flex-wrap gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg bg-[#131b2e] border border-[#1e293b] hover:border-primary/40 hover:bg-[#1a2236] text-[#cbd5e1] font-label-mono-sm text-label-mono-sm transition-all shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-xs text-primary">science</span>
+<span>Generate Edge-Case Matrix</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-[#131b2e] border border-[#1e293b] hover:border-secondary/40 hover:bg-[#1a2236] text-[#cbd5e1] font-label-mono-sm text-label-mono-sm transition-all shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-xs text-secondary">memory</span>
+<span>Suggest Memory Optimization</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-[#131b2e] border border-[#1e293b] hover:border-tertiary/40 hover:bg-[#1a2236] text-[#cbd5e1] font-label-mono-sm text-label-mono-sm transition-all shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-xs text-tertiary">swap_horiz</span>
+<span>Convert to 0-1 BFS</span>
+</button>
+</div>
+</div>
+<!-- Prompt Input Bar inside Assistant -->
+<div class="relative mt-space-xs">
+<input class="w-full pl-space-md pr-16 py-2.5 bg-[#131b2e] border border-[#1e293b] rounded-lg font-body-sm text-body-sm text-[#e2e8f0] placeholder:text-[#64748b] focus:outline-none focus:border-primary/60 focus:bg-[#1a2236] shadow-inner transition-colors" placeholder="Ask a conceptual question about Dijkstra invariants..." type="text"/>
+<button class="absolute right-1.5 top-1.5 bottom-1.5 px-space-sm rounded-md bg-primary hover:bg-[#34d399] text-[#003824] transition-colors flex items-center justify-center shadow-[0_0_10px_rgba(78,222,163,0.3)] font-bold" type="button">
+<span class="material-symbols-outlined text-sm font-bold">arrow_upward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Simple copy snippet micro-interaction
+  const copyBtn = document.getElementById('copyCodeBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<span class="material-symbols-outlined text-sm text-primary">done</span><span class="text-primary font-semibold">Copied!</span>';
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+      }, 2000);
+    });
+  }
+</script></main></div></body></html>

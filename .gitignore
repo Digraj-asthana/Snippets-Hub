@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Vercel output & cache
+.vercel/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# IDE files
+.vscode/
+.idea/

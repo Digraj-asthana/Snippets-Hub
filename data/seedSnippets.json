@@ -1,0 +1,592 @@
+[
+  {
+    "id": "lru-cache-python",
+    "title": "LRU Cache with Doubly Linked List & Hash Map",
+    "description": "Guarantees strict constant time amortized operations for get() and put() by pinning sentinel nodes to head and tail.",
+    "notes": "Key takeaway: Sentinel head and tail nodes eliminate null pointer checks during node detachment. When evicting, pop from head.next; when accessing or adding, push directly before tail. The hash map stores direct node references for O(1) pointer updates.",
+    "language": "python",
+    "version": "Python 3.11",
+    "course": "CS 106B: Data Structures",
+    "category": "Data Structures",
+    "timeComplexity": "O(1) avg",
+    "spaceComplexity": "O(capacity)",
+    "tags": [
+      "data-structures",
+      "systems",
+      "hash-map",
+      "linked-list",
+      "lru"
+    ],
+    "starred": true,
+    "pinned": true,
+    "createdAt": "2026-10-10T10:00:00Z",
+    "updatedAt": "2026-10-15T15:30:00Z",
+    "code": "class Node:\n    def __init__(self, key: int, val: int):\n        self.key, self.val = key, val\n        self.prev = self.next = None\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.cap, self.cache = capacity, {}\n        self.head, self.tail = Node(0, 0), Node(0, 0)\n        self.head.next, self.tail.prev = self.tail, self.head\n\n    def _remove(self, node: Node):\n        prev, nxt = node.prev, node.next\n        prev.next, nxt.prev = nxt, prev\n\n    def _insert(self, node: Node):\n        prev, nxt = self.tail.prev, self.tail\n        prev.next = node\n        node.prev, node.next = prev, nxt\n        nxt.prev = node\n\n    def get(self, key: int) -> int:\n        if key in self.cache:\n            self._remove(self.cache[key])\n            self._insert(self.cache[key])\n            return self.cache[key].val\n        return -1\n\n    def put(self, key: int, value: int) -> None:\n        if key in self.cache:\n            self._remove(self.cache[key])\n        self.cache[key] = Node(key, value)\n        self._insert(self.cache[key])\n        if len(self.cache) > self.cap:\n            lru = self.head.next\n            self._remove(lru)\n            del self.cache[lru.key]",
+    "annotations": [
+      {
+        "line": 9,
+        "author": "Bhoomika Yadav",
+        "time": "2 days ago",
+        "note": "Sentinel head & tail nodes prevent null checks on edge insertions."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "LRUCache(2); put(1, 1); put(2, 2); get(1)",
+        "expected": "1",
+        "status": "passed"
+      },
+      {
+        "input": "put(3, 3); get(2)",
+        "expected": "-1",
+        "status": "passed"
+      },
+      {
+        "input": "put(4, 4); get(1)",
+        "expected": "-1",
+        "status": "passed"
+      },
+      {
+        "input": "get(3); get(4)",
+        "expected": "3, 4",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "dijkstra-cpp",
+    "title": "Dijkstra's Shortest Path with Min-Priority Queue",
+    "description": "Adjacency-list formulation using std::greater comparator over a min-heap for single-source shortest path.",
+    "notes": "Important concept: std::priority_queue defaults to max-heap in C++; std::greater<T> inverts it to a min-heap. The lazy deletion check `if (d > dist[u]) continue;` is crucial because vertices are re-pushed upon discovering shorter paths. Never run Dijkstra on graphs with negative edge weights!",
+    "language": "cpp",
+    "version": "C++20",
+    "course": "CS 161: Algorithms",
+    "category": "Graph Algorithms",
+    "timeComplexity": "O((V + E) log V)",
+    "spaceComplexity": "O(V + E)",
+    "tags": [
+      "graph-traversal",
+      "algorithms",
+      "greedy",
+      "heap",
+      "shortest-path"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-10-12T12:00:00Z",
+    "updatedAt": "2026-10-15T18:12:00Z",
+    "code": "#include <iostream>\n#include <vector>\n#include <queue>\n#include <limits>\n\n// Min-heap state: (distance, vertex_id)\nusing Edge = std::pair<int, int>;\n\nstd::vector<int> dijkstra(int n, int src, const std::vector<std::vector<Edge>>& adj) {\n    const int INF = std::numeric_limits<int>::max();\n    std::vector<int> dist(n, INF);\n    dist[src] = 0;\n\n    // Min-heap ordering: lowest distance on top\n    std::priority_queue<Edge, std::vector<Edge>, std::greater<Edge>> pq;\n    pq.push({0, src});\n\n    while (!pq.empty()) {\n        auto [d, u] = pq.top(); pq.pop();\n        \n        // Lazy deletion check: skip stale entries\n        if (d > dist[u]) continue;\n\n        // Edge relaxation loop\n        for (const auto& [v, weight] : adj[u]) {\n            if (dist[u] + weight < dist[v]) {\n                dist[v] = dist[u] + weight;\n                pq.push({dist[v], v});\n            }\n        }\n    }\n    return dist;\n}",
+    "annotations": [
+      {
+        "line": 18,
+        "author": "Bhoomika Yadav",
+        "time": "Yesterday 11:24 PM",
+        "note": "Invariant check: dist[u] < d prevents redundant relaxations on lazy deletions in binary heap!"
+      }
+    ],
+    "testCases": [
+      {
+        "input": "Graph V=5, E=6, src=0",
+        "expected": "dist = [0, 2, 3, 8, 6]",
+        "status": "passed"
+      },
+      {
+        "input": "Unreachable vertex test (n=4, isolated vertex 3)",
+        "expected": "dist[3] = INF",
+        "status": "passed"
+      },
+      {
+        "input": "Single node graph (n=1, src=0)",
+        "expected": "dist = [0]",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "use-debounce-ts",
+    "title": "Debounce & Throttle Hook Implementation",
+    "description": "Type-safe React hooks handling cleanup timers, leading/trailing execution flags for fast search & resize handlers.",
+    "notes": "Debounce buffers high-frequency user actions until a pause occurs (e.g. live search typing). Throttle guarantees execution at fixed maximum intervals (e.g. scroll handlers). In React, always clean up timers inside useEffect to prevent memory leaks and setState on unmounted components.",
+    "language": "typescript",
+    "version": "TypeScript 5.2",
+    "course": "Personal Web Projects",
+    "category": "Frontend & React",
+    "timeComplexity": "O(1)",
+    "spaceComplexity": "O(1)",
+    "tags": [
+      "web-dev",
+      "react",
+      "hooks",
+      "typescript",
+      "debounce"
+    ],
+    "starred": false,
+    "pinned": false,
+    "createdAt": "2026-10-08T09:00:00Z",
+    "updatedAt": "2026-10-14T20:15:00Z",
+    "code": "import { useState, useEffect, useRef } from 'react';\n\nexport function useDebounce<T>(val: T, delay: number): T {\n  const [debounced, setDebounced] = useState<T>(val);\n\n  useEffect(() => {\n    const handler = setTimeout(() => setDebounced(val), delay);\n    return () => clearTimeout(handler);\n  }, [val, delay]);\n\n  return debounced;\n}\n\nexport function useThrottle<T extends (...args: any[]) => any>(fn: T, limit: number): T {\n  const inThrottle = useRef(false);\n  return ((...args: any[]) => {\n    if (!inThrottle.current) {\n      fn(...args);\n      inThrottle.current = true;\n      setTimeout(() => { inThrottle.current = false; }, limit);\n    }\n  }) as T;\n}",
+    "annotations": [
+      {
+        "line": 8,
+        "author": "Bhoomika Yadav",
+        "time": "3 days ago",
+        "note": "Cleanup function in useEffect cancels pending timer on rapid prop changes."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "useDebounce('search', 300ms) with 5 keystrokes",
+        "expected": "Fires only 1 time after 300ms idle",
+        "status": "passed"
+      },
+      {
+        "input": "useThrottle(onScroll, 100ms) with continuous scroll",
+        "expected": "Executes at most once every 100ms",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "fast-io-cpp",
+    "title": "Fast I/O & Modular Arithmetic Template",
+    "description": "Competitive programming I/O acceleration template with binary exponentiation and Fermat's Little Theorem modular inverse.",
+    "notes": "ios_base::sync_with_stdio(false) disables synchronization between C++ streams and C stdio. cin.tie(NULL) unties cin from cout. Fermat's Little Theorem states a^(p-1) = 1 (mod p), meaning modular inverse a^(-1) = a^(p-2) (mod p) for prime p.",
+    "language": "cpp",
+    "version": "C++20",
+    "course": "LeetCode & Interviews",
+    "category": "Mathematics & Bits",
+    "timeComplexity": "O(log MOD)",
+    "spaceComplexity": "O(1)",
+    "tags": [
+      "fast-io",
+      "math",
+      "modular-arithmetic",
+      "competitive-programming"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-10-05T14:00:00Z",
+    "updatedAt": "2026-10-13T14:40:00Z",
+    "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nstatic const auto fast_io = []() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    return nullptr;\n}();\n\nconst int MOD = 1e9 + 7;\n\nlong long power(long long base, long long exp, long long mod = MOD) {\n    long long res = 1;\n    base %= mod;\n    while (exp > 0) {\n        if (exp & 1) res = (res * base) % mod;\n        base = (base * base) % mod;\n        exp >>= 1;\n    }\n    return res;\n}\n\nlong long modInverse(long long n, long long p = MOD) {\n    return power(n, p - 2, p); // Fermat's Little Theorem (p is prime)\n}",
+    "annotations": [],
+    "testCases": [
+      {
+        "input": "power(2, 10, 1000000007)",
+        "expected": "1024",
+        "status": "passed"
+      },
+      {
+        "input": "modInverse(3, 7)",
+        "expected": "5 (since 3*5 = 15 = 1 mod 7)",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "two-pointer-water-py",
+    "title": "Container With Most Water (Greedy Two-Pointer)",
+    "description": "Optimal two-pointer contraction maximizing area between vertical lines by always advancing the shorter line.",
+    "notes": "Mathematical proof: The area is constrained by min(height[left], height[right]) * width. Moving the taller pointer can only decrease width without any chance of increasing the bottleneck height. Therefore, discarding the shorter pointer is guaranteed never to eliminate the optimal pair.",
+    "language": "python",
+    "version": "Python 3.11",
+    "course": "LeetCode & Interviews",
+    "category": "Algorithms",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
+    "tags": [
+      "two-pointers",
+      "greedy",
+      "arrays",
+      "interview"
+    ],
+    "starred": false,
+    "pinned": false,
+    "createdAt": "2026-10-04T08:00:00Z",
+    "updatedAt": "2026-10-12T09:15:00Z",
+    "code": "def maxArea(height: list[int]) -> int:\n    left, right = 0, len(height) - 1\n    max_water = 0\n    \n    while left < right:\n        width = right - left\n        current_height = min(height[left], height[right])\n        max_water = max(max_water, width * current_height)\n        \n        # Invariant: Moving the taller pointer can never yield a larger area\n        # because width shrinks and bottleneck is constrained by min height.\n        if height[left] < height[right]:\n            left += 1\n        else:\n            right -= 1\n            \n    return max_water",
+    "annotations": [
+      {
+        "line": 11,
+        "author": "Bhoomika Yadav",
+        "time": "4 days ago",
+        "note": "Mathematical invariant: The eliminated line cannot pair with any remaining candidate to exceed current area."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "expected": "49",
+        "status": "passed"
+      },
+      {
+        "input": "height = [1,1]",
+        "expected": "1",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "producer-consumer-rust",
+    "title": "Thread-Safe Ring Buffer (Producer-Consumer)",
+    "description": "Lock-free bounded circular queue synchronization primitives using atomic head/tail cursors.",
+    "notes": "Ordering::Acquire on load ensures we read all prior writes made by the producer. Ordering::Release on store ensures that our buffer slot write is visible to other threads before the updated index is published. This guarantees lock-free safety.",
+    "language": "rust",
+    "version": "Rust 1.76",
+    "course": "CS 110: Systems",
+    "category": "Systems & Concurrency",
+    "timeComplexity": "O(1) amortized",
+    "spaceComplexity": "O(Capacity)",
+    "tags": [
+      "concurrency",
+      "systems",
+      "rust",
+      "ring-buffer",
+      "atomics"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-10-01T15:00:00Z",
+    "updatedAt": "2026-10-11T16:20:00Z",
+    "code": "use std::sync::atomic::{AtomicUsize, Ordering};\nuse std::sync::Arc;\n\npub struct RingBuffer<T> {\n    buffer: Vec<Option<T>>,\n    capacity: usize,\n    head: AtomicUsize,\n    tail: AtomicUsize,\n}\n\nimpl<T: Clone> RingBuffer<T> {\n    pub fn new(capacity: usize) -> Self {\n        Self {\n            buffer: vec![None; capacity],\n            capacity,\n            head: AtomicUsize::new(0),\n            tail: AtomicUsize::new(0),\n        }\n    }\n\n    pub fn try_push(&mut self, item: T) -> Result<(), &'static str> {\n        let head = self.head.load(Ordering::Acquire);\n        let tail = self.tail.load(Ordering::Relaxed);\n        \n        if (tail + 1) % self.capacity == head {\n            return Err(\"Buffer full\");\n        }\n        \n        self.buffer[tail] = Some(item);\n        self.tail.store((tail + 1) % self.capacity, Ordering::Release);\n        Ok(())\n    }\n}",
+    "annotations": [],
+    "testCases": [
+      {
+        "input": "Buffer capacity 4, push(1), push(2), push(3)",
+        "expected": "All pushes Ok(())",
+        "status": "passed"
+      },
+      {
+        "input": "Push 4th element onto full buffer",
+        "expected": "Err(\"Buffer full\")",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "recursive-cte-sql",
+    "title": "Recursive CTE Hierarchical Graph & Tree Traversal",
+    "description": "PostgreSQL recursive common table expression detecting cyclical dependencies and computing topological depth.",
+    "notes": "Recursive CTEs consist of an Anchor member (base rows) and a Recursive member (joined iteratively). To prevent infinite loops in cyclic graphs, track visited path IDs via ARRAY[id] and filter with `WHERE NOT (c.id = ANY(ct.path))`.",
+    "language": "sql",
+    "version": "Postgres 16",
+    "course": "CS 110: Systems",
+    "category": "Databases & Storage",
+    "timeComplexity": "O(V + E)",
+    "spaceComplexity": "O(Depth)",
+    "tags": [
+      "sql",
+      "recursion",
+      "databases",
+      "cte",
+      "graph"
+    ],
+    "starred": false,
+    "pinned": false,
+    "createdAt": "2026-09-28T11:00:00Z",
+    "updatedAt": "2026-10-09T11:05:00Z",
+    "code": "WITH RECURSIVE category_tree AS (\n    -- Base member: root nodes\n    SELECT \n        id, \n        name, \n        parent_id, \n        1 AS depth, \n        ARRAY[id] AS path\n    FROM course_categories\n    WHERE parent_id IS NULL\n\n    UNION ALL\n\n    -- Recursive member: join children with cycle prevention\n    SELECT \n        c.id, \n        c.name, \n        c.parent_id, \n        ct.depth + 1, \n        path || c.id\n    FROM course_categories c\n    INNER JOIN category_tree ct ON c.parent_id = ct.id\n    WHERE NOT (c.id = ANY(ct.path))\n)\nSELECT id, name, depth, path \nFROM category_tree \nORDER BY path;",
+    "annotations": [],
+    "testCases": [
+      {
+        "input": "Categories 5 levels deep with cyclic reference at node 4",
+        "expected": "Terminates gracefully at depth 5 without infinite loop",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "red-black-rotations-java",
+    "title": "Left-Leaning Red-Black Tree Balance Invariants",
+    "description": "Sedgewick 2-3 Left-Leaning Red-Black (LLRB) tree rotation and color flip algorithms preserving 1-to-1 isometry.",
+    "notes": "Left-Leaning Red-Black trees simplify classical Red-Black trees by enforcing that red links only lean left. Right-leaning red links are immediately fixed by rotateLeft(); consecutive red links are fixed by rotateRight() followed by flipColors().",
+    "language": "java",
+    "version": "Java 21",
+    "course": "CS 106B: Data Structures",
+    "category": "Data Structures",
+    "timeComplexity": "O(log N)",
+    "spaceComplexity": "O(log N)",
+    "tags": [
+      "data-structures",
+      "recursion",
+      "trees",
+      "java",
+      "red-black"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-09-25T14:00:00Z",
+    "updatedAt": "2026-10-08T14:10:00Z",
+    "code": "public class LLRBTree<Key extends Comparable<Key>, Value> {\n    private static final boolean RED = true;\n    private static final boolean BLACK = false;\n\n    private class Node {\n        Key key; Value val; Node left, right;\n        boolean color; // color of parent link\n        Node(Key key, Value val, boolean color) {\n            this.key = key; this.val = val; this.color = color;\n        }\n    }\n\n    private boolean isRed(Node x) { return x != null && x.color == RED; }\n\n    private Node rotateLeft(Node h) {\n        Node x = h.right;\n        h.right = x.left;\n        x.left = h;\n        x.color = h.color;\n        h.color = RED;\n        return x;\n    }\n\n    private Node rotateRight(Node h) {\n        Node x = h.left;\n        h.left = x.right;\n        x.right = h;\n        x.color = h.color;\n        h.color = RED;\n        return x;\n    }\n\n    private void flipColors(Node h) {\n        h.color = !h.color;\n        h.left.color = !h.left.color;\n        h.right.color = !h.right.color;\n    }\n}",
+    "annotations": [],
+    "testCases": [
+      {
+        "input": "Insert keys in descending order [10, 9, 8]",
+        "expected": "Root = 9, left = 8, right = 10 (perfectly balanced)",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "merge-sort-python",
+    "title": "Merge Sort with Divide-and-Conquer Invariants",
+    "description": "Stable O(N log N) divide-and-conquer sorting algorithm with recursive subproblem decomposition and two-pointer merge.",
+    "notes": "Key invariant: The merge step assumes both sub-arrays are already sorted in non-decreasing order. Space complexity is O(N) for auxiliary buffer arrays during merging. Guaranteed O(N log N) worst-case time makes it ideal when predictable performance is required.",
+    "language": "python",
+    "version": "Python 3.11",
+    "course": "CS 161: Algorithms",
+    "category": "Algorithms & DP",
+    "timeComplexity": "O(N log N)",
+    "spaceComplexity": "O(N)",
+    "tags": [
+      "sorting",
+      "divide-and-conquer",
+      "recursion",
+      "algorithms"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-10-13T09:15:00Z",
+    "updatedAt": "2026-10-15T19:00:00Z",
+    "code": "def merge_sort(arr: list[int]) -> list[int]:\n    \"\"\"Divide-and-conquer merge sort returning a newly sorted array.\"\"\"\n    if len(arr) <= 1:\n        return arr\n\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge(left, right)\n\ndef merge(left: list[int], right: list[int]) -> list[int]:\n    merged = []\n    i = j = 0\n\n    # Two-pointer linear scan\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            merged.append(left[i])\n            i += 1\n        else:\n            merged.append(right[j])\n            j += 1\n\n    # Append remaining elements\n    merged.extend(left[i:])\n    merged.extend(right[j:])\n    return merged",
+    "annotations": [
+      {
+        "line": 18,
+        "author": "Bhoomika Yadav",
+        "time": "3 days ago",
+        "note": "Stability check: using <= rather than < preserves relative order of equal keys!"
+      }
+    ],
+    "testCases": [
+      {
+        "input": "merge_sort([38, 27, 43, 3, 9, 82, 10])",
+        "expected": "[3, 9, 10, 27, 38, 43, 82]",
+        "status": "passed"
+      },
+      {
+        "input": "merge_sort([])",
+        "expected": "[]",
+        "status": "passed"
+      },
+      {
+        "input": "merge_sort([5])",
+        "expected": "[5]",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "trie-prefix-tree-ts",
+    "title": "Trie Prefix Tree with Autocomplete & Search",
+    "description": "High-performance n-ary tree structure for fast string dictionary storage, prefix filtering, and vocabulary lookup.",
+    "notes": "Key takeaway: Each node stores child pointers keyed by character and a boolean flag isEndOfWord. Search and insertion operate in O(L) where L is the string length, strictly independent of the total number of words in the dictionary.",
+    "language": "typescript",
+    "version": "TypeScript 5.2",
+    "course": "CS 106B: Data Structures",
+    "category": "Data Structures",
+    "timeComplexity": "O(L) per op",
+    "spaceComplexity": "O(Σ · L · N)",
+    "tags": [
+      "data-structures",
+      "trie",
+      "strings",
+      "autocomplete",
+      "trees"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-10-14T11:00:00Z",
+    "updatedAt": "2026-10-15T19:20:00Z",
+    "code": "class TrieNode {\n  children: Map<string, TrieNode> = new Map();\n  isEndOfWord: boolean = false;\n}\n\nexport class Trie {\n  private root: TrieNode = new TrieNode();\n\n  insert(word: string): void {\n    let current = this.root;\n    for (const char of word) {\n      if (!current.children.has(char)) {\n        current.children.set(char, new TrieNode());\n      }\n      current = current.children.get(char)!;\n    }\n    current.isEndOfWord = true;\n  }\n\n  search(word: string): boolean {\n    const node = this.traverse(word);\n    return node !== null && node.isEndOfWord;\n  }\n\n  startsWith(prefix: string): boolean {\n    return this.traverse(prefix) !== null;\n  }\n\n  private traverse(prefix: string): TrieNode | null {\n    let current = this.root;\n    for (const char of prefix) {\n      if (!current.children.has(char)) return null;\n      current = current.children.get(char)!;\n    }\n    return current;\n  }\n}",
+    "annotations": [
+      {
+        "line": 16,
+        "author": "Bhoomika Yadav",
+        "time": "Yesterday",
+        "note": "O(L) lookup independent of vocabulary size N — essential for search suggestion engines."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "insert(\"apple\"); search(\"apple\")",
+        "expected": "true",
+        "status": "passed"
+      },
+      {
+        "input": "search(\"app\")",
+        "expected": "false",
+        "status": "passed"
+      },
+      {
+        "input": "startsWith(\"app\")",
+        "expected": "true",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "kadane-max-subarray-java",
+    "title": "Kadane's Dynamic Programming Algorithm (Maximum Subarray)",
+    "description": "Computes the contiguous subarray within a one-dimensional numerical array that has the largest sum in optimal O(N) time and O(1) space.",
+    "notes": "Mathematical proof: At index i, the maximum subarray ending at i is max(nums[i], maxEndingHere + nums[i]). If running sum drops below 0, discarding previous elements and starting fresh from nums[i] is always provably optimal.",
+    "language": "java",
+    "version": "Java 21",
+    "course": "CS 161: Algorithms",
+    "category": "Algorithms & DP",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
+    "tags": [
+      "dynamic-programming",
+      "arrays",
+      "optimization",
+      "kadane"
+    ],
+    "starred": false,
+    "pinned": false,
+    "createdAt": "2026-10-14T14:30:00Z",
+    "updatedAt": "2026-10-15T19:35:00Z",
+    "code": "public class KadaneSubarray {\n    public static class SubarrayResult {\n        public int maxSum;\n        public int startIndex;\n        public int endIndex;\n\n        public SubarrayResult(int maxSum, int startIndex, int endIndex) {\n            this.maxSum = maxSum;\n            this.startIndex = startIndex;\n            this.endIndex = endIndex;\n        }\n    }\n\n    public static SubarrayResult findMaxSubarray(int[] nums) {\n        if (nums == null || nums.length == 0) {\n            throw new IllegalArgumentException(\"Input array cannot be empty\");\n        }\n\n        int maxSoFar = nums[0];\n        int currentMax = nums[0];\n        int start = 0, end = 0, tempStart = 0;\n\n        for (int i = 1; i < nums.length; i++) {\n            if (nums[i] > currentMax + nums[i]) {\n                currentMax = nums[i];\n                tempStart = i;\n            } else {\n                currentMax += nums[i];\n            }\n\n            if (currentMax > maxSoFar) {\n                maxSoFar = currentMax;\n                start = tempStart;\n                end = i;\n            }\n        }\n        return new SubarrayResult(maxSoFar, start, end);\n    }\n}",
+    "annotations": [
+      {
+        "line": 23,
+        "author": "Bhoomika Yadav",
+        "time": "Yesterday",
+        "note": "Boundary invariant: Tracking tempStart allows exact [start, end] window coordinates recovery."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+        "expected": "maxSum = 6 (subarray [4, -1, 2, 1])",
+        "status": "passed"
+      },
+      {
+        "input": "nums = [5, 4, -1, 7, 8]",
+        "expected": "maxSum = 23",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "topological-sort-kahn-cpp",
+    "title": "Kahn's Topological Sort with BFS Cycle Detection",
+    "description": "Linear ordering of vertices in a Directed Acyclic Graph (DAG) using vertex in-degrees and BFS queue, detecting cycles if output length < V.",
+    "notes": "Algorithmic guarantee: Only nodes with in-degree == 0 can be processed at any step. If all vertices are processed, the graph is provably a DAG. If visited count < V, a directed cyclic dependency exists (crucial for build systems like Make and course prerequisites).",
+    "language": "cpp",
+    "version": "C++20",
+    "course": "CS 161: Algorithms",
+    "category": "Graph Algorithms",
+    "timeComplexity": "O(V + E)",
+    "spaceComplexity": "O(V)",
+    "tags": [
+      "graph-traversal",
+      "dag",
+      "topological-sort",
+      "bfs",
+      "cycle-detection"
+    ],
+    "starred": true,
+    "pinned": false,
+    "createdAt": "2026-10-15T08:00:00Z",
+    "updatedAt": "2026-10-15T19:40:00Z",
+    "code": "#include <vector>\n#include <queue>\n#include <iostream>\n\nstd::vector<int> topologicalSortKahn(int n, const std::vector<std::pair<int, int>>& edges) {\n    std::vector<std::vector<int>> adj(n);\n    std::vector<int> inDegree(n, 0);\n\n    for (const auto& [u, v] : edges) {\n        adj[u].push_back(v);\n        inDegree[v]++;\n    }\n\n    std::queue<int> q;\n    for (int i = 0; i < n; i++) {\n        if (inDegree[i] == 0) q.push(i);\n    }\n\n    std::vector<int> topoOrder;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        topoOrder.push_back(u);\n\n        for (int v : adj[u]) {\n            if (--inDegree[v] == 0) {\n                q.push(v);\n            }\n        }\n    }\n\n    // Cycle detection check: if topoOrder size != n, cycle exists\n    if (topoOrder.size() != static_cast<size_t>(n)) {\n        return {}; // Directed cycle detected\n    }\n    return topoOrder;\n}",
+    "annotations": [
+      {
+        "line": 29,
+        "author": "Bhoomika Yadav",
+        "time": "5 hours ago",
+        "note": "Cycle invariant: if topoOrder.size() < n, at least one directed cycle was skipped."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "V=6, edges=[(5,2),(5,0),(4,0),(4,1),(2,3),(3,1)]",
+        "expected": "topoOrder = [4, 5, 2, 0, 3, 1]",
+        "status": "passed"
+      },
+      {
+        "input": "V=2, edges=[(0,1),(1,0)]",
+        "expected": "Cycle detected: return []",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "async-rwlock-rust",
+    "title": "Thread-Safe Shared State with Arc<RwLock<T>>",
+    "description": "Idiomatic Rust concurrency pattern enabling concurrent multiple readers or exclusive single writer under compiler-enforced borrow checks.",
+    "notes": "Key takeaway: `Arc<RwLock<T>>` guarantees safe data sharing across threads without data races. Multiple readers acquire shared locks concurrently; writers acquire exclusive mutable locks, preventing stale reads and torn writes with zero garbage collection.",
+    "language": "rust",
+    "version": "Rust 1.76",
+    "course": "CS 110: Systems",
+    "category": "Systems & Concurrency",
+    "timeComplexity": "O(1) lock acquire",
+    "spaceComplexity": "O(1) overhead",
+    "tags": [
+      "systems",
+      "concurrency",
+      "rust",
+      "threads",
+      "mutex",
+      "rwlock"
+    ],
+    "starred": false,
+    "pinned": false,
+    "createdAt": "2026-10-15T10:30:00Z",
+    "updatedAt": "2026-10-15T19:50:00Z",
+    "code": "use std::sync::{Arc, RwLock};\nuse std::thread;\nuse std::time::Duration;\n\n#[derive(Debug)]\nstruct SharedState {\n    counter: u64,\n    status: String,\n}\n\nfn main() {\n    let state = Arc::new(RwLock::new(SharedState {\n        counter: 0,\n        status: \"INITIALIZED\".to_string(),\n    }));\n\n    let mut handles = vec![];\n\n    // Spawn 4 concurrent reader threads\n    for id in 0..4 {\n        let state_clone = Arc::clone(&state);\n        handles.push(thread::spawn(move || {\n            let lock = state_clone.read().unwrap();\n            println!(\"Reader {}: counter={}, status={}\", id, lock.counter, lock.status);\n        }));\n    }\n\n    // Spawn 1 exclusive writer thread\n    let writer_state = Arc::clone(&state);\n    handles.push(thread::spawn(move || {\n        let mut lock = writer_state.write().unwrap();\n        lock.counter += 42;\n        lock.status = \"MUTATED_EXCLUSIVE\".to_string();\n        println!(\"Writer finalized state mutation\");\n    }));\n\n    for h in handles {\n        h.join().unwrap();\n    }\n}",
+    "annotations": [
+      {
+        "line": 23,
+        "author": "Bhoomika Yadav",
+        "time": "4 hours ago",
+        "note": "Send + Sync invariants: Arc provides atomic reference counting while RwLock prevents data races."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "4 readers + 1 exclusive writer",
+        "expected": "Safe concurrent execution, 0 data races",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "id": "window-partition-sql",
+    "title": "Rolling 7-Day Window Moving Average & Partition LAG",
+    "description": "Advanced analytic SQL using OVER(), PARTITION BY, sliding window ROWS BETWEEN frames, and LAG() delta calculations.",
+    "notes": "Key takeaway: Window functions compute cumulative or moving aggregates without collapsing rows like GROUP BY. `ROWS BETWEEN 6 PRECEDING AND CURRENT ROW` ensures exact physical frame bounds for moving average and trend detection.",
+    "language": "sql",
+    "version": "PostgreSQL / SQLite 3.38+",
+    "course": "CS 145: Data Management",
+    "category": "Databases & Storage",
+    "timeComplexity": "O(N log N) index sort",
+    "spaceComplexity": "O(N) window buffer",
+    "tags": [
+      "sql",
+      "databases",
+      "analytics",
+      "window-functions",
+      "cte"
+    ],
+    "starred": false,
+    "pinned": false,
+    "createdAt": "2026-10-15T12:00:00Z",
+    "updatedAt": "2026-10-15T19:55:00Z",
+    "code": "WITH DailyUserMetrics AS (\n    SELECT\n        student_id,\n        event_date,\n        snippets_created,\n        LAG(snippets_created, 1) OVER (\n            PARTITION BY student_id\n            ORDER BY event_date\n        ) AS prev_day_snippets\n    FROM student_study_log\n)\nSELECT\n    student_id,\n    event_date,\n    snippets_created,\n    (snippets_created - COALESCE(prev_day_snippets, 0)) AS day_over_day_delta,\n    ROUND(AVG(snippets_created) OVER (\n        PARTITION BY student_id\n        ORDER BY event_date\n        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW\n    ), 2) AS rolling_7day_avg,\n    SUM(snippets_created) OVER (\n        PARTITION BY student_id\n        ORDER BY event_date\n    ) AS cumulative_study_snippets\nFROM DailyUserMetrics\nORDER BY student_id, event_date;",
+    "annotations": [
+      {
+        "line": 18,
+        "author": "Bhoomika Yadav",
+        "time": "3 hours ago",
+        "note": "Analytical frame invariant: ROWS BETWEEN 6 PRECEDING calculates exact 7-day rolling window."
+      }
+    ],
+    "testCases": [
+      {
+        "input": "7 daily rows: [2, 4, 3, 5, 6, 8, 7]",
+        "expected": "rolling_7day_avg = 5.00",
+        "status": "passed"
+      }
+    ]
+  }
+]
